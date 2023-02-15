@@ -1,0 +1,24 @@
+.BlogsCard{
+    width: 23%;
+}  
+@media screen and ( max-width:900px ){
+    .BlogsCard{
+        width: 32%;
+    }  
+}
+@media screen and ( max-width:600px ){
+    .BlogsCard{
+        width: 47.5%;
+    }  
+}
+@media screen and ( max-width:600px ){
+    .BlogsCard{
+        width: 100%;
+    }  
+}
+
+
+
+
+
+/* width={["100%", "47.5%", "32%", "23%"]} */
