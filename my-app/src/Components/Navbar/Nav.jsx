@@ -125,8 +125,8 @@ export default function Navbar() {
                     </Box>
                 </Box>
                 <Box display={["none", "none", "none", "flex"]} justifyContent={"center"} alignItems={"center"} height={"100%"} width={"30%"}>
-                    <NavLink style={{ textDecoration: "none" }} to={"/Projects"}>
-                        <Button variant="text" style={{ fontFamily: 'Roboto, sans-serif', fontSize: "15px", width: "150px", height: "70%", background: "#ff7d7d", color: "white", borderRadius: "10px", fontWeight: "800" }}>Start Donation</Button>
+                    <NavLink style={{ textDecoration: "none",height:"80%",width:"50%" }} to={"/Projects"}>
+                        <Button variant="text" style={{ fontFamily: 'Roboto, sans-serif', fontSize: "15px", width: "100%", height: "100%", background: "#ff7d7d", color: "white", borderRadius: "10px", fontWeight: "800" }}>Start Donation</Button>
                     </NavLink>
                 </Box>
                 <Hamburger />
