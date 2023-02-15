@@ -44,12 +44,6 @@ function App() {
       console.log(res.data)
     })
   }, [])
-
-
-
-
-
-
   return (
     <>
       <SocialMedia />
