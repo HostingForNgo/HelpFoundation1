@@ -5,9 +5,9 @@ import { NavLink } from "react-router-dom";
 
 export default function PcViewBlogCard({ blog, head, id, wid }) {
     return (
-        <Box display={["none", "none", "flex", "flex"]} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} width={wid} minHeight={"400x"} >
+        <Box display={["none", "none", "flex", "flex"]} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} width={wid} height={"400x"} >
             <Box width={"40%"} p={"20px"} overflow={"hidden"} display={"flex"} alignItems={"center"}>
-                <img style={{ width: "100%" }} src={"https://img.freepik.com/free-vector/nature-scene-with-river-hills-forest-mountain-landscape-flat-cartoon-style-illustration_1150-37326.jpg"} alt="" />
+                <img style={{ width: "100%" }} src={"https://img.freepik.com/free-photo/beautiful-scenery-phragmites-plants-by-sea-with-swimming-pelican-sunset_181624-37787.jpg"} alt="" />
             </Box>
             <Box width={"60%"} p={"20px"} height={"100%"}>
 
