@@ -30,11 +30,14 @@ export default function ProjectCard({ img, role, description, name }) {
                     <Typography fontWeight={"800"} fontSize={"18px"} mb={"10px"}>Heading</Typography>
                     <Typography fontSize={["10px", "14px"]} color={"grey"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime placeat adipisci doloremque. Provident nulla eveniet </Typography>
                     <Box display={"flex"} m={"10px 0"} gap={"10px"} flexDirection={["column", "row", "row", "row"]}>
-                        <Button style={{ background: "red", color: "white", fontFamily: "Raleway", flex: "1" }}>Donate</Button>
+                        <Button style={{ background: "red", color: "white", fontFamily: "Raleway", flex: "1" }}>Volunteer</Button>
+ 
                         <NavLink style={{ textDecoration: "none", flex: "1", width: "100%" }} to={"1"}>
                             <Button style={{ fontSize: "13px", background: "orange", color: "white", fontFamily: "Raleway", width: "100%" }}>Read More...</Button>
                         </NavLink>
+                        
                     </Box>
+                    <Button style={{ background: "lightgreen", color: "white", fontFamily: "Raleway", width:"100%" }}>Donate</Button>
                 </Box>
             </Box>
         </motion.div>
