@@ -1,4 +1,5 @@
 import Blogs from "./Blogs/Blogs";
+import Events from "./EventsSection/Events";
 import FirstSection from "./firstSection/FirstSection";
 import Involvements from "./Involvement/Involvement";
 import Supporter from "./Supporter/Supporters";
@@ -9,6 +10,7 @@ export default function LandingPage() {
     return (
         <>
             <FirstSection/>
+            <Events/>
             <Testimonals />
             <Involvements />
             <Blogs/>

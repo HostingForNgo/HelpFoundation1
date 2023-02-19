@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { useRef, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useInView } from 'framer-motion';
-import BgImg from "./backgroundImg.png";
+import BgImg from "./backgroundImg-modified.png";
 import { motion } from "framer-motion";
 export default function FirstSection() {
     const ref = useRef(null)
@@ -23,7 +23,7 @@ export default function FirstSection() {
                     {/* Front Page Center Part Starts here */}
 
                     <Box padding={["20px", "20px", "0px", "0px"]} sx={{ width: "100%", height: "88%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                        <Box sx={{ width: "547px", height: "300px", display: "flex", flexDirection: "column", gap: "30px" }}>
+                        <Box  sx={{ width: "547px", height: "300px", display: "flex", flexDirection: "column", gap: "30px" }}>
                             <motion.div
                                 ref={ref}
                                 initial="hidden"
@@ -37,15 +37,13 @@ export default function FirstSection() {
                                 </Typography>
                                 <Typography sx={{ fontSize: "14px", color: "white", fontWeight: "800", fontFamily: "Raleway" }}>
                                     Your donation providing life changing education for children from rural villages. HELP (Health and Education for Life Project) foundation is a non-profit section-8 organisation. We need your support.
-                                </Typography>
-                                <NavLink to={"/Projects"} style={{ textDecoration: "none" }}>
-                                    <Button variant="text" style={{ fontFamily: 'Roboto, sans-serif', fontSize: "20px", width: "210px", height: "68px", background: "#ff7d7d", color: "white", borderRadius: "10px", fontWeight: "800" }}>Start Donation</Button>
+                                </Typography>s
+                                <NavLink to={"/Projects"} style={{ textDecoration: "none",width: "210px" }}>
+                                    <Button variant="text" style={{ fontFamily: 'Roboto, sans-serif', fontSize: "20px", width: "210px", height: "68px", background: "red", color: "white", borderRadius: "10px", fontWeight: "800" }}>Start Donation</Button>
                                 </NavLink>
                             </motion.div>
-
                         </Box>
                     </Box>
-
                 </Box>
             </Box>
         </Box>

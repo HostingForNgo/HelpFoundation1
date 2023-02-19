@@ -1,11 +1,13 @@
 import { Box, Typography } from "@mui/material";
+import { useContext } from "react";
+import { Context } from "../../ContextApi";
 // import { useContext } from "react";
 // import { Context } from "../../ContextApi";
 import ProjectCard from "./ProjectCard";
 import s from "./Projects.module.css"
 
 export default function Project() {
-    // let { items } = useContext(Context);
+    let { projectsData } = useContext(Context);
     window.scrollTo(0,0)
     return (
         <Box display={"flex"} justifyContent={"center"} flexDirection={"column"} alignItems={"center"} width={"100vw"} marginBottom={"50px"}>
@@ -15,14 +17,17 @@ export default function Project() {
             <Box className={"productsGrid"} p={"20px"} alignItems={"center"} gap={"20px"} display={"flex"} flexWrap={"wrap"} flexDirection={"column"} width={"100%"}>
                 <Box className={s.productsGrid} display={"grid"} p={"20px"} minHeight={"500px"} width={"100%"} >
                 {/* <Box display={"flex"} p={"20px"} flexWrap={"wrap"} columnGap={["0", "2%", "1%", "2%"]} minHeight={"500px"} rowGap={"20px"} width={"100%"} > */}
+                {projectsData.map(i=>(
+                    <ProjectCard heading={i.heading} volunteer={i.volunteer} description={i.description} id={i.id}/>
+                ))}
+                    
+                    {/* <ProjectCard />
                     <ProjectCard />
                     <ProjectCard />
                     <ProjectCard />
                     <ProjectCard />
                     <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
+                    <ProjectCard /> */}
                 </Box>
             </Box>
         </Box>

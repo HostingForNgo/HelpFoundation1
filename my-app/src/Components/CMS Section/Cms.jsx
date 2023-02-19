@@ -5,7 +5,7 @@ import { Box } from "@mui/system";
 
 export default function CMS() {
     return (
-        <Box height={"100vh"} width={"100vw"} >
+        <Box minHeight={"100vh"} width={"100%"} >
             <Box display={"flex"}>
                 <Navigation />
                 <MainWrapper />

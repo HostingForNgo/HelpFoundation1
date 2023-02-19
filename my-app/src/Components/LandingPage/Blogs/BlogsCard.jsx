@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import s from "./Blogs.module.css"
-export default function BlogCard({ blog, head, id, wid }) {
+export default function BlogCard({ blog, head, id, wid, date }) {
     const ref = useRef(null)
     const isInView = useInView(ref)
 
@@ -21,16 +21,19 @@ export default function BlogCard({ blog, head, id, wid }) {
             animate={isInView ? "visible" : "hidden"}
             variants={variants}
             transition={{ duration: 0.75 }}
-            // style={{width:wid}}
+            style={{width:wid}}
             >
             
             <Box  flexShrink={0} width={"100%"} >
-                <Box width={"100%"} height={"300px"} overflow={"hidden"}>
+                <Box width={"100%"} overflow={"hidden"}>
                     <img style={{ width: "100%" }} src="https://img.freepik.com/free-vector/nature-scene-with-river-hills-forest-mountain-landscape-flat-cartoon-style-illustration_1150-37326.jpg" />
                 </Box>
                 <Box minHeight={"260px"}>
                     <Box padding={"10px"}>
                         <Typography fontFamily={"arial"} fontSize={"25px"}>{head}</Typography>
+                    </Box>
+                    <Box padding={"10px"}>
+                        <Typography fontFamily={"arial"}  color={"gray"} fontSize={"15px"}>{date}</Typography>
                     </Box>
                     <Box padding={"10px"} fontSize={"12px"} color={"gray"} fontFamily={"arial"}>
                         {blog}

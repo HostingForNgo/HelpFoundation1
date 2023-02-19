@@ -6,7 +6,7 @@ export default function Navigation() {
     
     return (
         <>
-            <Box display={"flex"} gap={"20px"} flexDirection={"column"} p={"20px"} position={"relative"} left={0} height={"100%"} width={"20%"}>
+            <Box display={"flex"} gap={"20px"} flexDirection={"column"} p={"20px"} position={"relative"} left={0} width={"20%"} sx={{overflowY:"scroll",position:"sticky",maxHeight:"100vh"}}>
                 <NavLink to={"AddMember"}>
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD MEMBERS</Button>
                 </NavLink>
@@ -19,8 +19,8 @@ export default function Navigation() {
                 <NavLink to={"ModifyTestimonials"}>
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>MODIFY TESTIMONIAL</Button>
                 </NavLink>
-                <NavLink to={"AddMedia"}>
-                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>UPLOAD MEDIA</Button>
+                <NavLink to={"AddGalleryMedia"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD GALLERY MEDIA</Button>
                 </NavLink>
                 <NavLink to={"UploadGallery"}>
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>DELETE MEDIA</Button>
@@ -33,6 +33,22 @@ export default function Navigation() {
                 </NavLink>
                 <NavLink to={"Messages"}>
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>MESSAGES</Button>
+                </NavLink>
+                <NavLink to={"AddBlogs"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD BLOGS</Button>
+                </NavLink>
+                <NavLink to={"AddProjects"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD PROJECTS</Button>
+                </NavLink>
+
+                <NavLink to={"DeleteGalleryMedia"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>Delete GALLERY MEDIA</Button>
+                </NavLink>
+                <NavLink to={"AddEvents"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD EVENTS</Button>
+                </NavLink>
+                <NavLink to={"DeleteEvents"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>Delete EVENTS</Button>
                 </NavLink>
             </Box>
         </>

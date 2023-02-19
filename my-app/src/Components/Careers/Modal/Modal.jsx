@@ -7,6 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useRef } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -80,15 +81,16 @@ export default function BasicModal() {
                     <Box mb={"20px"}    >
                         <Box onClick={() => {
                             inputRef.current.click();
-                        }} sx={{ cursor: "pointer" }} position={"relative"} height={"100px"} width={"200px"}>
+                        }} sx={{ cursor: "pointer" }} position={"relative"} height={"70px"} width={"150px"}>
                             <input ref={inputRef} onChange={handleFileChange} type={"file"} style={{ width: "100%", height: "100%", position: "absolute" }} />
-                            <Box zIndex={"50"} bgcolor={"#dfdfdf"} position={"absolute"} display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100%"} height={"100%"}>
+                            <Box p={"20px"} zIndex={"50"} bgcolor={"#dfdfdf"} position={"absolute"} display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100%"} height={"100%"}>
                                 <Typography color={"black"} fontWeight={"bold"} fontSize={"17px"} >ATTACH RESUME</Typography>
+                                <AddCircleOutlineIcon/>
                             </Box>
                         </Box>
                     </Box>
                     <Box mt={"20px"} display={"flex"} justifyContent={"center"}>
-                        <Button  onClick={handleClose} sx={{ background: "#dfdfdf", color: "black", "&:hover": { background: "dfdfdf" } }}>Submit</Button>
+                        <Button  onClick={handleClose} sx={{ background: "#dfdfdf",width:"130px", color: "black", "&:hover": { background: "dfdfdf" } }}>Submit</Button>
                     </Box>
                 </Box>
             </Modal>

@@ -23,7 +23,7 @@ export default function Card({ text, imgSrc, linkk }) {
             transition={{ duration: 0.75 }}>
             <Box className={"InvolvementMainCard"} pb={"20px"} ref={ref} display={"flex"} flexDirection={"column"} alignItems={"center"} width={"100%"} height={["120vw", "40vw", "35vw", "30vw"]} bgcolor="#414141" borderRadius={"50px 50px 0 0"} overflow={"hidden"} position={"relative"}>
                 <Box width={"100%"} height={"100%"} position={"absolute"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                    <Box height={"200%"} bgcolor="cyan" width={"200px"} className={"involvementAnimationCard"}>
+                    <Box height={"200%"} bgcolor="white" width={"200px"} className={"involvementAnimationCard"}>
 
                     </Box>
                 </Box>
@@ -33,7 +33,7 @@ export default function Card({ text, imgSrc, linkk }) {
                     </Box>
                     <Box width={"100%"} height={"15%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
                         <NavLink style={{ textDecoration: "none", width: "85%", height: "100%", bgcolor: "white" }} to={`/${linkk}`}>
-                            <Button sx={{ transition: ".25s", marginTop: "20px", "&:hover": { borderRadius: "10px 40px 10px 40px", border: "2px solid cyan", color: "white" }, background: "cyan", color: "gray", fontWeight: "900", borderRadius: "10px", width: "100%", height: "100%", fontSize: "16px", letterSpacing: "2px" }} >{text}</Button>
+                            <Button sx={{ transition: ".25s", marginTop: "20px", "&:hover": { borderRadius: "10px 40px 10px 40px", border: "2px solid red", color: "white" }, background: "red", color: "white", fontWeight: "900", borderRadius: "10px", width: "100%", height: "100%", fontSize: "16px", letterSpacing: "2px" }} >{text}</Button>
                         </NavLink>
                     </Box>
                 </Box>

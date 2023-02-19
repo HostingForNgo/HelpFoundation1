@@ -9,10 +9,10 @@ export default function Team() {
     return (
         <Box display={"flex"} justifyContent={"center"} flexDirection={"column"} alignItems={"center"} width={"100vw"} marginBottom={"50px"}>
             <Box m={"40px 0"} width={"90%"} height={"10%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                <Typography fontSize={["24px", "26px", "30px", "40px"]} fontWeight={"800"}>OUR TEAM</Typography>
+                <Typography fontSize={["24px", "26px", "30px", "40px"]} color={"#564fa4"} fontWeight={"800"}>OUR TEAM</Typography>
             </Box>
             <Box p={"20px"} alignItems={"center"} gap={"20px"} display={"flex"} flexWrap={"wrap"} flexDirection={"column"} width={"100%"}>
-                <Box className={s.TeamGrid} display={"grid"} p={"20px"} flexWrap={"wrap"} columnGap={["0", "2%", "1%", "2%"]} minHeight={"500px"} rowGap={"20px"} width={"100%"} >
+                <Box className={s.TeamGrid} display={"grid"} p={"20px"}  minHeight={"500px"} rowGap={"20px"} width={"100%"} >
                     {items.map((i) => {
                         return (
                             <MemberCard key={i.img} img={i.img} name={i.name} description={i.description} role={i.secondText} />

@@ -45,7 +45,7 @@ export default function JobApplicationPage() {
                     </Box>
                     <Box mb={"20px"}>
                         <Typography mb={"10px"} fontWeight={"bold"} fontSize={"20px"}>Job Description :</Typography>
-                        <Typography fontStyle={"italic"} fontSize={"14px"} color={"gray"}>
+                        <Typography fontSize={"14px"} color={"gray"}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, numquam magni. Aliquid excepturi pariatur, odio doloremque amet quaerat ad ut iusto voluptatum nobis hic dignissimos modi esse dolore eveniet quod voluptas. Reiciendis earum nostrum molestias, laborum debitis eos similique consequatur eius, eveniet natus quo, tempore alias expedita dolorum dignissimos perferendis ut porro ratione. Non, quisquam ex distinctio aspernatur iste atque ratione veritatis, magni facere delectus repellendus reprehenderit accusamus voluptas quod sed molestias temporibus quas dolor eum voluptatum rerum itaque qui placeat. Pariatur autem, veritatis itaque id laudantium consequatur cumque quibusdam? Enim cupiditate quis natus reprehenderit provident molestiae mollitia. Veritatis, fugiat?
                         </Typography>
                     </Box>

@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 
 
-export default function GalleryCard({ images, title, date, func }) {
+export default function DeleteEventCard({ images, title, date, func }) {
     return (
         <Box flexShrink={0} padding={"20px"} minHeight={"50px"} flexDirection={"column"}  display={"flex"} alignItems={"center"} width={"100%"} boxShadow={"rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"}>
             <Box width={"100%"} display={"flex"} justifyContent={"space-around"}>
