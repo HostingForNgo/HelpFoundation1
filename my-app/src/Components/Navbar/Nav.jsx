@@ -18,12 +18,12 @@ export default function Navbar() {
                     </Box>
 
                     <Box sx={{ alignItems: "center", width: "80%", height: "100%", justifyContent: "center", fontSize: "24px", color: "white" }} display={["none", "none", "flex"]}>
-                        <Box className={"dropDown1"} width={"20%"} height={"80%"} display={"flex"} alignItems={"center"} position={"relative"}>
+                        <Box className={"dropDown1"} width={"20%"} height={"70%"} display={"flex"} alignItems={"center"} position={"relative"}>
                             <Box width={"100%"} height={"100%"}>
                                 <NavLink className={"underLine"} style={{ color: "black", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }} to={"/"}>Home</NavLink>
                             </Box>
                         </Box>
-                        <Box className={"dropDown1"} width={"20%"} height={"80%"} display={"flex"} alignItems={"center"} position={"relative"}>
+                        <Box className={"dropDown1"} width={"20%"} height={"70%"} display={"flex"} alignItems={"center"} position={"relative"}>
                             <Box width={"100%"} height={"100%"}>
                                 <Box className={"underLine"} color={"black"} style={{ textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer", gap: "10px" }}>About <KeyboardArrowDownIcon /> </Box>
                             </Box>
@@ -63,13 +63,13 @@ export default function Navbar() {
                             </Box>
                         </Box>
 
-                        <Box className={"dropDown1"} width={"20%"} height={"80%"} display={"flex"} alignItems={"center"} position={"relative"}>
+                        <Box className={"dropDown1"} width={"20%"} height={"70%"} display={"flex"} alignItems={"center"} position={"relative"}>
                             <Box width={"100%"} height={"100%"}>
                                 <NavLink className={"underLine"} style={{ color: "black", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }} to={"/Projects"}>Projects </NavLink>
                             </Box>
                         </Box>
 
-                        <Box className={"dropDown1"} width={"20%"} height={"80%"} display={"flex"} alignItems={"center"} position={"relative"}>
+                        <Box className={"dropDown1"} width={"20%"} height={"70%"} display={"flex"} alignItems={"center"} position={"relative"}>
                             <Box width={"100%"} height={"100%"}>
                                 <Box className={"underLine"} color={"black"} style={{ textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer", gap: "10px" }}>Initiatives <KeyboardArrowDownIcon /></Box>
                             </Box>
@@ -100,7 +100,7 @@ export default function Navbar() {
                                 }} >CENTERS</NavLink>
                             </Box>
                         </Box>
-                        <Box className={"dropDown1"} width={"20%"} height={"80%"} display={"flex"} alignItems={"center"} position={"relative"}>
+                        <Box className={"dropDown1"} width={"20%"} height={"70%"} display={"flex"} alignItems={"center"} position={"relative"}>
                             <Box width={"100%"} height={"100%"}>
                                 <Box className={"underLine"} color={"black"} style={{ textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer", gap: "10px" }}>Media  <KeyboardArrowDownIcon /></Box>
                             </Box>
