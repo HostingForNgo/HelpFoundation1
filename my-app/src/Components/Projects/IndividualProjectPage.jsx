@@ -12,7 +12,7 @@ export default function IndividualProjectPage() {
     let [heading,setHeading] = useState("")
     let [description,setDescription] = useState("")
     useEffect(() => {
-        axios.get(`https://futuristic-unexpected-citrine.glitch.me/Projects/${projectID}`).then(res=>{
+        axios.get(`http://localhost:3001/Projects/${projectID}`).then(res=>{
             setHeading(res.data.heading)
             setDescription(res.data.description)
         })

@@ -19,7 +19,6 @@ export default function GalleryCard({ img, data, defaultIndex }) {
         setIndex(defaultIndex)
     }
     const handleClose = () => setOpen(false);
-    console.log(data)
     const ref = useRef(null)
     const isInView = useInView(ref)
 

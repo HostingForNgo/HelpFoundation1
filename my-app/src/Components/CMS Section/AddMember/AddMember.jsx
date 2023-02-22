@@ -33,7 +33,8 @@ export default function AddTeam() {
                             img: imgSrc,
                         }
                         console.log(data);
-                        axios.post("https://futuristic-unexpected-citrine.glitch.me/team", data);
+                        axios.post("http://localhost:3001/team", data);
+                        // axios.post("https://futuristic-unexpected-citrine.glitch.me/team", data);
                         setName("");
                         setRole("");
                         setSummary("");

@@ -35,7 +35,7 @@ export default function CareerCard({ title, qualifications, JobId }) {
                     </Box>
                     <Box mt={"20px"}>
                         <Typography mb={"20px"} fontWeight={"600"}>Qualification :</Typography>
-                        <ul style={{ marginLeft: "30px", display: "flex", flexDirection: "column", gap: "20px", width: "calc( 100% - 30px )", fontFamily: "arial" }}>
+                        <ul style={{ marginLeft: "30px", display: "flex", flexDirection: "column", gap: "20px", width: "calc( 100% - 30px )", fontFamily: "Roboto, sans-serif" }}>
                             {qualifications.map((i, index) => (
                                 <li key={index}>{i}</li>
                             ))}

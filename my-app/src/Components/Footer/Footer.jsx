@@ -27,6 +27,7 @@ export default function Footer() {
     return (
         <>
             <motion.div
+            id="footer"
                 ref={ref}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
@@ -35,7 +36,7 @@ export default function Footer() {
             >
                 <Box position={"relative"} sx={{ background: `url(${bgImg})`, backgroundSize: "cover" }} minHeight={"900px"}>
                     <Box sx={{ background: "rgba(0,0,0,0.8)" }} minHeight={"900px"} display={"flex"} justifyContent={"center"}>
-                        <Box position={"absolute"} minHeight={"1000px"} p={"10px"} paddingTop={"70px"} flexDirection={"column"} display={"flex"} alignItems={"center"} gap={"30px"}>
+                        <Box minHeight={"1000px"} p={"10px"} paddingTop={"70px"} flexDirection={"column"} display={"flex"} alignItems={"center"} gap={"30px"}>
                             <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={"20px"}>
                                 <Typography color={"white"} fontWeight={"700"} fontSize={"40px"}>CONTACT US</Typography>
                                 <Typography textAlign={"center"} color={"white"} fontWeight={"700"} fontSize={"15px"}>Ranipokhar Rd, Bishunpur Udho Urf Dumri, Bihar - 844113</Typography>
@@ -64,7 +65,7 @@ export default function Footer() {
                                     let data = {
                                         name, email, phone, address, subject, message
                                     }
-                                    axios.post("https://futuristic-unexpected-citrine.glitch.me/messages", data)
+                                    axios.post("http://localhost:3001/messages", data)
                                     setName("")
                                     setEmail("")
                                     setPhone("")
@@ -104,4 +105,5 @@ export default function Footer() {
         </>
     )
 }
+
 

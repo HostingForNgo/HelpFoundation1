@@ -36,7 +36,7 @@ export default function BasicModal() {
             age:ageRef.current.value,
             resume:resume
         }
-        axios.post("https://futuristic-unexpected-citrine.glitch.me/JobApplications",obj);
+        axios.post("http://localhost:3001/JobApplications",obj);
         fullNameRef.current.value=""
         qualificationsRef.current.value=""
         ageRef.current.value=""
@@ -48,7 +48,6 @@ export default function BasicModal() {
         reader.readAsDataURL(file);
         reader.onloadend = () => {
             setResume(reader.result);
-            console.log(reader.result)
         };
     };
     

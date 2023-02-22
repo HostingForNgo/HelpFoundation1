@@ -10,7 +10,7 @@ export default function PcViewBlogCard({ blog, head, id, wid, date }) {
                 <img style={{ width: "100%",height:"100%" }} src={"https://img.freepik.com/free-photo/beautiful-scenery-phragmites-plants-by-sea-with-swimming-pelican-sunset_181624-37787.jpg"} alt="" />
             </Box>
             <Box width={"60%"} p={"20px"} height={"100%"}>
-                <Box height={"70%"}fontFamily={"arial"} display={"flex"} flexDirection={"column"} gap={"15px"} overflow={"hidden"}> 
+                <Box height={"70%"}fontFamily={"Roboto, sans-serif"} display={"flex"} flexDirection={"column"} gap={"15px"} overflow={"hidden"}> 
                     <Typography fontSize={"30px"} color={"#564fa4"} fontWeight={"900"}>
                         {head}
                     </Typography >
@@ -25,7 +25,7 @@ export default function PcViewBlogCard({ blog, head, id, wid, date }) {
                 </Box>
                 <Box p={"10px"} height={"30%"} display={"flex"} alignItems={"center"}>
                     <NavLink style={{ textDecoration: "none" }} to={`/Blog/${id}`}>
-                        <Button sx={{ background: "white", color: "black", fontFamily: "arial",border:"2px solid black","&:hover":{background:"black",color:"white"}}}>Read More</Button>
+                        <Button sx={{ background: "#564fa4", color: "white", fontFamily: "Roboto, sans-serif","&:hover":{background:"transparent",color:"#564fa4",border:" 2px solid #564fa4"}}}>Read More</Button>
                     </NavLink>
                 </Box>
             </Box>

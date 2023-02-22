@@ -40,34 +40,44 @@ import Centers from "./Components/Centers/Centers";
 import CenterDetailsPage from "./Components/Centers/CenterDetailsPage";
 import AddEvents from "./Components/CMS Section/AddEvents/AddEvents";
 import DeleteEvents from "./Components/CMS Section/DeleteEvents/DeleteEvents";
+import EventDetailsPage from "./Components/LandingPage/EventsSection/EventDetailsPage";
+import ModifyJobs from "./Components/CMS Section/ModifyJobs/ModifyJobs";
+import ModifyBlogs from "./Components/CMS Section/ModifyBlogs/ModifyBlogs"
+import ModifyProjects from "./Components/CMS Section/ModifyProjects/ModifyProjects"
+import AddLivesAffected from "./Components/CMS Section/AddLivesAffected/AddLivesAffected";
+import ModifyLivesAffected from "./Components/CMS Section/ModifyLivesAffected/ModifyLivesAffected";
 function App() {
-  let { items, setItems, images, setImages, setCareerData, isAdmin, setIsAdmin, projectsData, setProjectsData, page, setPage, maxPage, setMaxPage,setEvents } = useContext(Context)
+  let { items, setItems, images, setImages, setCareerData, isAdmin, setIsAdmin, projectsData, setProjectsData, page, setPage, maxPage, setMaxPage, setEvents } = useContext(Context)
   useEffect(() => {
-    axios.get("https://futuristic-unexpected-citrine.glitch.me/team").then(res => {
-      setItems(res.data)
-    })
-    // axios.get("https://futuristic-unexpected-citrine.glitch.me/gallery").then(res => {
-    //   setImages(res.data)
-    // })
-    axios.get("https://futuristic-unexpected-citrine.glitch.me/Jobs").then(res => {
-      setCareerData(res.data)
-    })
-    axios.get("https://futuristic-unexpected-citrine.glitch.me/Projects").then(res => {
-      setProjectsData(res.data)
-      console.log(res.data)
-    })
-    axios.get("https://futuristic-unexpected-citrine.glitch.me/event").then((res) => {
-      let data = res.data;
-      data.sort((a,b)=>new Date(b.date)-new Date(a.date));
-      setEvents(data.slice(0,3))
-    });
+    try{
+      axios.get("http://localhost:3001/team").then(res => {
+        setItems(res.data)
+      })
+      // axios.get("http://localhost:3001/gallery").then(res => {
+      //   setImages(res.data)
+      // })
+      axios.get("http://localhost:3001/jobs").then(res => {
+        setCareerData(res.data)
+      })
+      axios.get("http://localhost:3001/Projects").then(res => {
+        setProjectsData(res.data)
+      })
+      axios.get("http://localhost:3001/event").then((res) => {
+        let data = res.data;
+        data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        setEvents(data.slice(0, 3))
+      });
+    }
+    catch(err){
+      console.log(err)
+    }
   }, [])
 
   useEffect(() => {
-    axios.get(`https://futuristic-unexpected-citrine.glitch.me/gallery/?_page=${page}&_limit=4`).then(res => {
-      setMaxPage(Math.ceil(res.headers["x-total-count"] / 4));
-      setImages(res.data);
-      // window.scrollTo(0,0)
+    
+    axios.get(`http://localhost:3001/gallery/pagination?page=${page}&limit=4`).then(res => {
+      setMaxPage(Math.ceil(res.data["x-total-count"] / 4));
+      setImages(res.data.finalData);
     })
   }, [page])
   return (
@@ -98,6 +108,7 @@ function App() {
         <Route path="/Projects/:projectID" element={<IndividualProjectPage />} />
         <Route path="/Blog/:blogID" element={<IndividualBlogPage />} />
         <Route path="/Career/:JobID" element={<JobApplicationPage />} />
+        <Route path="/Events/:EventID" element={<EventDetailsPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="CMS" element={isAdmin ? <CMS /> : <AccessDeclined />}>
           <Route index path='AddMember' element={<AddMember />} />
@@ -107,13 +118,18 @@ function App() {
           <Route path='AddMedia' element={<UploadMedia />} />
           <Route path='UploadGallery' element={<DeleteMedia />} />
           <Route path='AddJobs' element={<AddJobs />} />
+          <Route path='ModifyJobs' element={<ModifyJobs />} />
           <Route path='JobApplications' element={<JobApplications />} />
           <Route path='Messages' element={<Messages />} />
           <Route path='AddBlogs' element={<AddBlogs />} />
+          <Route path='ModifyBlogs' element={<ModifyBlogs />} />
           <Route path='AddProjects' element={<AddProjects />} />
+          <Route path='ModifyProjects' element={<ModifyProjects />} />
           <Route path='AddGalleryMedia' element={<AddGalleryMedia />} />
           <Route path='AddEvents' element={<AddEvents />} />
           <Route path='DeleteEvents' element={<DeleteEvents />} />
+          <Route path='AddLivesAffected' element={<AddLivesAffected />} />
+          <Route path='ModifyLivesAffected' element={<ModifyLivesAffected />} />
         </Route>
       </Routes>
       <Footer />

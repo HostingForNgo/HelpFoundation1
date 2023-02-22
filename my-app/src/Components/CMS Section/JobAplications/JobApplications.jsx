@@ -9,7 +9,8 @@ import JobApplicationsCard from "./JobApplicationsCard";
 export default function JobApplications() {
     let [data, setData] = useState([]);
     useEffect(() => {
-        axios.get("https://futuristic-unexpected-citrine.glitch.me/JobApplications").then((res)=>setData(res.data))
+        axios.get("http://localhost:3001/Jobs").then((res)=>setData(res.data))
+        // axios.get("https://futuristic-unexpected-citrine.glitch.me/JobApplications").then((res)=>setData(res.data))
     }, [])
     return (
         <Box width={"100%"} minHeight={"100%"} p={"20px"}>

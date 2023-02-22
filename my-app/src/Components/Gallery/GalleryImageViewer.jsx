@@ -12,15 +12,11 @@ export default function GalleryImageViewer() {
     let {index} = useParams();
     const [data,setData] = useState([])
     window.scrollTo(0,0)
-    // useEffect(()=>{
-    //     if(images[index].images) setData()
-        
-    // })
     return (
         <Box display={"grid"} className={s.GalleryGrid} width={"100%"} minHeight={"100vh"} p={"30px"}>
             {
                 images[index]?.images.map((i,inde) => {
-                    return <GalleryCard img={i} data={images[index].images || []} defaultIndex={inde}/>
+                    return <GalleryCard  key={inde} img={i} data={images[index].images || []} defaultIndex={inde}/>
                 })
             }
         </Box>

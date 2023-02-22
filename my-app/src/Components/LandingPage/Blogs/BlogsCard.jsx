@@ -30,17 +30,17 @@ export default function BlogCard({ blog, head, id, wid, date }) {
                 </Box>
                 <Box minHeight={"260px"}>
                     <Box padding={"10px"}>
-                        <Typography fontFamily={"arial"} fontSize={"25px"}>{head}</Typography>
+                        <Typography fontFamily={"Roboto, sans-serif"} fontSize={"25px"}>{head}</Typography>
                     </Box>
                     <Box padding={"10px"}>
-                        <Typography fontFamily={"arial"}  color={"gray"} fontSize={"15px"}>{date}</Typography>
+                        <Typography fontFamily={"Roboto, sans-serif"}  color={"gray"} fontSize={"15px"}>{date}</Typography>
                     </Box>
-                    <Box padding={"10px"} fontSize={"12px"} color={"gray"} fontFamily={"arial"}>
+                    <Box padding={"10px"} fontSize={"12px"} color={"gray"} fontFamily={"Roboto, sans-serif"}>
                         {blog}
                     </Box>
                     <Box padding={"10px"}>
                         <NavLink style={{ textDecoration: "none" }} to={`/Blog/${id}`}>
-                            <Button style={{ background: "orange", color: "white", fontFamily: "Raleway" }}>Read More</Button>
+                            <Button style={{ background: "orange", color: "white", fontFamily: "Roboto, sans-serif" }}>Read More</Button>
                         </NavLink>
                     </Box>
                 </Box>

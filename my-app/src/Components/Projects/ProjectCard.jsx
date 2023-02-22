@@ -30,13 +30,13 @@ export default function ProjectCard({ heading,volunteer,description,id }) {
                     <Typography fontWeight={"800"} fontSize={"18px"} mb={"10px"}>{heading}</Typography>
                     <Typography fontSize={["10px", "14px"]} color={"grey"}>{description.slice(0,100)}</Typography>
                     <Box display={"flex"} m={"10px 0"} gap={"10px"} flexDirection={["column", "row", "row", "row"]}>
-                        <Button style={{ background: "#564fa4", color: "white", fontFamily: "Raleway", flex: "1",display:volunteer?"flex":"none" }}>Volunteer</Button>
+                        <Button style={{ background: "#6c8438", color: "white", fontFamily: "Roboto, sans-serif", flex: "1",display:volunteer?"flex":"none" }}>Volunteer</Button>
  
                         <NavLink style={{ textDecoration: "none", flex: "1", width: "100%" }} to={`${id}`}>
-                            <Button sx={{ fontSize: "13px",border:"2px solid black", color: "black", fontFamily: "Raleway", width: "100%","&:hover":{background:"black",color:"white"}}}>Read More...</Button>
+                            <Button sx={{ fontSize: "13px",border:"2px solid black", color: "black", fontFamily: "Roboto, sans-serif", width: "100%","&:hover":{background:"black",color:"white"}}}>Read More...</Button>
                         </NavLink>
                     </Box>
-                    <Button style={{ background: "red", color: "white", fontFamily: "Raleway", width:"100%" }}>Donate</Button>
+                    <Button style={{ background: "#564fa4", color: "white", fontFamily: "Roboto, sans-serif", width:"100%" }}>Donate</Button>
                 </Box>
             </Box>
         </motion.div>

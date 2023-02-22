@@ -3,6 +3,9 @@ import { Box, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
 export default function MemberCard({ img, name, description, role }) {
     const ref = useRef(null)
     const isInView = useInView(ref)
@@ -32,8 +35,13 @@ export default function MemberCard({ img, name, description, role }) {
                             <Typography fontSize={"12px"} color={"grey"}>{description}</Typography>
                         </Box>
                     </Box>
-                    <Box bgcolor={"black"} className={"back"} p={"20px"}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tempore ducimus quaerat fugiat doloremque placeat! Quaerat, quasi aperiam molestias, animi deleniti dolore non dolor cupiditate fugit commodi in optio harum vel, aliquam placeat. Officia, facilis assumenda eius iste deleniti aut perspiciatis sapiente. At, est ab ipsa, eaque quam quia id nihil minima quae hic harum pariatur libero laudantium fugit aliquid accusantium officiis esse nostrum, temporibus ullam. Fugiat laborum maiores temporibus porro optio ipsam possimus, soluta libero placeat corrupti ipsum quae exercitationem ea. Provident, harum! Eligendi quidem dolores rem, corporis obcaecati nemo ea! Facilis culpa voluptatum beatae. Eius, similique repellendus. Quae!
+                    <Box bgcolor={"black"} className={"back"} p={"20px"} display={"flex"} flexDirection={"column"} justifyContent={"center"} gap={"30px"}>
+                        <Box justifyContent={"space-evenly"} gap={"10px"} display={"flex"}>
+                            <LinkedInIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/>
+                            <TwitterIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/>
+                            <InstagramIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/>
+                        </Box>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tempore ducimus quaerat fugiat doloremque placeat! Quaerat, quasi aperiam molestias, animi deleniti dolore non dolor cupiditate fugit commodi in optio harum vel, aliquam placeat. Officia, facilis assumenda eius iste deleniti aut perspiciatis sapiente. At, est ab ipsa,
                     </Box>
                 </Box>
             </Box>

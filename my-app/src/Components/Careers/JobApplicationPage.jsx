@@ -23,7 +23,7 @@ export default function JobApplicationPage() {
     };
 
     useEffect(() => {
-        axios.get(`https://futuristic-unexpected-citrine.glitch.me/Jobs/${JobID}`).then(res => {
+        axios.get(`http://localhost:3001/Jobs/${JobID}`).then(res => {
             setData(res.data);
             setQuali(res.data.qualifications.join(", "))
         })
@@ -40,7 +40,7 @@ export default function JobApplicationPage() {
         >
             <Box  mt={"20px"} minHeight={"100vh"} p={"20px"} display={"flex"} flexDirection={"column"} alignItems={"center"}>
                 <Box width={["100%", "100%", "80%", "80%"]}>
-                    <Box mb={"30px"} fontFamily={"Arial"} pb={"10px"} borderBottom={"1px solid black"} fontSize={"40px"} fontWeight={"600"} width={"100%"}>
+                    <Box mb={"30px"} fontFamily={"Roboto, sans-serif"} pb={"10px"} borderBottom={"1px solid black"} fontSize={"40px"} fontWeight={"600"} width={"100%"}>
                         {data?.JobTitle}
                     </Box>
                     <Box mb={"20px"}>

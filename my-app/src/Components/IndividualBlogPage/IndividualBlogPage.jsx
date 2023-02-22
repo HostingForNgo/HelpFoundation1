@@ -11,8 +11,7 @@ export default function IndividualBlogPage() {
     window.scrollTo(0,0);
     let [blogData,setBlogData] = useState({})
     useEffect(() => {
-        console.log(data)
-        axios.get(`https://futuristic-unexpected-citrine.glitch.me/blogs/${data.blogID}`).then((res)=>{
+        axios.get(`http://localhost:3001/blogs/${data.blogID}`).then((res)=>{
             setBlogData(res.data)
         })
     },[])

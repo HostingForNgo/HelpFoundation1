@@ -11,12 +11,12 @@ import EventsCard from "./EventsCard";
 export default function Events() {
     let { events } = useContext(Context);
     return (
-        <Box width={"100%"} minHeight={"300px"} display={"flex"} flexDirection={'column'} alignItems={"center"} p={"20px"} gap={"20px"}>
-            <Typography fontSize={"30px"} fontWeight={"900"} letterSpacing={"5px"}>EVENTS</Typography>
+        <Box bgcolor={"white"} width={"100%"} minHeight={"300px"} display={"flex"} flexDirection={'column'} alignItems={"center"} p={"20px"} gap={"20px"} borderBottom={"2px solid rgb(86, 79, 164)"}>
+            <Typography fontSize={"30px"} fontWeight={"900"} letterSpacing={"5px"} color={"rgb(86, 79, 164)"}>EVENTS</Typography>
             <Box display={"grid"} flexWrap={"wrap"} gap={"20px"} gridTemplateColumns={["repeat(1,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"]}>
                 {
                     events.map(i=>(
-                        <EventsCard key={i.id} heading={i.title} description={i.description} date={i.date} images={i.images} id={`${i.id}`} />
+                        <EventsCard key={i._id} fundRaised={i.fundRaised} heading={i.title} description={i.description} date={i.date} images={i.images} id={`${i._id}`} />
                     ))
                 }
             </Box>

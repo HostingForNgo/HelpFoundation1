@@ -19,15 +19,15 @@ export default function Gallery() {
     },[images])
     return (
         <Box width={"100%"} alignItems={"center"} p={"20px"} pb={"100px"} display={"flex"} gap={"30px"} flexDirection={"column"} minHeight={"100vh"} position={"relative"}>
-            <Typography fontWeight={"900"} fontSize={"40px"} m={"20px 0"}>Gallery</Typography>
+            <Typography fontWeight={"900"} fontSize={"40px"} m={"20px 0"} color={"rgb(86, 79, 164)"}>Gallery</Typography>
             {
                 images.map((i,inde)=>(
-                    <GalleryCategoryCard heading={i.title} description={i.description} img={i.images[0]} index={inde}/>
+                    <GalleryCategoryCard key={i._id} heading={i?.title} description={i?.description} img={i?.images[0]} index={inde}/>
                 ))
             }
             {
                 images.map((i,inde)=>(
-                    <GalleryCategoryCardMobile heading={i.title} description={i.description} img={i.images[0]} index={inde}/>
+                    <GalleryCategoryCardMobile key={i._id} heading={i?.title} description={i?.description} img={i?.images[0]} index={inde}/>
                 ))
             }
             <Pagination sx={{position:"absolute",bottom:"20px"}} onChange={(e,value)=>{

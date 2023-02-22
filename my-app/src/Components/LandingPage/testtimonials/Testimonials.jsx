@@ -20,20 +20,22 @@ export default function Testimonals() {
     const [downLeft, setDownLeft] = useState(0);
     const [marginRightCarousel, setMarginRightCarousel] = useState(0)
     let arr; // downArrowTriangle position Array
-    if (window.innerWidth <= 1050) arr = [4, 18, 31, 44, 58];
+    if (window.innerWidth <= 950) arr = [2.5, 17, 30, 43.5, 56.5];
+    if (window.innerWidth <= 1050) arr = [4, 18, 31, 44, 57];
     else if (window.innerWidth <= 1150) arr = [4.5, 18.5, 31.5, 44.5, 57.5];
-    else if (window.innerWidth <= 1250) arr = [5, 19, 32, 45, 58];
-    else if (window.innerWidth <= 1350) arr = [5.5, 19.5, 32.5, 45.5, 58.5];
+    else if (window.innerWidth <= 1250) arr = [5.5, 19.5, 33, 46, 59];
+    else if (window.innerWidth <= 1350) arr = [6, 20, 33.5, 46.5, 59.5];
     else if (window.innerWidth <= 1450) arr = [6, 20, 33, 46, 59];
-    else arr = [6.5, 20.5, 33.5, 46.5, 59.5];
+    else arr = [7, 21, 34, 47, 60.5];
     useEffect(() => {
         function func() {
+            if (window.innerWidth <= 950) arr = [2.5, 17, 30, 43.5, 56.5];
             if (window.innerWidth <= 1050) arr = [4, 18, 31, 44, 57];
             else if (window.innerWidth <= 1150) arr = [4.5, 18.5, 31.5, 44.5, 57.5];
-            else if (window.innerWidth <= 1250) arr = [5, 19, 32, 45, 58];
-            else if (window.innerWidth <= 1350) arr = [5.5, 19.5, 32.5, 45.5, 58.5];
+            else if (window.innerWidth <= 1250) arr = [5.5, 19.5, 32, 45, 58];
+            else if (window.innerWidth <= 1350) arr = [6, 20, 33.5, 46.5, 59.5];
             else if (window.innerWidth <= 1450) arr = [6, 20, 33, 46, 59];
-            else arr = [6.5, 20.5, 33.5, 46.5, 59.5];
+            else arr = [7, 21, 34, 47, 60.5];
         }
 
         window.addEventListener("resize", func);
@@ -43,7 +45,7 @@ export default function Testimonals() {
 
 
     useEffect(() => {
-        axios.get("https://futuristic-unexpected-citrine.glitch.me/testimonials").then(res => {
+        axios.get("http://localhost:3001/testimonials").then(res => {
             let temp = res.data;
             let random = [];
             for (let i = 0; i < 5 && i < temp.length; i++) {
@@ -55,10 +57,10 @@ export default function Testimonals() {
         });
     }, [])
     return (
-        <Box sx={{ width: "100%", height: "700px", display: "flex", borderBottom: "2px solid white", flexDirection: "column", justifyContent: "space-evenly", alignItems: "center" }}>
+        <Box bgcolor={"white"} sx={{ width: "100%", height: "700px", display: "flex", flexDirection: "column", justifyContent: "space-evenly", alignItems: "center" }} borderBottom={"2px solid rgb(86, 79, 164)"}>
             <Box>
-            <Typography sx={{ fontFamily: "arial", fontSize: "40px", color: "#564fa4" }}>TESTIMONIALS</Typography>
-            <Box width={"50%"} bgcolor={"#564fa4"} minHeight={"3px"} m={"auto"}></Box>
+                <Typography sx={{ fontFamily: "Roboto, sans-serif", fontSize: "40px", color: "#564fa4" }}>TESTIMONIALS</Typography>
+                <Box width={"50%"} bgcolor={"#564fa4"} minHeight={"3px"} m={"auto"}></Box>
             </Box>
             <Box sx={{ width: "100%", height: "70%" }}>
                 <Box sx={{ width: "100%", height: "70%", display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -67,14 +69,14 @@ export default function Testimonals() {
                             <img style={{ width: "70%", margin: "10%" }} src={Comma} alt="comma" />
                         </Box>
                         <Box className="scrollbar-hidden" sx={{ width: "80%", height: "70%", overflowY: "scroll" }}>
-                            <Typography fontSize={["11px", "17px", "19px", "24px"]} sx={{ fontfamily: 'Arial', fontWeight: "bold" }}>{coverTextMain}</Typography>
+                            <Typography fontSize={["11px", "17px", "19px", "24px"]} sx={{ fontfamily: 'Roboto, sans-serif', fontWeight: "bold" }}>{coverTextMain}</Typography>
                         </Box>
-                        <Box class left={["calc( 50% - 50px )", "calc( 50% - 50px )", `${downLeft}%`, `${downLeft}%`]} sx={{ transition: ".5s", width: "0px", height: "0px", borderLeft: "solid 50px transparent", borderTop: "solid 50px #564fa4", borderRight: "solid 50px transparent", bottom: "-49px", position: "absolute" }}></Box>
+                        <Box left={["calc( 50% - 50px )", "calc( 50% - 50px )", `${downLeft}%`, `${downLeft}%`]} sx={{ transition: ".5s", width: "0px", height: "0px", borderLeft: "solid 50px transparent", borderTop: "solid 50px #564fa4", borderRight: "solid 50px transparent", top: "100%", position: "absolute" }}></Box>
                     </Box>
                 </Box>
 
 
-                <Box sx={{ width: "100%", height: "30%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Box sx={{ width: "100%", minHeight: "30%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                     {/* For PC */}
                     <Box display={["none", "none", "flex", "flex"]} sx={{ width: "80%", height: "100%", position: "relative", justifyContent: "center" }}>
 
@@ -82,7 +84,6 @@ export default function Testimonals() {
                             <Button onClick={() => {
                                 for (let i = 0; i < widArr.length; i++) {
                                     if (widArr[i] == 29.5) {
-                                        console.log(widArr[i]);
                                         for (let j = 0; j < setWidArr.length; j++) {
                                             if (j != i - 1) setWidArr[j](10);
                                         }
@@ -100,7 +101,7 @@ export default function Testimonals() {
                             </Button>
                         </Box>
 
-                        <Box bgcolor={"#efefef"} display={["none", "none", "flex", "flex"]} width={["60%", "70%", "92%", "90%"]} className="scrollbar-hidden" sx={{ overflowX: "scroll", overflowY: "hidden", height: "100%", gap: ".5vw", alignItems: "center", flexShrink: "0" }}>
+                        <Box  display={["none", "none", "flex", "flex"]} width={["60%", "70%", "92%", "90%"]} className="scrollbar-hidden" sx={{ overflowX: "scroll", overflowY: "hidden", height: "100%", gap: ".5vw", alignItems: "center", flexShrink: "0" }}>
                             {testimonialData.map((i, index) => (
                                 <TestimonialCircle setWid={setWidArr[index]} wid={widArr[index]} key={index} />
                             ))}
@@ -116,7 +117,6 @@ export default function Testimonals() {
                                             setWidArr[0](29.5)
                                             return
                                         }
-                                        console.log(widArr[i]);
                                         for (let j = 0; j < setWidArr.length; j++) {
                                             if (j != i + 1) setWidArr[j](10);
                                         }
@@ -127,7 +127,7 @@ export default function Testimonals() {
                                     }
                                 }
                             }} variant="text" style={{
-                                height: "100%", top: "0", color: "white", width: "5%"
+                                height: "100%", top: "0", color: "black", width: "5%"
                                 , justifyContent: "center", alignItems: "center", position: "absolute", right: "-5%"
                             }}>
                                 <KeyboardArrowRightIcon sx={{ width: "40px", height: "40px", color: "black" }} />
@@ -138,9 +138,9 @@ export default function Testimonals() {
 
 
                     {/* For Mobile Devices */}
-                    <Box position={"relative"} width={"80%"} height={"100%"} display={["flex", "flex", "none", "none"]} justifyContent={"center"}>
+                    <Box bgcolor={"#efefef"} position={"relative"} width={"80%"} height={"100%"} display={["flex", "flex", "none", "none"]} justifyContent={"center"}>
                         <Box display={marginRightCarousel == 0 ? "none" : "flex"} width={"15%"} height={"100%"} position={"absolute"} left={"-5%"}>
-                            <button onClick={() => {
+                            <Button onClick={() => {
                                 let temp = marginRightCarousel + 100;
                                 let index = Math.abs(temp / 100)
                                 if (temp == -500) {
@@ -151,9 +151,9 @@ export default function Testimonals() {
                                 setCoverTextMain(testimonialData[index].testimonial)
                                 setMarginRightCarousel(temp)
                             }}
-                                style={{ height: "100%", color: "black", width: "100%", justifyContent: "center", alignItems: "center", border: "0", background: "#564fa4" }}>
-                                <ChevronLeftIcon sx={{ width: "100%", color: "white" }} />
-                            </button>
+                                style={{ height: "100%", color: "black", width: "100%", justifyContent: "center", alignItems: "center", border: "0",background: "rgb(223 223 223)" }}>
+                                <ChevronLeftIcon sx={{ width: "100%", color: "black" }} />
+                            </Button>
                         </Box>
                         <Box width={"80%"} height={"100%"} overflow={"hidden"}>
                             <Box sx={{ transition: ".5s" }} marginLeft={`${marginRightCarousel}%`} display={"flex"} height={"100%"} width={`${100 * testimonialData.length}%`}>
@@ -165,7 +165,7 @@ export default function Testimonals() {
                             </Box>
                         </Box>
                         <Box display={marginRightCarousel == -400 ? "none" : "flex"} width={"15%"} height={"100%"} position={"absolute"} right={"-5%"}>
-                            <button onClick={() => {
+                            <Button onClick={() => {
                                 let temp = marginRightCarousel - 100;
                                 let index = Math.abs(temp / 100)
                                 if (temp == -500) {
@@ -176,9 +176,9 @@ export default function Testimonals() {
                                 setCoverTextMain(testimonialData[index].testimonial)
                                 setMarginRightCarousel(temp)
                             }}
-                                style={{ height: "100%", color: "black", width: "100%", justifyContent: "center", alignItems: "center", border: "0", background: "#564fa4" }}>
-                                <KeyboardArrowRightIcon sx={{ width: "100%", color: "white" }} />
-                            </button>
+                                style={{ height: "100%", color: "black", width: "100%", justifyContent: "center", alignItems: "center", border: "0", background: "rgb(223 223 223)" }}>
+                                <KeyboardArrowRightIcon sx={{ width: "100%", color: "black" }} />
+                            </Button>
                         </Box>
                     </Box>
                 </Box>

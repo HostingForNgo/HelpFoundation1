@@ -7,7 +7,7 @@ export default function ContextProvider({ children }) {
     let [items, setItems] = useState([])
     let [images,setImages] = useState([]);
     let [careerData,setCareerData] = useState([]);
-    let [isAdmin,setIsAdmin] = useState(false);
+    let [isAdmin,setIsAdmin] = useState(localStorage.getItem("loginStatus") || false);
     let [projectsData,setProjectsData] = useState([]);
     let [events,setEvents] = useState([]);
     const [page,setPage] = useState(1);

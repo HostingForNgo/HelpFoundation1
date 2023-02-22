@@ -23,7 +23,7 @@ export default function FirstSection() {
                     {/* Front Page Center Part Starts here */}
 
                     <Box padding={["20px", "20px", "0px", "0px"]} sx={{ width: "100%", height: "88%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                        <Box  sx={{ width: "547px", height: "300px", display: "flex", flexDirection: "column", gap: "30px" }}>
+                        <Box  sx={{ width: "600px", height: "300px", display: "flex", flexDirection: "column", gap: "30px" }}>
                             <motion.div
                                 ref={ref}
                                 initial="hidden"
@@ -32,10 +32,10 @@ export default function FirstSection() {
                                 transition={{ duration: 0.75 }}
                                 style={{display:"flex",flexDirection:"column",gap:"20px"}}
                             >
-                                <Typography sx={{ fontSize: "36px", color: "white", fontWeight: "800", fontFamily: "Raleway", lineHeight: "42px" }}>
+                                <Typography sx={{ fontSize: "36px", color: "white", fontWeight: "800", fontFamily: "Roboto, sans-serif", lineHeight: "42px" }}>
                                     Health and Education for Life Project
                                 </Typography>
-                                <Typography sx={{ fontSize: "14px", color: "white", fontWeight: "800", fontFamily: "Raleway" }}>
+                                <Typography sx={{ fontSize: "14px", color: "white", fontWeight: "800", fontFamily: "Roboto, sans-serif" }}>
                                     Your donation providing life changing education for children from rural villages. HELP (Health and Education for Life Project) foundation is a non-profit section-8 organisation. We need your support.
                                 </Typography>s
                                 <NavLink to={"/Projects"} style={{ textDecoration: "none",width: "210px" }}>

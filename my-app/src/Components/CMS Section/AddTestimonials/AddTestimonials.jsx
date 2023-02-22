@@ -17,7 +17,8 @@ export default function AddTestimonials() {
                 let temp = {
                     testimonial:testimonials
                 }
-                axios.post("https://futuristic-unexpected-citrine.glitch.me/testimonials",temp);
+                axios.post("http://localhost:3001/testimonials",temp);
+                // axios.post("https://futuristic-unexpected-citrine.glitch.me/testimonials",temp);
                 setTestimonials("")
             }} variant="text" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "40%", background: "#7912f7"}} >
                 Add To Testimonials

@@ -47,7 +47,8 @@ export default function AddJobs() {
                 <Box mb={"10px"}>
                     <Button onClick={()=>{
                         let obj = {JobTitle,location,jobDescription,qualifications,openPositions};
-                        axios.post("https://futuristic-unexpected-citrine.glitch.me/Jobs",obj)
+                        axios.post("http://localhost:3001/Jobs",obj)
+                        // axios.post("https://futuristic-unexpected-citrine.glitch.me/Jobs",obj)
                         console.log(obj);
                         setJobTitle("");
                         setLocation("");
