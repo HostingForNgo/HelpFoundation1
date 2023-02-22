@@ -25,7 +25,8 @@ export default function LifeAffectedCard({ title, description, counter }) {
                     clearInterval(intervalId);
                     return counter
                 }
-               return prev + 1
+               return prev + 1;
+               console.log(prev)
             });
           }
         }, 50);
