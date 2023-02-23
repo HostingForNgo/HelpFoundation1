@@ -33,9 +33,9 @@ var instance = new Razorpay({
 
 app.post("/create/orderId", async (req, res) => {
     const data = req.body;
-    
+
     const options = {
-        amount: req.body.amount*100,
+        amount: req.body.amount * 100,
         currency: "INR",
         receipt: "rcp1"
     }
@@ -234,18 +234,16 @@ app.patch("/messages/:id", async (req, res) => {
 })
 
 
-    //***************************************************************************************************************************** */
+//***************************************************************************************************************************** */
 
-    // blogs EndPoint
+// blogs EndPoint
 
-    ,
-
-    app.get("/blogs", async (req, res) => {
-        const query = req.query;
-        console.log(query)
-        const data = await BlogModel.find(query)
-        res.send(data)
-    })
+app.get("/blogs", async (req, res) => {
+    const query = req.query;
+    console.log(query)
+    const data = await BlogModel.find(query)
+    res.send(data)
+})
 app.get("/blogs/:id", async (req, res) => {
     const id = req.params.id;
     const data = await BlogModel.findById(id);

@@ -6,10 +6,12 @@ import { useInView } from "framer-motion";
 import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
+import BasicModal from "./Modal/Modal";
 export default function ProjectCard({ heading, volunteer, description, id }) {
     const ref = useRef(null)
     const isInView = useInView(ref)
     const [open, setOpen] = useState(false);
+    const [open1, setOpen1] = useState(false);
     const variants = {
         hidden: { opacity: 0, x: -150 },
         visible: { opacity: 1, x: 0 },
@@ -88,8 +90,7 @@ export default function ProjectCard({ heading, volunteer, description, id }) {
                     <Typography fontWeight={"800"} fontSize={"18px"} mb={"10px"}>{heading}</Typography>
                     <Typography fontSize={["10px", "14px"]} color={"grey"}>{description.slice(0, 100)}</Typography>
                     <Box display={"flex"} m={"10px 0"} gap={"10px"} flexDirection={["column", "row", "row", "row"]}>
-                        <Button style={{ background: "#6c8438", color: "white", fontFamily: "Roboto, sans-serif", flex: "1", display: volunteer ? "flex" : "none" }}>Volunteer</Button>
-
+                        <Button onClick={()=>setOpen1(true)} style={{ background: "#6c8438", color: "white", fontFamily: "Roboto, sans-serif", flex: "1", display: volunteer ? "flex" : "none" }}>Volunteer</Button>
                         <NavLink style={{ textDecoration: "none", flex: "1", width: "100%" }} to={`${id}`}>
                             <Button sx={{ fontSize: "13px", border: "2px solid black", color: "black", fontFamily: "Roboto, sans-serif", width: "100%", "&:hover": { background: "black", color: "white" } }}>Read More...</Button>
                         </NavLink>
@@ -135,12 +136,12 @@ export default function ProjectCard({ heading, volunteer, description, id }) {
                                     </Box>
                                     <input ref={amountRef} placeholder="Enter the Amount" type={"number"} style={{ width: "80%", fontSize: "30px", padding: "15px 10px", border: "1px solid #e2e2e2", color: "rgb(108, 132, 56)" }}></input>
                                 </Box>
-
                                 <Button sx={{ width: "100%", background: "rgb(86, 79, 164)", padding: "20px", color: "white", "&:hover": { background: "rgb(86, 79, 164)", color: "white", padding: "20px" } }} onClick={displayRazorPay}>
                                     DONATE NOW</Button>
                             </Box>
                         </Box>
                     </Modal>
+                    <BasicModal open={open1} setOpen={setOpen1}/>
                 </Box>
             </Box>
         </motion.div>
