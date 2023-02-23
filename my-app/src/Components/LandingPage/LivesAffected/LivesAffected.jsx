@@ -13,7 +13,7 @@ export default function LivesAffected(){
         <Box width={"100%"} minHeight={"100vh"} p={"20px"} display={"flex"} flexWrap={"wrap"} gap={"20px"} justifyContent={"center"}>
             {
                 data.map((i)=>(
-                    <LifeAffectedCard title={i.title} description={i.description} counter={Number(i.count)}/>
+                    <LifeAffectedCard title={i.title} description={i.description.slice(0,200)} counter={Number(i.count)}/>
                 ))
             }
         </Box>

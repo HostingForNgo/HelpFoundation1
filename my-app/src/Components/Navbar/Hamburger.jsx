@@ -35,7 +35,12 @@ export default function Hamburger() {
     >
       <List>
         <ListItem disablePadding>
-          <NavLink onClick={toggleDrawer(anchor, false)} style={{ width: "100%", textDecoration: "none", color: "black",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"}} to={"/"}>
+          <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }
+            }} to={"/"}>
             <ListItemButton>
               <ListItemText primary={"Home"} />
             </ListItemButton>
@@ -45,7 +50,12 @@ export default function Hamburger() {
 
         <ControlledAccordions Head={"About"}>
           <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={{ width: "100%", textDecoration: "none", color: "black" }} to={"/Team"}>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/Team"}>
               <ListItemButton>
                 <ListItemText primary={"Team"} />
               </ListItemButton>
@@ -53,7 +63,12 @@ export default function Hamburger() {
           </ListItem>
           <Divider />
           <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={{ width: "100%", textDecoration: "none", color: "black" }} to={"/Mission"}>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/Mission"}>
               <ListItemButton>
                 <ListItemText primary={"Mission"} />
               </ListItemButton>
@@ -61,7 +76,12 @@ export default function Hamburger() {
           </ListItem>
           <Divider />
           <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={{ width: "100%", textDecoration: "none", color: "black" }} to={"/Vision"}>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/Vision"}>
               <ListItemButton>
                 <ListItemText primary={"Vission"} />
               </ListItemButton>
@@ -71,7 +91,12 @@ export default function Hamburger() {
 
         <Divider />
         <ListItem disablePadding>
-          <NavLink onClick={toggleDrawer(anchor, false)} style={{ width: "100%", textDecoration: "none", color: "black",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }} to={"/Projects"}>
+          <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }
+            }} to={"/Projects"}>
             <ListItemButton>
               <ListItemText primary={"Projects"} />
             </ListItemButton>
@@ -80,7 +105,12 @@ export default function Hamburger() {
         <Divider />
         <ControlledAccordions Head={"Initiatives"}>
           <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={{ width: "100%", textDecoration: "none", color: "black" }} to={"/Impact"}>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/Impact"}>
               <ListItemButton>
                 <ListItemText primary={"Impact"} />
               </ListItemButton>
@@ -89,7 +119,12 @@ export default function Hamburger() {
           <Divider />
 
           <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={{ width: "100%", textDecoration: "none", color: "black" }} to={"/Ongoing Initiatives"}>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/Ongoing Initiatives"}>
               <ListItemButton>
                 <ListItemText primary={"Ongoing Initiatives"} />
               </ListItemButton>
@@ -100,7 +135,12 @@ export default function Hamburger() {
         <Divider />
         <ControlledAccordions Head={"Media"}>
           <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={{ width: "100%", textDecoration: "none", color: "black" }} to={"/Gallery"}>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/Gallery"}>
               <ListItemButton>
                 <ListItemText primary={"Gallery"} />
               </ListItemButton>
@@ -108,7 +148,12 @@ export default function Hamburger() {
           </ListItem>
           <Divider />
           <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={{ width: "100%", textDecoration: "none", color: "black" }} to={"/MediaCoverage"}>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/MediaCoverage"}>
               <ListItemButton>
                 <ListItemText primary={"Media Coverage"} />
               </ListItemButton>
@@ -116,7 +161,12 @@ export default function Hamburger() {
           </ListItem>
           <Divider />
           <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={{ width: "100%", textDecoration: "none", color: "black" }} to={"/Certificates"}>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/Certificates"}>
               <ListItemButton>
                 <ListItemText primary={"Certificates"} />
               </ListItemButton>

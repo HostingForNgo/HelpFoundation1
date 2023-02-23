@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require("cors")
+const Razorpay = require("razorpay");
 const port = process.env.PORT || 3001;
 const { connection,
     TeamMemberModel,
@@ -21,6 +22,42 @@ app.use(express.static('./', {
         res.set("Content-Security-Policy", "default-src 'self'");
     }
 }));
+
+
+// Payment Gateway Integration Starts Here
+
+var instance = new Razorpay({
+    key_id: 'rzp_test_nSahl5FThvw7uJ',
+    key_secret: 'd4p6ON5LLXwJXM8gg9mB93qo'
+})
+
+app.post("/create/orderId", async (req, res) => {
+    const data = req.body;
+    
+    const options = {
+        amount: req.body.amount*100,
+        currency: "INR",
+        receipt: "rcp1"
+    }
+    console.log(data)
+    instance.orders.create(options, (err, order) => {
+        console.log(order);
+        res.send({
+            orderId: order.id
+        })
+    })
+});
+
+
+
+
+
+
+
+
+
+
+
 app.get("/", (req, res) => {
     res.send("Welcome")
 })
@@ -66,7 +103,7 @@ app.patch("/team/:id", async (req, res) => {
     const data = req.body;
     const id = req.params.id;
     console.log(id)
-    const updatedObjet = await TeamMemberModel.findOneAndUpdate({_id:id}, data);
+    const updatedObjet = await TeamMemberModel.findOneAndUpdate({ _id: id }, data);
     res.send(`Object with ID:${id} has been deleted`);
 })
 app.delete("/team/:id", async (req, res) => {
@@ -111,7 +148,7 @@ app.delete("/testimonials/:id", async (req, res) => {
 app.patch("/testimonials/:id", async (req, res) => {
     const data = req.body;
     const id = req.params.id;
-    const updatedObjet = await TestimonialModel.findOneAndUpdate({_id:id}, data);
+    const updatedObjet = await TestimonialModel.findOneAndUpdate({ _id: id }, data);
     res.send(`Object with ID:${id} has been deleted`);
 })
 
@@ -134,9 +171,9 @@ app.get("/gallery/pagination", async (req, res) => {
         if (!data[i]) break
         finalData.push(data[i]);
     }
-    res.header("x-count-count",data.length)
+    res.header("x-count-count", data.length)
     console.log(res)
-    res.send({finalData,"x-total-count":data.length});
+    res.send({ finalData, "x-total-count": data.length });
 })
 app.get("/gallery/:id", async (req, res) => {
     const id = req.params.id;
@@ -157,7 +194,7 @@ app.delete("/gallery/:id", async (req, res) => {
 app.patch("/gallery/:id", async (req, res) => {
     const data = req.body;
     const id = req.params.id;
-    const updatedObjet = await GalleryModel.findOneAndUpdate({_id:id}, data);
+    const updatedObjet = await GalleryModel.findOneAndUpdate({ _id: id }, data);
     res.send(`Object with ID:${id} has been deleted`);
 })
 
@@ -192,7 +229,7 @@ app.delete("/messages/:id", async (req, res) => {
 app.patch("/messages/:id", async (req, res) => {
     const data = req.body;
     const id = req.params.id;
-    const updatedObjet = await MessageModel.findOneAndUpdate({_id:id}, data);
+    const updatedObjet = await MessageModel.findOneAndUpdate({ _id: id }, data);
     res.send(`Object with ID:${id} has been deleted`);
 })
 
@@ -229,7 +266,7 @@ app.delete("/blogs/:id", async (req, res) => {
 app.patch("/blogs/:id", async (req, res) => {
     const data = req.body;
     const id = req.params.id;
-    const updatedObjet = await BlogModel.findOneAndUpdate({_id:id}, data);
+    const updatedObjet = await BlogModel.findOneAndUpdate({ _id: id }, data);
     res.send(`Object with ID:${id} has been deleted`);
 })
 
@@ -265,7 +302,7 @@ app.delete("/Jobs/:id", async (req, res) => {
 app.patch("/Jobs/:id", async (req, res) => {
     const data = req.body;
     const id = req.params.id;
-    const updatedObjet = await JobModel.findOneAndUpdate({_id:id}, data);
+    const updatedObjet = await JobModel.findOneAndUpdate({ _id: id }, data);
     res.send(`Object with ID:${id} has been deleted`);
 })
 
@@ -299,7 +336,7 @@ app.delete("/JobApplications/:id", async (req, res) => {
 app.patch("/JobApplications/:id", async (req, res) => {
     const data = req.body;
     const id = req.params.id;
-    const updatedObjet = await JobApplicationsModel.findOneAndUpdate({_id:id}, data);
+    const updatedObjet = await JobApplicationsModel.findOneAndUpdate({ _id: id }, data);
     res.send(`Object with ID:${id} has been deleted`);
 })
 
@@ -337,7 +374,7 @@ app.delete("/Projects/:id", async (req, res) => {
 app.patch("/Projects/:id", async (req, res) => {
     const data = req.body;
     const id = req.params.id;
-    const updatedObjet = await ProjectsModel.findOneAndUpdate({_id:id}, data);
+    const updatedObjet = await ProjectsModel.findOneAndUpdate({ _id: id }, data);
     res.send(`Object with ID:${id} has been deleted`);
 })
 
@@ -369,7 +406,7 @@ app.delete("/event/:id", async (req, res) => {
 app.patch("/event/:id", async (req, res) => {
     const data = req.body;
     const id = req.params.id;
-    const updatedObject = await EventModel.findOneAndUpdate({_id:id}, data);
+    const updatedObject = await EventModel.findOneAndUpdate({ _id: id }, data);
     res.send(`Object with ID:${id} has been deleted`);
 })
 
@@ -402,7 +439,7 @@ app.delete("/lifeAffected/:id", async (req, res) => {
 app.patch("/lifeAffected/:id", async (req, res) => {
     const data = req.body;
     const id = req.params.id;
-    const updatedObject = await lifeAffectedModel.findOneAndUpdate({_id:id}, data);
+    const updatedObject = await lifeAffectedModel.findOneAndUpdate({ _id: id }, data);
     res.send(`Object with ID:${id} has been deleted`);
 })
 
