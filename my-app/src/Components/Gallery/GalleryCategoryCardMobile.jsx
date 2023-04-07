@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 
 
 
-export default function GalleryCategoryCardMobile({ heading, volunteer, description, id,index }) {
+export default function GalleryCategoryCardMobile({ heading, volunteer, description, img, id,index }) {
     const ref = useRef(null)
     const isInView = useInView(ref)
 
@@ -25,7 +25,7 @@ export default function GalleryCategoryCardMobile({ heading, volunteer, descript
             <Box display={["block", "none", "none", "none"]} sx={{ transition: "1s", overflowX: "hidden" }} className={"card"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} position={"relative"} flexShrink={0} >
                 <NavLink to={`${index}`} style={{textDecoration:"none",color:"black"}}>
                     <Box width={"100%"} height={"50%"} overflow={"hidden"}>
-                        <img draggable={"false"} style={{ width: "100%", height: "100%" }} src={"https://thumbs.dreamstime.com/b/amazing-misty-autumn-scenery-lake-sorapis-dolomites-italy-beautiful-mountains-colorful-yellow-larches-shore-193683774.jpg"} alt={"projects"} />
+                        <img draggable={"false"} style={{ width: "100%", height: "100%" }} src={img} alt={"projects"} />
                     </Box>
                     <Box padding={"20px"} width={"100%"} height={"50%"}>
                         <Typography fontWeight={"800"} fontSize={"18px"} mb={"10px"}>{heading || "Help Foundation1"}</Typography>
