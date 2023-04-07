@@ -15,7 +15,7 @@ export default function Team() {
                 <Box className={s.TeamGrid} display={"grid"} p={"20px"}  minHeight={"500px"} rowGap={"20px"} width={"100%"} >
                     {items.map((i) => {
                         return (
-                            <MemberCard key={i.img} img={i.img} name={i.name} description={i.description} role={i.secondText} />
+                            <MemberCard key={i.img} img={i.img} name={i.name} description={i.description} role={i.secondText} linkedin={i.linkedin} instagram={i.instagram} twitter={i.twitter}  />
                         )
                     })}
                 </Box>

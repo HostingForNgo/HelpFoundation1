@@ -7,7 +7,10 @@ const teamMemberSchema = mongoose.Schema({
     name: String,
     secondText: String,
     description: String,
-    img: String
+    img: String,
+    linkedin:String,
+    twitter:String,
+    instagram:String,
 })
 const testimonialSchema = mongoose.Schema({
     testimonial: String

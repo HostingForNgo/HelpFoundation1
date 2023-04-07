@@ -7,6 +7,9 @@ export default function AddTeam() {
     const [imgSrc, setImg] = useState("")
     const [role, setRole] = useState("")
     const [summary, setSummary] = useState("")
+    const [linkedin, setLinkedin] = useState("")
+    const [instagram, setInstagram] = useState("")
+    const [twitter, setTwitter] = useState("")
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
@@ -21,6 +24,9 @@ export default function AddTeam() {
                     <InputBox value={name} typ={"text"} func={setName} Category={"Name"} />
                     <InputBox value={role} typ={"text"} func={setRole} Category={"Role"} />
                     <InputBox value={summary} typ={"text"} func={setSummary} Category={"Summary"} />
+                    <InputBox value={linkedin} typ={"text"} func={setLinkedin} Category={"LinkedIn"} />
+                    <InputBox value={instagram} typ={"text"} func={setInstagram} Category={"Instagram"} />
+                    <InputBox value={twitter} typ={"text"} func={setTwitter} Category={"Twitter"} />
                     <Box>
                         <Typography>{"ImgSrc"}</Typography>
                         <input type={"file"} onChange={handleFileChange} />
@@ -31,6 +37,9 @@ export default function AddTeam() {
                             secondText: role,
                             description: summary,
                             img: imgSrc,
+                            linkedin,
+                            twitter,
+                            instagram,
                         }
                         console.log(data);
                         axios.post("http://localhost:3001/team", data);
@@ -38,6 +47,9 @@ export default function AddTeam() {
                         setName("");
                         setRole("");
                         setSummary("");
+                        setLinkedin("");
+                        setInstagram("");
+                        setTwitter("");
                     }} >Add To Team</Button>
                 </Box>
 
