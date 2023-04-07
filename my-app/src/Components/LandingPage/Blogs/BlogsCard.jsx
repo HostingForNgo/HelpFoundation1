@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import s from "./Blogs.module.css"
-export default function BlogCard({ blog, head, id, wid, date }) {
+export default function BlogCard({ blog, head, id, wid, date, blogLink }) {
     const ref = useRef(null)
     const isInView = useInView(ref)
 
@@ -39,9 +39,9 @@ export default function BlogCard({ blog, head, id, wid, date }) {
                         {blog}
                     </Box>
                     <Box padding={"10px"}>
-                        <NavLink style={{ textDecoration: "none" }} to={`/Blog/${id}`}>
+                        <a style={{ textDecoration: "none" }} target={"_blank"} to={`//${blogLink}`}>
                             <Button style={{ background: "orange", color: "white", fontFamily: "Roboto, sans-serif" }}>Read More</Button>
-                        </NavLink>
+                        </a>
                     </Box>
                 </Box>
             </Box>

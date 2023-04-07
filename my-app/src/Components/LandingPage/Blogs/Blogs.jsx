@@ -41,12 +41,12 @@ export default function Blogs() {
                     <Box width={`${data.length * 100}%`} minHeight={"400px"} marginLeft={`${margin}%`} display={"flex"} sx={{ transition: ".4s" }} flexShrink={0}>
                         {
                             data.map((i) => (
-                                <PcViewBlogCard wid={`${100 / data.length}%`} key={i._id} blog={i.blog.slice(0, 200)} date={i.date} head={i.heading} id={i._id} />
+                                <PcViewBlogCard blogLink={i.blogLink} wid={`${100 / data.length}%`} key={i._id} blog={i.blog.slice(0, 200)} date={i.date} head={i.heading} id={i._id} />
                             )).reverse()
                         }
                         {
                             data.map((i) => (
-                                <BlogCard wid={`${100 / data.length}%`} key={i._id} blog={i.blog.slice(0, 200)} date={i.date} head={i.heading} id={i._id} />
+                                <BlogCard blogLink={i.blogLink} wid={`${100 / data.length}%`} key={i._id} blog={i.blog.slice(0, 200)} date={i.date} head={i.heading} id={i._id} />
                             )).reverse()
                         }
                     </Box>

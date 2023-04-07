@@ -8,14 +8,14 @@ import CloseIcon from '@mui/icons-material/Close';
 
 
 export default function EventsCard({ heading, description, date, images, id, fundRaised }) {
-    const ref = useRef(null)
-    const isInView = useInView(ref)
+    const ref = useRef(null);
+    const isInView = useInView(ref);
     const [donateBtnState, setDonateBtnState] = useState(false);
     const variants = {
         hidden: { opacity: 0, x: -150 },
         visible: { opacity: 1, x: 0 },
     };
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
     const amountRef = useRef(null);
     const firstNameRef = useRef(null);
     const lastNameRef = useRef(null);
@@ -74,6 +74,7 @@ export default function EventsCard({ heading, description, date, images, id, fun
             document.body.appendChild(script);
         })
     }
+
     useEffect(() => {
         const today = new Date(Date.now());
         let Compare = new Date(date)
@@ -90,7 +91,7 @@ export default function EventsCard({ heading, description, date, images, id, fun
         >
             <Box sx={{ transition: "1s", overflowX: "hidden" }} className={"card"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} position={"relative"} flexShrink={0} >
                 <Box width={"100%"} height={"50%"}>
-                    <img draggable={"false"} style={{ width: "100%", height: "100%" }} src={images[0]} alt={"projects"} />
+                    <img draggable={"false"} style={{ width: "100%", height: "100%" }} src={images} alt={"projects"} />
                 </Box>
                 <Box padding={"20px"} width={"100%"} height={"50%"}>
                     <Typography fontWeight={"800"} fontSize={"18px"} mb={"10px"}>{heading}</Typography>
@@ -103,7 +104,7 @@ export default function EventsCard({ heading, description, date, images, id, fun
                     </Box>
                     <Typography fontSize={["10px", "14px"]} color={"grey"}>{description.slice(0, 100)}</Typography>
                     <Box display={"flex"} m={"10px 0"} gap={"10px"} flexDirection={["column", "row", "row", "row"]}>
-                        <NavLink style={{ textDecoration: "none", flex: "1", width: "100%" }} to={`Events/${id}`}>
+                        <NavLink style={{ textDecoration: "none", flex: "1", width: "100%" }} target={"_blank"} to={`events/${id}`}>
                             <Button sx={{ fontSize: "13px", border: "2px solid rgb(108, 132, 56)", color: "rgb(108, 132, 56)", fontFamily: "Roboto, sans-serif", width: "100%", "&:hover": { background: "rgb(108, 132, 56)", color: "white", flex: "1" } }}>Read More...</Button>
                         </NavLink>
                         <Button onClick={()=>setOpen(true)} style={{ display: donateBtnState ? "block" : "none", background: "rgb(86, 79, 164)", color: "white", fontFamily: "Roboto, sans-serif", flex: "1" }}>Donate</Button>
@@ -113,9 +114,9 @@ export default function EventsCard({ heading, description, date, images, id, fun
                         onClose={() => setOpen(false)}
                         aria-labelledby="modal-modal-title"
                         aria-describedby="modal-modal-description"
-                        sx={{ overflow: "scroll" }}                    >
-                        <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} >
-                            <Box width={"800px"} display={"flex"} flexDirection={"column"} gap={"20px"} height={"600px"} bgcolor={"white"} p={"30px"} position={"relative"} mt={"50px"}>
+                        sx={{ overflow: "scroll" }}>
+                        <Box width={"100%"} minHeight={"100%"} display={"flex"} justifyContent={"center"} >
+                            <Box width={"800px"} display={"flex"} flexDirection={"column"} gap={"20px"} minHeight={"600px"} bgcolor={"white"} p={"30px"} position={"relative"} mt={["0px","10px","20px"]}>
                                 <Box top={"15px"} right={"15px"} width={"30px"} height={"30px"} position={"absolute"}>
                                     <CloseIcon sx={{ width: "100%", height: "100%", cursor: "pointer" }} onClick={() => setOpen(false)} />
                                 </Box>
@@ -137,6 +138,10 @@ export default function EventsCard({ heading, description, date, images, id, fun
                                     <input ref={emailRef} placeholder="Email Address" style={{ width: "100%", padding: "15px 10px", border: "1px solid #e2e2e2", color: "rgb(108, 132, 56)" }}></input>
                                 </Box>
                                 <Box width={"100%"}>
+                                    <Typography color={"rgb(86, 79, 164)"} fontWeight={"800"} fontSize={"18px"}>Pan Card</Typography>
+                                    <input ref={emailRef} placeholder="Email Address" style={{ width: "100%", padding: "15px 10px", border: "1px solid #e2e2e2", color: "rgb(108, 132, 56)" }}></input>
+                                </Box>
+                                <Box width={"100%"}>
                                     <Typography color={"rgb(86, 79, 164)"} fontWeight={"800"} fontSize={"18px"}>Contact</Typography>
                                     <input ref={contactRef} placeholder="Enter Your Number" style={{ width: "100%", padding: "15px 10px", border: "1px solid #e2e2e2", color: "rgb(108, 132, 56)" }}></input>
                                 </Box>
@@ -144,7 +149,7 @@ export default function EventsCard({ heading, description, date, images, id, fun
                                     <Box display={"flex"} alignItems={"center"} justifyContent={"center"} width={["40%", "30%", "20%"]} height={"100%"} p={"20px"} bgcolor={"rgb(86, 79, 164)"}>
                                         <Typography fontSize={"20px"} fontWeight={"800"} color={"white"}>Donation</Typography>
                                     </Box>
-                                    <input min={0} max={500000} ref={amountRef} placeholder="Enter the Amount" type={"number"} style={{ width: "80%", fontSize: "30px", padding: "15px 10px", border: "1px solid #e2e2e2", color: "rgb(108, 132, 56)" }}></input>
+                                    <input ref={amountRef} placeholder="Enter the Amount" type={"number"} style={{ width: "80%", fontSize: "30px", padding: "15px 10px", border: "1px solid #e2e2e2", color: "rgb(108, 132, 56)" }}></input>
                                 </Box>
                                 <Button sx={{ width: "100%", background: "rgb(86, 79, 164)", padding: "20px", color: "white", "&:hover": { background: "rgb(86, 79, 164)", color: "white", padding: "20px" } }} onClick={displayRazorPay}>
                                     DONATE NOW</Button>

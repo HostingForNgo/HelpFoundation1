@@ -1,15 +1,25 @@
 import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 
-export default function BlogCard({ images, heading, date, blog , func, id }) {
+export default function BlogCard({ image, heading, date, mainBlog, blog, func, id }) {
     const headingRef = useRef(null);
     const dateRef = useRef(null);
     const descRef = useRef(null);
     const fundRaisedRef = useRef(null);
-    const [imgs, setImgs] = useState(images);
-    const [readOnly, setReadOnly] = useState(true)
+    const [readOnly, setReadOnly] = useState(true);
+    useEffect(() => {
+        let obj = {
+            heading: heading,
+            date: date,
+            blog: blog,
+            carouselImg: image,
+            mainBlog: mainBlog,
+        }
+
+    })
+    console.log(image)
     return (
         <Box flexShrink={0} padding={"20px"} minHeight={"50px"} flexDirection={"column"} display={"flex"} width={"100%"} boxShadow={"rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"} gap={"20px"}>
             <Box width={"100%"} display={"flex"} >
@@ -19,22 +29,30 @@ export default function BlogCard({ images, heading, date, blog , func, id }) {
                     <textarea ref={descRef} readOnly={readOnly} style={{ resize: "none", fontSize: "16px", minHeight: "100px" }} defaultValue={blog} />
                 </Box>
                 <Box p={"10px"} width={"20%"} display={"flex"} flexDirection={"column"} justifyContent={"center"} gap={"10px"}>
-                    <Button onClick={()=>{
-                        
+                    <Button onClick={() => {
+
                         func()
                     }} variant="text" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", background: "#7912f7", height: "30px" }} >
                         Delete
                     </Button>
                     <Button onClick={() => {
                         setReadOnly(true);
+                        // let obj = {
+                        //     title: headingRef.current.value,
+                        //     fundRaised: Number(fundRaisedRef.current.value),
+                        //     date: dateRef.current.value,
+                        //     description: descRef.current.value,
+                        //     images: imgs
+                        // }
+
                         let obj = {
-                            title: headingRef.current.value,
-                            fundRaised: Number(fundRaisedRef.current.value),
-                            date: dateRef.current.value,
-                            description: descRef.current.value,
-                            images: imgs
+                            heading: heading,
+                            date: date,
+                            blog: blog,
+                            carouselImg: image,
+                            mainBlog: mainBlog,
                         }
-                        axios.patch(`http://localhost:3001/event/${id}`, obj)
+                        axios.patch(`http://localhost:3001/blogs/${id}`, obj)
                     }}
                         variant="text" sx={{ display: !readOnly ? "flex" : "none", "&:hover": { background: "#7912f7" }, color: "white", width: "100%", background: "#7912f7", height: "30px" }} >
                         Save
@@ -48,17 +66,7 @@ export default function BlogCard({ images, heading, date, blog , func, id }) {
                 </Box>
             </Box>
             <Box display={"flex"} flexWrap={"wrap"} justifyContent={"space-evenly"}>
-                {imgs.map((el, i) => (
-                    <Box width={"23%"} height={"150px"} position={"relative"} border={"2px solid black"}>
-                        <img width={"100%"} height={"100%"} src={el} />
-                        <Box width={"100%"} height={"100%"} border={"2px solid black"} display={readOnly ? "none" : "flex"} justifyContent={"center"} alignItems={"center"} position={"absolute"} top={"0"} >
-                            <CloseIcon sx={{ color: "white", width: "50px", height: "50px", cursor: "pointer" }} onClick={() => {
-                                let restData = imgs.filter((element, index) => index != i);
-                                setImgs(restData)
-                            }} />
-                        </Box>
-                    </Box>
-                ))}
+                <img width={"200px"} height={"200px"} src={image} />
             </Box>
         </Box>
     )

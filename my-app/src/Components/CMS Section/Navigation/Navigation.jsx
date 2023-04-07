@@ -6,7 +6,7 @@ export default function Navigation() {
     
     return (
         <>
-            <Box display={"flex"} gap={"20px"} flexDirection={"column"} p={"20px"} position={"relative"} left={0} width={"20%"} sx={{overflowY:"scroll",position:"sticky",maxHeight:"100vh"}}>
+            <Box display={"flex"} gap={"20px"} flexDirection={"column"} p={"20px"} position={"sticky"} left={0} width={"20%"} sx={{overflowY:"scroll",position:"sticky",maxHeight:"100vh"}}>
                 <NavLink to={"AddMember"}>
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD MEMBERS</Button>
                 </NavLink>
@@ -60,6 +60,24 @@ export default function Navigation() {
                 </NavLink>
                 <NavLink to={"ModifyLivesAffected"}>
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>MODIFY LIVES AFFECTED</Button>
+                </NavLink>
+                <NavLink to={"AddCenter"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD CENTER</Button>
+                </NavLink>
+                <NavLink to={"ModifyCenters"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>MODIFY CENTER</Button>
+                </NavLink>
+                <NavLink to={"AddActivityReports"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD ActivityReports</Button>
+                </NavLink>
+                <NavLink to={"ModifyActivityReports"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>Modify Activity Reports</Button>
+                </NavLink>
+                <NavLink to={"AddAuditReports"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>Add Audit Reports</Button>
+                </NavLink>
+                <NavLink to={"ModifyAuditReports"}>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>Modify Audit Reports</Button>
                 </NavLink>
             </Box>
         </>

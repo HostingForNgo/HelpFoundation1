@@ -16,7 +16,7 @@ export default function Events() {
             <Box display={"grid"} flexWrap={"wrap"} gap={"20px"} gridTemplateColumns={["repeat(1,1fr)", "repeat(2,1fr)", "repeat(3,1fr)"]}>
                 {
                     events.map(i=>(
-                        <EventsCard key={i._id} fundRaised={i.fundRaised} heading={i.title} description={i.description} date={i.date} images={i.images} id={`${i._id}`} />
+                        <EventsCard key={i._id} fundRaised={i.fundRaised} heading={i.title} description={i.description} date={i.date} images={i.images} mainPageLink={i.mainPageLink} id={`${i._id}`} />
                     ))
                 }
             </Box>

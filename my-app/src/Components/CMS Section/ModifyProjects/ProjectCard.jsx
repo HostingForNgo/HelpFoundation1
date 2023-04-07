@@ -50,17 +50,7 @@ export default function ProjectCard({ images, heading, date, description, isVolu
                 </Box>
             </Box>
             <Box display={"flex"} flexWrap={"wrap"} justifyContent={"space-evenly"}>
-                {imgs.map((el, i) => (
-                    <Box width={"23%"} height={"150px"} position={"relative"} border={"2px solid black"}>
-                        <img width={"100%"} height={"100%"} src={el} />
-                        <Box width={"100%"} height={"100%"} border={"2px solid black"} display={readOnly ? "none" : "flex"} justifyContent={"center"} alignItems={"center"} position={"absolute"} top={"0"} >
-                            <CloseIcon sx={{ color: "white", width: "50px", height: "50px", cursor: "pointer" }} onClick={() => {
-                                let restData = imgs.filter((element, index) => index != i);
-                                setImgs(restData)
-                            }} />
-                        </Box>
-                    </Box>
-                ))}
+            <img width={"100%"} height={"100%"} src={imgs} />
             </Box>
         </Box>
     )

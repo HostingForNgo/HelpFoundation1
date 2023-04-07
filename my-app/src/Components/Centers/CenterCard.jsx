@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import s from "./Involvement.module.css"
-export default function CenterCard({ text, imgSrc, linkk }) {
+export default function CenterCard({ text, description, location, imgSrc, _id }) {
     const ref = useRef(null)
     const isInView = useInView(ref)
 
@@ -21,17 +21,17 @@ export default function CenterCard({ text, imgSrc, linkk }) {
             animate={isInView ? "visible" : "hidden"}
             variants={variants}
             transition={{ duration: 0.75 }}>
-            <NavLink to={"1"} style={{color:"black",textDecoration:"none"}}>
+            <NavLink to={`${_id}`} style={{color:"black",textDecoration:"none"}}>
                 <Box className={"InvolvementMainCard"} pb={"20px"} ref={ref} display={"flex"} flexDirection={"column"} alignItems={"center"} width={"100%"} overflow={"hidden"} position={"relative"} boxShadow={"rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"}>
                     <Box width={"100%"} height={"100%"} overflow={"hidden"}>
                         <Box width={"100%"} height={"70%"} display={"flex"} justifyContent={"center"} >
                             <img draggable={"false"} src={imgSrc} style={{ width: "100%" }} />
                         </Box>
                         <Box width={"100%"} display={"flex"} flexDirection={"column"} padding={"20px"}>
-                            <Typography fontWeight={"800"} fontSize={"18px"}>Heading</Typography>
-                            <Typography fontWeight={"800"} fontSize={"13px"}>Location</Typography>
+                            <Typography fontWeight={"800"} fontSize={"18px"}>{text}</Typography>
+                            <Typography fontWeight={"800"} fontSize={"13px"}>{location}</Typography>
                             <Typography fontSize={"12px"} color={"grey"}>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non praesentium, vitae libero facere laudantium eligendi, animi tempora nisi omnis quia necessitatibus, blanditiis nostrum nihil assumenda?
+                                {description}
                             </Typography>
                         </Box>
                     </Box>

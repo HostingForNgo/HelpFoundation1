@@ -33,6 +33,7 @@ export default function GalleryCard({ img, data, defaultIndex }) {
             animate={isInView ? "visible" : "hidden"}
             variants={variants}
             transition={{ duration: 0.75 }}
+            style={{height:"250px",overflow:"hidden"}}
         >
             <div>
                 <Box onClick={handleOpen} style={{ cursor: "pointer" }}>
@@ -54,7 +55,7 @@ export default function GalleryCard({ img, data, defaultIndex }) {
                         }} sx={{ cursor: "pointer" }}>
                             <KeyboardArrowLeftIcon sx={{ width: '100%', height: "100%", color: "white" }} />
                         </Box>
-                        <img style={{ width: "100%", transition: "1s" }} src={data[index]} alt="cs" />
+                        <img style={{ height:"100%", transition: "1s",maxWidth:"90vw",maxHeight:"90vh" }} src={data[index]} alt="cs" />
                         <Box display={index == data.length - 1 ? "none" : "flex"} position={"absolute"} width={["50px", "70px", "100px"]} height={"100px"} top={"calc( 50% - 50px )"} right={"10px"} onClick={() => {
                             setIndex(prev => prev + 1)
                         }} sx={{ cursor: "pointer" }}>

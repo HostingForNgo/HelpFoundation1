@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const connection = mongoose.connect("mongodb://localhost:27017/HelpFoundation");
+// const connection = mongoose.connect("mongodb+srv://raghbirsingh9101:W2zp4cy9rk%40@helpfounation.cjmltdu.mongodb.net/test");
 
 const teamMemberSchema = mongoose.Schema({
     name: String,
@@ -29,7 +30,8 @@ const blogSchema = mongoose.Schema({
     heading: String,
     blog: String,
     date: String,
-    images:Array
+    carouselImg:String,
+    blogLink:String
 })
 const jobsSchema = mongoose.Schema({
     JobTitle: String,
@@ -44,24 +46,45 @@ const jobApplicationsSchema = mongoose.Schema({
     age: String,
     resume: String
 })
+
 const projectsSchema = mongoose.Schema({
     heading: String,
     volunteer: Boolean,
     description: String,
-    images:Array
+    images:String,
+    html:String
 })
 const eventSchema = mongoose.Schema({
     title: String,
     date: String,
     fundRaised: Number,
     description:String,
-    images:Array
+    images:String,
+    html:String
 })
+
 const lifeAffected = mongoose.Schema({
     title: String,
     description: String,
     count:String,
 })
+const centers = mongoose.Schema({
+    heading: String,
+    location: String,
+    description:String,
+    image:String
+})
+const activityReports = mongoose.Schema({
+    heading: String,
+    images: Array,
+    pdf:String,
+})
+const auditReports = mongoose.Schema({
+    heading: String,
+    images: Array,
+    pdf:String,
+})
+
 
 const TeamMemberModel = mongoose.model("team", teamMemberSchema)
 const TestimonialModel = mongoose.model("testimonial", testimonialSchema)
@@ -73,6 +96,9 @@ const JobApplicationsModel = mongoose.model("jobApplication", jobApplicationsSch
 const ProjectsModel = mongoose.model("project", projectsSchema)
 const EventModel = mongoose.model("event", eventSchema)
 const lifeAffectedModel = mongoose.model("lifeAffected", lifeAffected)
+const CentersModel = mongoose.model("center", centers)
+const ActivityReportsModel = mongoose.model("ActivityReport", activityReports)
+const AuditReportsModel = mongoose.model("AuditReport", auditReports)
 
 module.exports = {
     connection,
@@ -85,5 +111,8 @@ module.exports = {
     JobApplicationsModel,
     ProjectsModel,
     EventModel,
-    lifeAffectedModel
+    lifeAffectedModel,
+    CentersModel,
+    ActivityReportsModel,
+    AuditReportsModel
 }

@@ -23,7 +23,7 @@ export default function ProjectCard({ heading, volunteer, description, id }) {
     const contactRef = useRef(null);
     async function displayRazorPay() {
         const res = await handlePayment();
-        if(!res){
+        if (!res) {
             alert("Error");
             return
         }
@@ -32,7 +32,7 @@ export default function ProjectCard({ heading, volunteer, description, id }) {
         }
         const options = {
             "key": "rzp_test_nSahl5FThvw7uJ", // Enter the Key ID generated from the Dashboard
-            "amount": obj.amount*100+"", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "amount": obj.amount * 100 + "", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": firstNameRef.current.value + " " + lastNameRef.current.value,
             "description": "Test Transaction",
@@ -64,7 +64,7 @@ export default function ProjectCard({ heading, volunteer, description, id }) {
         return new Promise(resolve => {
             const script = document.createElement("script");
             script.src = "https://checkout.razorpay.com/v1/checkout.js";
-            
+
             script.onload = () => {
                 resolve(true)
             }
@@ -90,7 +90,7 @@ export default function ProjectCard({ heading, volunteer, description, id }) {
                     <Typography fontWeight={"800"} fontSize={"18px"} mb={"10px"}>{heading}</Typography>
                     <Typography fontSize={["10px", "14px"]} color={"grey"}>{description.slice(0, 100)}</Typography>
                     <Box display={"flex"} m={"10px 0"} gap={"10px"} flexDirection={["column", "row", "row", "row"]}>
-                        <Button onClick={()=>setOpen1(true)} style={{ background: "#6c8438", color: "white", fontFamily: "Roboto, sans-serif", flex: "1", display: volunteer ? "flex" : "none" }}>Volunteer</Button>
+                        <Button onClick={() => setOpen1(true)} style={{ background: "#6c8438", color: "white", fontFamily: "Roboto, sans-serif", flex: "1", display: volunteer ? "flex" : "none" }}>Volunteer</Button>
                         <NavLink style={{ textDecoration: "none", flex: "1", width: "100%" }} to={`${id}`}>
                             <Button sx={{ fontSize: "13px", border: "2px solid black", color: "black", fontFamily: "Roboto, sans-serif", width: "100%", "&:hover": { background: "black", color: "white" } }}>Read More...</Button>
                         </NavLink>
@@ -104,8 +104,8 @@ export default function ProjectCard({ heading, volunteer, description, id }) {
                         aria-labelledby="modal-modal-title"
                         aria-describedby="modal-modal-description"
                         sx={{ overflow: "scroll" }}                    >
-                        <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} >
-                            <Box width={"800px"} display={"flex"} flexDirection={"column"} gap={"20px"} height={"600px"} bgcolor={"white"} p={"30px"} position={"relative"} mt={"50px"}>
+                        <Box width={"100%"} minHeight={"100%"} display={"flex"} justifyContent={"center"} >
+                            <Box width={"800px"} display={"flex"} flexDirection={"column"} gap={"20px"} minHeight={"600px"} bgcolor={"white"} p={"30px"} position={"relative"} mt={["0px","10px","20px"]}>
                                 <Box top={"15px"} right={"15px"} width={"30px"} height={"30px"} position={"absolute"}>
                                     <CloseIcon sx={{ width: "100%", height: "100%", cursor: "pointer" }} onClick={() => setOpen(false)} />
                                 </Box>
@@ -127,6 +127,10 @@ export default function ProjectCard({ heading, volunteer, description, id }) {
                                     <input ref={emailRef} placeholder="Email Address" style={{ width: "100%", padding: "15px 10px", border: "1px solid #e2e2e2", color: "rgb(108, 132, 56)" }}></input>
                                 </Box>
                                 <Box width={"100%"}>
+                                    <Typography color={"rgb(86, 79, 164)"} fontWeight={"800"} fontSize={"18px"}>Pan Card</Typography>
+                                    <input ref={emailRef} placeholder="Email Address" style={{ width: "100%", padding: "15px 10px", border: "1px solid #e2e2e2", color: "rgb(108, 132, 56)" }}></input>
+                                </Box>
+                                <Box width={"100%"}>
                                     <Typography color={"rgb(86, 79, 164)"} fontWeight={"800"} fontSize={"18px"}>Contact</Typography>
                                     <input ref={contactRef} placeholder="Enter Your Number" style={{ width: "100%", padding: "15px 10px", border: "1px solid #e2e2e2", color: "rgb(108, 132, 56)" }}></input>
                                 </Box>
@@ -136,12 +140,13 @@ export default function ProjectCard({ heading, volunteer, description, id }) {
                                     </Box>
                                     <input ref={amountRef} placeholder="Enter the Amount" type={"number"} style={{ width: "80%", fontSize: "30px", padding: "15px 10px", border: "1px solid #e2e2e2", color: "rgb(108, 132, 56)" }}></input>
                                 </Box>
+                                
                                 <Button sx={{ width: "100%", background: "rgb(86, 79, 164)", padding: "20px", color: "white", "&:hover": { background: "rgb(86, 79, 164)", color: "white", padding: "20px" } }} onClick={displayRazorPay}>
                                     DONATE NOW</Button>
                             </Box>
                         </Box>
                     </Modal>
-                    <BasicModal open={open1} setOpen={setOpen1}/>
+                    <BasicModal open={open1} setOpen={setOpen1} />
                 </Box>
             </Box>
         </motion.div>

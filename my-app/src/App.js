@@ -46,6 +46,14 @@ import ModifyBlogs from "./Components/CMS Section/ModifyBlogs/ModifyBlogs"
 import ModifyProjects from "./Components/CMS Section/ModifyProjects/ModifyProjects"
 import AddLivesAffected from "./Components/CMS Section/AddLivesAffected/AddLivesAffected";
 import ModifyLivesAffected from "./Components/CMS Section/ModifyLivesAffected/ModifyLivesAffected";
+import AddCenters from "./Components/CMS Section/AddCenter/AddCenter";
+import ModifyCenters from "./Components/CMS Section/ModifyCenters/ModifyCenter";
+import ActivityReport from "./Components/ActivityReport/ActivityReport";
+import AuditReport from "./Components/AuditReport/AuditReport";
+import AddActivityReports from "./Components/CMS Section/AddActivityReport/AddActivityReport";
+import AddAuditReports from "./Components/CMS Section/AddAuditReport/AddAuditReport";
+import ModifyActivityReports from "./Components/CMS Section/ModifyActivityReports/ModifyActivityReports";
+import ModifyAuditReports from "./Components/CMS Section/ModifyAuditReports/ModifyAuditReports";
 function App() {
   let { items, setItems, images, setImages, setCareerData, isAdmin, setIsAdmin, projectsData, setProjectsData, page, setPage, maxPage, setMaxPage, setEvents } = useContext(Context)
   useEffect(() => {
@@ -53,9 +61,6 @@ function App() {
       axios.get("http://localhost:3001/team").then(res => {
         setItems(res.data)
       })
-      // axios.get("http://localhost:3001/gallery").then(res => {
-      //   setImages(res.data)
-      // })
       axios.get("http://localhost:3001/jobs").then(res => {
         setCareerData(res.data)
       })
@@ -74,7 +79,6 @@ function App() {
   }, [])
 
   useEffect(() => {
-    
     axios.get(`http://localhost:3001/gallery/pagination?page=${page}&limit=4`).then(res => {
       setMaxPage(Math.ceil(res.data["x-total-count"] / 4));
       setImages(res.data.finalData);
@@ -110,6 +114,8 @@ function App() {
         <Route path="/Career/:JobID" element={<JobApplicationPage />} />
         <Route path="/Events/:EventID" element={<EventDetailsPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/ActivityReport" element={<ActivityReport />} />
+        <Route path="/AuditReport" element={<AuditReport />} />
         <Route path="CMS" element={isAdmin ? <CMS /> : <AccessDeclined />}>
           <Route index path='AddMember' element={<AddMember />} />
           <Route path='UpdateMembers' element={<ModifyMembers />} />
@@ -130,6 +136,12 @@ function App() {
           <Route path='DeleteEvents' element={<DeleteEvents />} />
           <Route path='AddLivesAffected' element={<AddLivesAffected />} />
           <Route path='ModifyLivesAffected' element={<ModifyLivesAffected />} />
+          <Route path='AddCenter' element={<AddCenters />} />
+          <Route path='ModifyCenters' element={<ModifyCenters />} />
+          <Route path='AddActivityReports' element={<AddActivityReports />} />
+          <Route path='ModifyActivityReports' element={<ModifyActivityReports />} />
+          <Route path='AddAuditReports' element={<AddAuditReports />} />
+          <Route path='ModifyAuditReports' element={<ModifyAuditReports />} />
         </Route>
       </Routes>
       <Footer />

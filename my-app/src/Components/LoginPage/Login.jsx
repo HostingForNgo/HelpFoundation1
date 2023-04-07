@@ -19,7 +19,7 @@ export default function LoginPage() {
             if(i.email==email && i.password==pass){
                 console.log("Login Successful !");
                 setIsAdmin(true)
-                localStorage.setItem("loginStatus",true)
+                // localStorage.setItem("loginStatus",true)
                 return;
             }
         }

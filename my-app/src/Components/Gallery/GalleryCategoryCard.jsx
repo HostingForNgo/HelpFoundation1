@@ -58,7 +58,7 @@ export default function GalleryCategoryCard({ heading, description, img, index }
                         <img style={{ height: "100%", width: "100%" }} src={img} alt="bvds" />
                     </Box>
                     <Box width={"60%"} height={"100%"} p={"10px"} display={"flex"} flexDirection={"column"}>
-                        <Box height={"20%"}>
+                        <Box minHeight={"20%"} pb={"40px"}>
                             <Typography fontSize={["18px", "20px", "30px", "40px"]} fontWeight={"900"} color={"#564FA5"}>{heading}</Typography>
                         </Box>
                         <Box height={"80%"}>

@@ -13,7 +13,10 @@ const { connection,
     JobApplicationsModel,
     ProjectsModel,
     EventModel,
-    lifeAffectedModel } = require("./db");
+    lifeAffectedModel,
+    CentersModel,
+    ActivityReportsModel,
+    AuditReportsModel } = require("./db");
 
 app.use(express.json({ limit: '50mb' }))
 app.use(cors())
@@ -247,6 +250,7 @@ app.get("/blogs", async (req, res) => {
 app.get("/blogs/:id", async (req, res) => {
     const id = req.params.id;
     const data = await BlogModel.findById(id);
+    console.log(data)
     res.send(data);
 })
 app.post("/blogs", async (req, res) => {
@@ -441,11 +445,104 @@ app.patch("/lifeAffected/:id", async (req, res) => {
     res.send(`Object with ID:${id} has been deleted`);
 })
 
+//***************************************************************************************************************************** */
+
+// Center EndPoint
+
+app.get("/centers", async (req, res) => {
+    const query = req.query;
+    const data = await CentersModel.find(query)
+    res.send(data)
+})
+app.get("/centers/:id", async (req, res) => {
+    const id = req.params.id;
+    const data = await CentersModel.findById(id);
+    res.send(data);
+})
+app.post("/centers", async (req, res) => {
+    const data = req.body;
+    const event = new CentersModel(data);
+    await event.save()
+    res.send(data)
+})
+app.delete("/centers/:id", async (req, res) => {
+    const id = req.params.id;
+    const deletedObject = await CentersModel.findByIdAndDelete(id);
+    res.send(`Object with ID:${id} has been deleted`);
+})
+app.patch("/centers/:id", async (req, res) => {
+    const data = req.body;
+    const id = req.params.id;
+    const updatedObject = await CentersModel.findOneAndUpdate({ _id: id }, data);
+    res.send(`Object with ID:${id} has been deleted`);
+})
+
+
+//***************************************************************************************************************************** */
+
+// ActivityReportsModel EndPoint
+
+app.get("/ActivityReports", async (req, res) => {
+    const query = req.query;
+    const data = await ActivityReportsModel.find(query)
+    res.send(data)
+})
+app.get("/ActivityReports/:id", async (req, res) => {
+    const id = req.params.id;
+    const data = await ActivityReportsModel.findById(id);
+    res.send(data);
+})
+app.post("/ActivityReports", async (req, res) => {
+    const data = req.body;
+    const event = new ActivityReportsModel(data);
+    await event.save()
+    res.send(data)
+})
+app.delete("/ActivityReports/:id", async (req, res) => {
+    const id = req.params.id;
+    const deletedObject = await ActivityReportsModel.findByIdAndDelete(id);
+    res.send(`Object with ID:${id} has been deleted`);
+})
+app.patch("/ActivityReports/:id", async (req, res) => {
+    const data = req.body;
+    const id = req.params.id;
+    const updatedObject = await ActivityReportsModel.findOneAndUpdate({ _id: id }, data);
+    res.send(`Object with ID:${id} has been deleted`);
+})
 
 
 
+//***************************************************************************************************************************** */
 
+// AuditReportsModel EndPoint
 
+app.get("/AuditReports", async (req, res) => {
+    const query = req.query;
+    const data = await AuditReportsModel.find(query)
+    res.send(data)
+})
+app.get("/AuditReports/:id", async (req, res) => {
+    const id = req.params.id;
+    const data = await AuditReportsModel.findById(id);
+    res.send(data);
+})
+app.post("/AuditReports", async (req, res) => {
+    const data = req.body;
+    const event = new AuditReportsModel(data);
+    await event.save()
+    res.send(data)
+})
+app.delete("/AuditReports/:id", async (req, res) => {
+    const id = req.params.id;
+    const deletedObject = await AuditReportsModel.findByIdAndDelete(id);
+    res.send(`Object with ID:${id} has been deleted`);
+})
+app.patch("/AuditReports/:id", async (req, res) => {
+    const data = req.body;
+    const id = req.params.id;
+    const updatedObject = await AuditReportsModel.findOneAndUpdate({ _id: id }, data);
+    res.send(`Object with ID:${id} has been deleted`);
+})
 
 
 

@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-export default function MemberCard({ img, name, description, role }) {
+export default function MemberCard({ img, name, description, role, }) {
     const ref = useRef(null)
     const isInView = useInView(ref)
 
@@ -41,7 +41,7 @@ export default function MemberCard({ img, name, description, role }) {
                             <TwitterIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/>
                             <InstagramIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/>
                         </Box>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tempore ducimus quaerat fugiat doloremque placeat! Quaerat, quasi aperiam molestias, animi deleniti dolore non dolor cupiditate fugit commodi in optio harum vel, aliquam placeat. Officia, facilis assumenda eius iste deleniti aut perspiciatis sapiente. At, est ab ipsa,
+                        {description}
                     </Box>
                 </Box>
             </Box>

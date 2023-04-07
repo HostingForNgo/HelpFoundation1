@@ -5,8 +5,6 @@ import { useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
 
-
-
 export default function AddGalleryMedia() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");

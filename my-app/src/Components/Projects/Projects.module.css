@@ -9,7 +9,7 @@
         grid-template-columns: repeat(3,1fr);
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 780px) {
     .productsGrid{
         grid-template-columns: repeat(2,1fr);
     }

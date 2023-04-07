@@ -4,7 +4,7 @@ import InfiniteCarousel from "./InfiniteCarousel/InfiniteCarousel";
 
 export default function Supporter() {
     return (
-        <Box width={"100%"} display={"flex"} alignItems={"center"} height={"25vw"}>
+        <Box overflow={"hidden"} display={"flex"} alignItems={"center"} height={"25vw"}>
             <InfiniteCarousel />
         </Box>
     )

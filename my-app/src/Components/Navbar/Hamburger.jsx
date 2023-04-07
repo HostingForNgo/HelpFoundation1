@@ -87,6 +87,32 @@ export default function Hamburger() {
               </ListItemButton>
             </NavLink>
           </ListItem>
+          <Divider />
+          <ListItem disablePadding>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/ActivityReport"}>
+              <ListItemButton>
+                <ListItemText primary={"Activity Report"} />
+              </ListItemButton>
+            </NavLink>
+          </ListItem>
+          <Divider />
+          <ListItem disablePadding>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/AuditReport"}>
+              <ListItemButton>
+                <ListItemText primary={"Audit Report"} />
+              </ListItemButton>
+            </NavLink>
+          </ListItem>
         </ControlledAccordions>
 
         <Divider />

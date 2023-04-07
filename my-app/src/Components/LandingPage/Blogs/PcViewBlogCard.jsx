@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import { NavLink } from "react-router-dom";
 
 
-export default function PcViewBlogCard({ blog, head, id, wid, date }) {
+export default function PcViewBlogCard({ blog, head, id, wid, date,blogLink }) {
     return (
         <Box display={["none", "none", "flex", "flex"]} width={wid} height={"400x"} bgcolor={"#efefef"}>
             <Box width={"40%"} p={"20px"} overflow={"hidden"} display={"flex"} alignItems={"center"}>
@@ -24,7 +24,7 @@ export default function PcViewBlogCard({ blog, head, id, wid, date }) {
                     </Typography>
                 </Box>
                 <Box p={"10px"} height={"30%"} display={"flex"} alignItems={"center"}>
-                    <NavLink style={{ textDecoration: "none" }} to={`/Blog/${id}`}>
+                    <NavLink style={{ textDecoration: "none" }} target={"_blank"} to={`//${blogLink}`}>
                         <Button sx={{ background: "#564fa4", color: "white", fontFamily: "Roboto, sans-serif","&:hover":{background:"transparent",color:"#564fa4",border:" 2px solid #564fa4"}}}>Read More</Button>
                     </NavLink>
                 </Box>

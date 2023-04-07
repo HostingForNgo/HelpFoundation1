@@ -20,11 +20,11 @@ export default function Navbar() {
                     <Box sx={{ alignItems: "center", width: "80%", height: "100%", justifyContent: "center", fontSize: "24px", color: "white" }} display={["none", "none", "flex"]}>
                         <Box className={"dropDown1"} width={"20%"} height={"70%"} display={"flex"} alignItems={"center"} position={"relative"}>
                             <Box width={"100%"} height={"100%"}>
-                                <NavLink className={"underLine"}  style={({ isActive }) => {
+                                <NavLink className={"underLine"} style={({ isActive }) => {
                                     if (isActive) {
                                         return { border: "2px solid black", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }
                                     }
-                                    else{
+                                    else {
                                         return { color: "black", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }
                                     }
                                 }} to={"/"}>Home</NavLink>
@@ -67,16 +67,36 @@ export default function Navbar() {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white" }
                                     }
                                 }} >CAREER</NavLink>
+                                <NavLink className={"hoverEffect dropDownParent"} style={{ padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", position: "relative" }} >
+                                    REPORT
+                                    <Box bgcolor={"white"} className={"doubleDropDown"} position={"absolute"} width={"120%"} display={"none"} flexDirection={"column"} top={"0"} left={"100%"}>
+                                        <NavLink to={"/ActivityReport"} className={"hoverEffect"} style={({ isActive }) => {
+                                            if (!isActive) {
+                                                return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700" }
+                                            }
+                                            else {
+                                                return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white" }
+                                            }
+                                        }} >ACTIVITY REPORT</NavLink>
+                                        <NavLink  to={"/AuditReport"}  className={"hoverEffect"} style={({ isActive }) => {
+                                            if (!isActive) {
+                                                return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700" }
+                                            }
+                                            else {
+                                                return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white" }
+                                            }
+                                        }}>AUDIT REPORT </NavLink>
+                                    </Box>
+                                </NavLink>
                             </Box>
                         </Box>
-
                         <Box className={"dropDown1"} width={"20%"} height={"70%"} display={"flex"} alignItems={"center"} position={"relative"}>
                             <Box width={"100%"} height={"100%"}>
                                 <NavLink className={"underLine"} style={({ isActive }) => {
                                     if (isActive) {
                                         return { border: "2px solid black", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }
                                     }
-                                    else{
+                                    else {
                                         return { color: "black", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }
                                     }
                                 }} to={"/Projects"}>Projects </NavLink>
@@ -98,10 +118,10 @@ export default function Navbar() {
                                 }}>IMPACT</NavLink>
                                 <NavLink to={"/OngoingInitiatives"} className={"hoverEffect"} style={({ isActive }) => {
                                     if (!isActive) {
-                                        return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700",lineHeight:"25px" }
+                                        return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", lineHeight: "25px" }
                                     }
                                     else {
-                                        return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white",lineHeight:"25px" }
+                                        return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white", lineHeight: "25px" }
                                     }
                                 }} >ONGOING INITIATIVES</NavLink>
                                 <NavLink to={"/Centers"} className={"hoverEffect"} style={({ isActive }) => {
@@ -130,10 +150,10 @@ export default function Navbar() {
                                 }}>GALLERY</NavLink>
                                 <NavLink to={"/MediaCoverage"} className={"hoverEffect"} style={({ isActive }) => {
                                     if (!isActive) {
-                                        return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700",lineHeight:"25px" }
+                                        return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", lineHeight: "25px" }
                                     }
                                     else {
-                                        return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white",lineHeight:"25px" }
+                                        return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white", lineHeight: "25px" }
                                     }
                                 }} >MEDIA COVERAGE</NavLink>
                                 <NavLink to={"/Certificates"} className={"hoverEffect"} style={({ isActive }) => {

@@ -1,6 +1,7 @@
 import { Button, Checkbox, FormControlLabel, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
+import JoditEditor from "jodit-react";
 import { useRef, useState } from "react";
 
 
@@ -42,29 +43,39 @@ export default function AddProjects() {
     let headingRef = useRef(null)
     let dateRef = useRef(null)
     let blogRef = useRef(null)
-    let [images, setImages] = useState([])
+    let [images, setImages] = useState("");
+    let imageConverter = useRef(null);
+    let [html, setHtml] = useState("");
     function handleSubmit() {
         let obj = {
             heading: headingRef.current.value,
-            date: dateRef.current.value,
-            blog: blogRef.current.value,
-            images: images
+            volunteer: volunteer,
+            description: blogRef.current.value,
+            images: images,
+            html: html
         }
-
-        axios.post("http://localhost:3001/blogs", obj)
+        axios.post("http://localhost:3001/projects", obj)
         // axios.post("https://futuristic-unexpected-citrine.glitch.me/blogs",obj)
         console.log(obj);
-        headingRef.current.value = ""
-        dateRef.current.value = ""
-        blogRef.current.value = ""
-        setImages([])
+        // headingRef.current.value = ""
+        // dateRef.current.value = ""
+        // blogRef.current.value = ""
+        // setImages("")
     }
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onloadend = () => {
-            setImages([...images, reader.result]);
+            setImages(reader.result);
+        };
+    };
+    const handleFileChange1 = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            imageConverter.current.value = reader.result;
         };
     };
     return (
@@ -84,24 +95,22 @@ export default function AddProjects() {
                         <textarea ref={blogRef} style={{ resize: "none", width: "100%", padding: "10px", minHeight: "300px" }} />
                     </Box>
                     <input type={"file"} onChange={handleFileChange} />
-                    <FormControlLabel control={<Checkbox onChange={(e) => setVolunteer(e.target.checked)} defaultChecked />} label="Volunteer" />
+                    <FormControlLabel control={<Checkbox onChange={(e) => setVolunteer(e.target.checked)}  />} label="Volunteer" />
                 </Box>
                 <Box width={"50%"} display={"flex"} flexWrap={"wrap"} p={"20px"} gap={"10px"}>
-                    {
-                        images.map((el, i) => (
-                            <Box key={i} width={"48%"} height={"200px"} position={"relative"}>
-                                <img style={{ position: "absolute" }} width={"100%"} height={"200px"} src={el} alt="w" />
-                                <Box position={"absolute"} wtop={"0"} zIndex={"10"} display={"flex"} justifyContent={"center"} alignItems={"center"} width={"100%"} height={"100%"}>
-                                    <Typography onClick={() => {
-                                        let filteredData = images.filter((e, index) => index != i);
-                                        setImages(filteredData)
-                                    }}
-                                        zIndex={20} sx={{ cursor: "pointer" }} fontSize={"30px"} color={"white"}>Delete</Typography>
-                                </Box>
-                            </Box>
-                        ))
-                    }
+                    <img width={"250px"} height={"200px"} src={images} alt="w" />
                 </Box>
+            </Box>
+            <Box width={"100%"} display={"flex"} flexDirection={"column"} gap={"10px"}>
+                <Typography fontWeight={"900"} fontSize={"40px"}>Convert Image to Link</Typography>
+                <input type={"file"} onChange={handleFileChange1} />
+                <input style={{ padding: "15px 10px" }} ref={imageConverter} />
+            </Box>
+            <Box width={"100%"}>
+                <Typography fontWeight={"900"} fontSize={"40px"}>For Main Page</Typography>
+                <JoditEditor onChange={(val) => {
+                    setHtml(val)
+                }}></JoditEditor>
             </Box>
             <Button onClick={handleSubmit} sx={{ fontWeight: "bold", width: "50%", background: "lightgreen", "&:hover": { background: "green", color: "white" } }}>Upload</Button>
         </Box>
