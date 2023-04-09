@@ -150,9 +150,22 @@ export default function Hamburger() {
                 return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
               }
               return { width: "100%", textDecoration: "none", color: "black" }
-            }} to={"/Ongoing Initiatives"}>
+            }} to={"/OngoingInitiatives"}>
               <ListItemButton>
                 <ListItemText primary={"Ongoing Initiatives"} />
+              </ListItemButton>
+            </NavLink>
+          </ListItem>
+          <Divider />
+          <ListItem disablePadding>
+            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
+              if (isActive) {
+                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
+              }
+              return { width: "100%", textDecoration: "none", color: "black" }
+            }} to={"/Centers"}>
+              <ListItemButton>
+                <ListItemText primary={"Centers"} />
               </ListItemButton>
             </NavLink>
           </ListItem>
