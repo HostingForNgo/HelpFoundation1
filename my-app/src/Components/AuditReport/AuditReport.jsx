@@ -6,7 +6,10 @@ import img1 from "./Supporters1.png"
 import img2 from "./Supporters2.png"
 import { motion } from "framer-motion"
 import DownloadIcon from '@mui/icons-material/Download';
+import { useContext } from "react";
+import { Context } from "../../ContextApi";
 export default function AuditReport() {
+    let {auditReport} = useContext(Context)
     let [arr, setArr] = useState([])
     let [width, setWidth] = useState(0)
     let [marginLeft, setMarginLeft] = useState(0)
@@ -23,7 +26,8 @@ export default function AuditReport() {
             console.log(width)
         }
         window.addEventListener("resize", func)
-        axios.get("https://helpapi.onrender.com/ActivityReports").then(res => setArr(res.data));
+        // axios.get("https://helpapi.onrender.com/ActivityReports").then(res => setArr(res.data));
+        setArr(auditReport)
         return () => window.removeEventListener("resize", func)
     }, [])
     useEffect(() => {

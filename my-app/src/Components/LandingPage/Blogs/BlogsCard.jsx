@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import s from "./Blogs.module.css"
-export default function BlogCard({ blog, head, id, wid, date, blogLink }) {
+export default function BlogCard({ blog, head,img, id, wid, date, blogLink }) {
     const ref = useRef(null)
     const isInView = useInView(ref)
 
@@ -26,7 +26,7 @@ export default function BlogCard({ blog, head, id, wid, date, blogLink }) {
             
             <Box  flexShrink={0} width={"100%"} >
                 <Box width={"100%"} overflow={"hidden"}>
-                    <img style={{ width: "100%" }} src="https://img.freepik.com/free-vector/nature-scene-with-river-hills-forest-mountain-landscape-flat-cartoon-style-illustration_1150-37326.jpg" />
+                    <img style={{ width: "100%" }} src={img} />
                 </Box>
                 <Box minHeight={"260px"}>
                     <Box padding={"10px"}>

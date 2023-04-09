@@ -90,8 +90,8 @@ export default function EventsCard({ heading, description, date, images, id, fun
             transition={{ duration: 0.75 }}
         >
             <Box sx={{ transition: "1s", overflowX: "hidden" }} className={"card"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} position={"relative"} flexShrink={0} >
-                <Box width={"100%"} height={"50%"}>
-                    <img draggable={"false"} style={{ width: "100%", height: "100%" }} src={images} alt={"projects"} />
+                <Box width={"100%"} height={"400px"} overflow={"hidden"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
+                    <img draggable={"false"} style={{ width: "100%" }} src={images} alt={"projects"} />
                 </Box>
                 <Box padding={"20px"} width={"100%"} height={"50%"}>
                     <Typography fontWeight={"800"} fontSize={"18px"} mb={"10px"}>{heading}</Typography>

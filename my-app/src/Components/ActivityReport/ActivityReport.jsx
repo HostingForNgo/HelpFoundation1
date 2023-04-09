@@ -6,7 +6,12 @@ import img1 from "./Supporters1.png"
 import img2 from "./Supporters2.png"
 import { motion } from "framer-motion"
 import DownloadIcon from '@mui/icons-material/Download';
+import { useContext } from "react";
+import { Context } from "../../ContextApi";
 export default function ActivityReport() {
+    let {activityReports} = useContext(Context)
+    
+    console.log(ActivityReport)
     let [arr, setArr] = useState([])
     let [width, setWidth] = useState(0)
     let [images, setImages] = useState(0)
@@ -25,20 +30,21 @@ export default function ActivityReport() {
             console.log(width)
         }
         window.addEventListener("resize", func)
-        axios.get("https://helpapi.onrender.com/ActivityReports").then(res => {
-            let data = res.data;
-            for (let i = data.length - 1; i >= 0; i++) {
-                if (data[i].images.length != 0) {
-                    setImages(data[i].images)
-                    break
-                }
-            }
-            setArr(res.data);
-        });
+        // axios.get("http://localhost:3001/ActivityReports").then(res => {
+        //     let data = res.data;
+        //     for (let i = data.length - 1; i >= 0; i++) {
+        //         if (data[i].images.length != 0) {
+        //             setImages(data[i].images)
+        //             break
+        //         }
+        //     }
+        //     setArr(res.data);
+        // });
+        setArr(activityReports);
         return () => window.removeEventListener("resize", func)
     }, [])
     useEffect(() => {
-        console.log(ref.current.scrollWidth - ref.current.offsetWidth)
+        // console.log(ref.current.scrollWidth - ref.current.offsetWidth)
         setWidth(ref.current.scrollWidth - ref.current.offsetWidth)
         setOffsetWidth(ref.current.offsetWidth)
     })

@@ -18,7 +18,7 @@ export default function Project() {
                 <Box className={s.productsGrid} display={"grid"} p={"20px"} minHeight={"500px"} width={"100%"} >
                 {/* <Box display={"flex"} p={"20px"} flexWrap={"wrap"} columnGap={["0", "2%", "1%", "2%"]} minHeight={"500px"} rowGap={"20px"} width={"100%"} > */}
                 {projectsData.map(i=>(
-                    <ProjectCard key={i._id} heading={i.heading} volunteer={i.volunteer} description={i.description} id={i._id}/>
+                    <ProjectCard key={i._id} img={i.images} heading={i.heading} volunteer={i.volunteer} description={i.description} id={i._id}/>
                 ))}
                     
                     {/* <ProjectCard />

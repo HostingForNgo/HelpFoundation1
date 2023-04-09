@@ -7,7 +7,7 @@ import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
 import BasicModal from "./Modal/Modal";
-export default function ProjectCard({ heading, volunteer, description, id }) {
+export default function ProjectCard({ heading, volunteer,img, description, id }) {
     const ref = useRef(null)
     const isInView = useInView(ref)
     const [open, setOpen] = useState(false);
@@ -84,7 +84,7 @@ export default function ProjectCard({ heading, volunteer, description, id }) {
         >
             <Box sx={{ transition: "1s", overflowX: "hidden" }} className={"card"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} position={"relative"} flexShrink={0} >
                 <Box width={"100%"} height={"50%"}>
-                    <img draggable={"false"} style={{ width: "100%", height: "100%" }} src={"https://thumbs.dreamstime.com/b/donate-letterpress-word-written-vintage-type-42205146.jpg"} alt={"projects"} />
+                    <img draggable={"false"} style={{ width: "100%", height: "400px" }} src={img} alt={"projects"} />
                 </Box>
                 <Box padding={"20px"} width={"100%"} height={"50%"}>
                     <Typography fontWeight={"800"} fontSize={"18px"} mb={"10px"}>{heading}</Typography>
