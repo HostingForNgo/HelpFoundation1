@@ -18,7 +18,7 @@ export default function TestimonialCard({ text, func, id }) {
                 </Button>
                 <Button onClick={()=>{
                     setIsReadOnly(true);
-                    axios.patch(`http://localhost:3001/testimonials/${id}`,{
+                    axios.patch(`https://helpapi.onrender.com/testimonials/${id}`,{
                         testimonial:textAreaRef.current.value
                     })
                 }} 

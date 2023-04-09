@@ -8,7 +8,7 @@ export default function DeleteTeam(){
 
     useEffect(()=>{
         // axios.get("https://futuristic-unexpected-citrine.glitch.me/team")
-        axios.get("http://localhost:3001/team")
+        axios.get("https://helpapi.onrender.com/team")
         .then( res=> setData(res.data))
     },[])
     return (
@@ -19,7 +19,7 @@ export default function DeleteTeam(){
                         console.log();
                         let temp = data.filter((it,ind)=>ind!=index);
                         setData(temp);
-                        axios.delete(`http://localhost:3001/team/${i._id}`)
+                        axios.delete(`https://helpapi.onrender.com/team/${i._id}`)
                     }}
                     name={i.name} role={i.secondText} desc={i.description} img={i.img}/>
                 )

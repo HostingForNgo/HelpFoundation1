@@ -40,7 +40,7 @@ export default function BasicModal({open,setOpen}) {
             message:messageRef.current.value,
         }
         
-        axios.post("http://localhost:3001/messages",obj);
+        axios.post("https://helpapi.onrender.com/messages",obj);
         fullNameRef.current.value=""
         emailRef.current.value=""
         phoneRef.current.value=""

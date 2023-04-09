@@ -33,10 +33,10 @@ export default function MediaCard({ name, img, role, desc, func, id }) {
                             name:nameRef.current.value,
                             secondText:roleRef.current.value,
                             description:descRef.current.value,
-                            id:`http://localhost:3001/team/${id}`
+                            id:`https://helpapi.onrender.com/team/${id}`
                         }
-                        axios.patch(`http://localhost:3001/team/${id}`,obj)
-                        console.log(`http://localhost:3001/team/${id}`)
+                        axios.patch(`https://helpapi.onrender.com/team/${id}`,obj)
+                        console.log(`https://helpapi.onrender.com/team/${id}`)
                         setEditable(true)
                         // axios.patch()
                     }} 

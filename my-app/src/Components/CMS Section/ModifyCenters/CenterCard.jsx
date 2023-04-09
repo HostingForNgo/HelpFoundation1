@@ -41,7 +41,7 @@ export default function CenterCard({ heading, func, id, location, description,im
                 </Button>
                 <Button onClick={() => {
                     setIsReadOnly(true);
-                    axios.patch(`http://localhost:3001/centers/${id}`, {
+                    axios.patch(`https://helpapi.onrender.com/centers/${id}`, {
                         heading: titleRef.current.value,
                         description: descriptionRef.current.value,
                         location: countRef.current.value,

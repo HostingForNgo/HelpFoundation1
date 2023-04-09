@@ -58,16 +58,16 @@ function App() {
   let { items, setItems, images, setImages, setCareerData, isAdmin, setIsAdmin, projectsData, setProjectsData, page, setPage, maxPage, setMaxPage, setEvents } = useContext(Context)
   useEffect(() => {
     try{
-      axios.get("http://localhost:3001/team").then(res => {
+      axios.get("https://helpapi.onrender.com/team").then(res => {
         setItems(res.data)
       })
-      axios.get("http://localhost:3001/jobs").then(res => {
+      axios.get("https://helpapi.onrender.com/jobs").then(res => {
         setCareerData(res.data)
       })
-      axios.get("http://localhost:3001/Projects").then(res => {
+      axios.get("https://helpapi.onrender.com/Projects").then(res => {
         setProjectsData(res.data)
       })
-      axios.get("http://localhost:3001/event").then((res) => {
+      axios.get("https://helpapi.onrender.com/event").then((res) => {
         let data = res.data;
         data.sort((a, b) => new Date(b.date) - new Date(a.date));
         setEvents(data.slice(0, 3))
@@ -79,7 +79,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/gallery/pagination?page=${page}&limit=4`).then(res => {
+    axios.get(`https://helpapi.onrender.com/gallery/pagination?page=${page}&limit=4`).then(res => {
       setMaxPage(Math.ceil(res.data["x-total-count"] / 4));
       setImages(res.data.finalData);
     })

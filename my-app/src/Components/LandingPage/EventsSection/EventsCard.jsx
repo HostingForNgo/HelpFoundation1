@@ -55,7 +55,7 @@ export default function EventsCard({ heading, description, date, images, id, fun
                 "color": "#564fa4"
             }
         };
-        let { data } = await axios.post("http://localhost:3001/create/orderId", obj)
+        let { data } = await axios.post("https://helpapi.onrender.com/create/orderId", obj)
         options.order_id = data.orderId;
         let rzp = new window.Razorpay(options);
         rzp.open();

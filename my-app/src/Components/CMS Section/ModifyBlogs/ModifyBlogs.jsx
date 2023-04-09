@@ -12,7 +12,7 @@ import BlogCard from "./BlogCard";
 export default function ModifyJobs() {
     let [data, setData] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:3001/blogs")
+        axios.get("https://helpapi.onrender.com/blogs")
             .then(res => setData(res.data))
     }, [])
     return (
@@ -22,7 +22,7 @@ export default function ModifyJobs() {
                     <BlogCard key={i._id} image={i.carouselImg} heading={i.heading} blog={i.blog} date={i.date} id={i._id} mainBlog={i.mainBlog} func={() => {
                         let temp = data.filter((item, ind) => index != ind);
                         setData(temp);
-                        axios.delete(`http://localhost:3001/blogs/${i._id}`);
+                        axios.delete(`https://helpapi.onrender.com/blogs/${i._id}`);
                     }} />
                 )
             })}

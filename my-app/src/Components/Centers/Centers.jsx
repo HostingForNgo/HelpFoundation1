@@ -6,7 +6,7 @@ import axios from "axios";
 export default function Centers() {
     let [data, setData] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:3001/centers").then(res => setData(res.data))
+        axios.get("https://helpapi.onrender.com/centers").then(res => setData(res.data))
     })
     return (
         <Box overflow={"hidden"} minHeight={["100vw", "65vw", "45vw"]} sx={{ display: "flex", alignItems: "center", flexDirection: "column" }} justifyContent={"space-evenly"}>

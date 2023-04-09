@@ -12,7 +12,7 @@ export default function CenterDetailsPage() {
     let [blogData, setBlogData] = useState({})
     useEffect(() => {
         console.log(data)
-        axios.get(`http://localhost:3001/centers/${data.CenterID}`).then((res) => {
+        axios.get(`https://helpapi.onrender.com/centers/${data.CenterID}`).then((res) => {
             setBlogData(res.data)
             console.log(res.data)
         })

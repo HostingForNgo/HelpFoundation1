@@ -28,7 +28,7 @@ export default function ModifyLivesAffectedCard({ title, func, id, description, 
                 </Button>
                 <Button onClick={()=>{
                     setIsReadOnly(true);
-                    axios.patch(`http://localhost:3001/lifeAffected/${id}`,{
+                    axios.patch(`https://helpapi.onrender.com/lifeAffected/${id}`,{
                         title:titleRef.current.value,
                         description:descriptionRef.current.value,
                         count:countRef.current.value,

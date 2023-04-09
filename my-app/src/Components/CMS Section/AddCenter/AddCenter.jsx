@@ -17,7 +17,7 @@ export default function AddEvents() {
             description: descRef.current.value,
             image: image,
         }
-        axios.post("http://localhost:3001/centers", obj)
+        axios.post("https://helpapi.onrender.com/centers", obj)
         console.log(obj);
         headingRef.current.value = ""
         descRef.current.value = ""

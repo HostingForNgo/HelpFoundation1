@@ -36,7 +36,7 @@ export default function BasicModal() {
             age:ageRef.current.value,
             resume:resume
         }
-        axios.post("http://localhost:3001/JobApplications",obj);
+        axios.post("https://helpapi.onrender.com/JobApplications",obj);
         fullNameRef.current.value=""
         qualificationsRef.current.value=""
         ageRef.current.value=""

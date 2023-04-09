@@ -23,7 +23,7 @@ export default function Blogs() {
 
 
     useEffect(() => {
-        axios.get("http://localhost:3001/blogs").then(res => setData(res.data));
+        axios.get("https://helpapi.onrender.com/blogs").then(res => setData(res.data));
     }, [])
 
     return (

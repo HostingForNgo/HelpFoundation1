@@ -15,7 +15,7 @@ export default function AddLivesAffected() {
             description: descRef.current.value,
             count: countRef.current.value,
         }
-        axios.post("http://localhost:3001/lifeAffected", obj)
+        axios.post("https://helpapi.onrender.com/lifeAffected", obj)
         // axios.post("https://futuristic-unexpected-citrine.glitch.me/blogs",obj)
         console.log(obj);
         headingRef.current.value = ""

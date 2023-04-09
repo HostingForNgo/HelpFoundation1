@@ -9,7 +9,7 @@ import JobApplicationsCard from "./JobApplicationsCard";
 export default function JobApplications() {
     let [data, setData] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:3001/jobApplications").then((res)=>setData(res.data))
+        axios.get("https://helpapi.onrender.com/jobApplications").then((res)=>setData(res.data))
         // axios.get("https://futuristic-unexpected-citrine.glitch.me/JobApplications").then((res)=>setData(res.data))
     }, [])
     return (

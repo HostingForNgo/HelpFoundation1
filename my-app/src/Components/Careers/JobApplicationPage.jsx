@@ -23,7 +23,7 @@ export default function JobApplicationPage() {
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/Jobs/${JobID}`).then(res => {
+        axios.get(`https://helpapi.onrender.com/Jobs/${JobID}`).then(res => {
             setData(res.data);
             setQuali(res.data.qualifications.join(", "))
         })

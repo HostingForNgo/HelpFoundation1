@@ -9,7 +9,7 @@ import GalleryCard from "./DeleteMediaCard";
 export default function DeleteGallery() {
     let [data,setData] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3001/gallery")
+        axios.get("https://helpapi.onrender.com/gallery")
         .then(res=>setData(res.data))
     },[])
     return (
@@ -19,7 +19,7 @@ export default function DeleteGallery() {
                     <GalleryCard key={i._id} id={i._id} title={i.title} date={i.date} images={i.images} description={i.description} func={()=>{
                         let temp = data.filter((item,ind)=>index!==ind);
                         setData(temp);
-                        axios.delete(`http://localhost:3001/gallery/${i._id}`)
+                        axios.delete(`https://helpapi.onrender.com/gallery/${i._id}`)
                     }}/>
                 )
             })}

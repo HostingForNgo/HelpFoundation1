@@ -62,7 +62,7 @@ export default function AddAuditReports() {
                     images:images,
                     pdf:file
                 }
-                axios.post("http://localhost:3001/AuditReports",obj)
+                axios.post("https://helpapi.onrender.com/AuditReports",obj)
                 console.log(obj)
             }}
             sx={{ marginTop: "20px", width: "100px", background: "lightgreen", color: "black", "&:hover": { background: "green", color: "white" } }}>

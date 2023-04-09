@@ -27,7 +27,7 @@ export default function AddBlogs() {
             blogLink: blogLinkRef.current.value,
         }
 
-        axios.post("http://localhost:3001/blogs", obj)
+        axios.post("https://helpapi.onrender.com/blogs", obj)
         // axios.post("https://futuristic-unexpected-citrine.glitch.me/blogs",obj)
         console.log(obj);
     }

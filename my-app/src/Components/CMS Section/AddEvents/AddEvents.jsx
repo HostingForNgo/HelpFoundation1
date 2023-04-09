@@ -28,7 +28,7 @@ export default function AddGalleryMedia() {
             fundRaised:0,
             html: html,
         }
-        axios.post("http://localhost:3001/event", obj)
+        axios.post("https://helpapi.onrender.com/event", obj)
         console.log(obj)
         // axios.post("https://futuristic-unexpected-citrine.glitch.me/blogs",obj)
     }

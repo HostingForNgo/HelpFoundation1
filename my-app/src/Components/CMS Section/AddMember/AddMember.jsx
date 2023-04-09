@@ -42,7 +42,7 @@ export default function AddTeam() {
                             instagram,
                         }
                         console.log(data);
-                        axios.post("http://localhost:3001/team", data);
+                        axios.post("https://helpapi.onrender.com/team", data);
                         // axios.post("https://futuristic-unexpected-citrine.glitch.me/team", data);
                         setName("");
                         setRole("");

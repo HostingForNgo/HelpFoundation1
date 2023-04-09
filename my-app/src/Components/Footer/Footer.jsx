@@ -65,7 +65,7 @@ export default function Footer() {
                                     let data = {
                                         name, email, phone, address, subject, message
                                     }
-                                    axios.post("http://localhost:3001/messages", data)
+                                    axios.post("https://helpapi.onrender.com/messages", data)
                                     setName("")
                                     setEmail("")
                                     setPhone("")

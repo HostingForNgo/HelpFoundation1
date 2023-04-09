@@ -6,7 +6,7 @@ import LifeAffectedCard from "./LifeAffectedCard";
 export default function LivesAffected(){
     let [data,setData] = useState([]);
     useEffect(() => {
-      axios.get("http://localhost:3001/lifeAffected").then(res=>setData(res.data))
+      axios.get("https://helpapi.onrender.com/lifeAffected").then(res=>setData(res.data))
     }, [])
     
     return (

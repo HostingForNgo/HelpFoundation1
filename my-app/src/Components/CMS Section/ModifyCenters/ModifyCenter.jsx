@@ -11,7 +11,7 @@ import CenterCard from "./CenterCard";
 export default function ModifyCenters() {
     let [data,setData] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3001/centers")
+        axios.get("https://helpapi.onrender.com/centers")
         .then(res=>setData(res.data))
     },[])
     return (
@@ -21,7 +21,7 @@ export default function ModifyCenters() {
                     <CenterCard img={i.image} key={i._id} heading={i.heading} location={i.location} description={i.description} id={i._id} func={()=>{
                         let temp = data.filter((item,ind)=>index!=ind);
                         setData(temp);
-                        axios.delete(`http://localhost:3001/centers/${i._id}`)
+                        axios.delete(`https://helpapi.onrender.com/centers/${i._id}`)
                     }}/>
                 )
             })}

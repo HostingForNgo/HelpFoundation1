@@ -23,7 +23,7 @@ export default function AuditReport() {
             console.log(width)
         }
         window.addEventListener("resize", func)
-        axios.get("http://localhost:3001/ActivityReports").then(res => setArr(res.data));
+        axios.get("https://helpapi.onrender.com/ActivityReports").then(res => setArr(res.data));
         return () => window.removeEventListener("resize", func)
     }, [])
     useEffect(() => {

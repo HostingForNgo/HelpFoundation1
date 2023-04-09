@@ -46,7 +46,7 @@ export default function JobCard({ title, location, jobDescription, qualification
                 </Button>
                 <Button onClick={() => {
                     setIsReadOnly(true);
-                    axios.patch(`http://localhost:3001/jobs/${id}`, {
+                    axios.patch(`https://helpapi.onrender.com/jobs/${id}`, {
                         JobTitle: headingRef.current.value,
                         location: locationRef.current.value,
                         jobDescription: descriptionRef.current.value,

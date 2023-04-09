@@ -9,7 +9,7 @@ import TestimonialCard from "./TestimonialCard";
 export default function DeleteTestimonials() {
     let [data,setData] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3001/testimonials")
+        axios.get("https://helpapi.onrender.com/testimonials")
         .then(res=>setData(res.data))
     },[])
     return (
@@ -19,7 +19,7 @@ export default function DeleteTestimonials() {
                     <TestimonialCard key={i._id} text={i.testimonial} id={i._id} func={()=>{
                         let temp = data.filter((item,ind)=>index!=ind);
                         setData(temp);
-                        axios.delete(`http://localhost:3001/testimonials/${i._id}`)
+                        axios.delete(`https://helpapi.onrender.com/testimonials/${i._id}`)
                     }}/>
                 )
             })}

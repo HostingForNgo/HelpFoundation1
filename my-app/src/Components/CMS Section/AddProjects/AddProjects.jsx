@@ -54,7 +54,7 @@ export default function AddProjects() {
             images: images,
             html: html
         }
-        axios.post("http://localhost:3001/projects", obj)
+        axios.post("https://helpapi.onrender.com/projects", obj)
         // axios.post("https://futuristic-unexpected-citrine.glitch.me/blogs",obj)
         console.log(obj);
         // headingRef.current.value = ""

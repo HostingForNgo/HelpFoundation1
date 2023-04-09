@@ -11,7 +11,7 @@ import JobCard from "./JobCard";
 export default function ModifyJobs() {
     let [data,setData] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3001/jobs")
+        axios.get("https://helpapi.onrender.com/jobs")
         .then(res=>setData(res.data))
     },[])
     return (
@@ -21,7 +21,7 @@ export default function ModifyJobs() {
                     <JobCard key={i._id} title={i.JobTitle} location={i.location} jobDescription={i.jobDescription} qualifications={i.qualifications} openPositions={i.openPositions} id={i._id} func={()=>{
                         let temp = data.filter((item,ind)=>index!=ind);
                         setData(temp);
-                        axios.delete(`http://localhost:3001/jobs/${i._id}`)
+                        axios.delete(`https://helpapi.onrender.com/jobs/${i._id}`)
                     }}/>
                 )
             })}

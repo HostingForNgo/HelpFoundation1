@@ -12,7 +12,7 @@ export default function EventDetailsPage() {
     window.scrollTo(0,0);
     let [blogData,setBlogData] = useState({})
     useEffect(() => {
-        axios.get(`http://localhost:3001/event/${data.EventID}`).then((res)=>{
+        axios.get(`https://helpapi.onrender.com/event/${data.EventID}`).then((res)=>{
             parentRef.current.innerHTML = res.data.html
             setBlogData(res.data)
         })

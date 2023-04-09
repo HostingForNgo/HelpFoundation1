@@ -25,7 +25,7 @@ export default function ActivityReport() {
             console.log(width)
         }
         window.addEventListener("resize", func)
-        axios.get("http://localhost:3001/ActivityReports").then(res => {
+        axios.get("https://helpapi.onrender.com/ActivityReports").then(res => {
             let data = res.data;
             for (let i = data.length - 1; i >= 0; i++) {
                 if (data[i].images.length != 0) {

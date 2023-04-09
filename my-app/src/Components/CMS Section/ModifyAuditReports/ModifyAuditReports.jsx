@@ -9,7 +9,7 @@ import ModifyAuditReportsCard from "./ModifyAuditReportsCard";
 export default function ModifyAuditReports() {
     let [data, setData] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:3001/AuditReports")
+        axios.get("https://helpapi.onrender.com/AuditReports")
             .then(res => setData(res.data))
     }, [])
     return (
@@ -19,7 +19,7 @@ export default function ModifyAuditReports() {
                     <ModifyAuditReportsCard key={i._id} id={i._id} heading={i.heading} images={i.images} func={() => {
                         let temp = data.filter((item, ind) => index !== ind);
                         setData(temp);
-                        axios.delete(`http://localhost:3001/AuditReports/${i._id}`)
+                        axios.delete(`https://helpapi.onrender.com/AuditReports/${i._id}`)
                     }} />
                 )
             })}

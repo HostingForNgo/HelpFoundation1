@@ -27,7 +27,7 @@ export default function AddGallery() {
                             img: imgSrc,
                         }
                         console.log(data);
-                        axios.post("https://futuristic-unexpected-citrine.glitch.me/gallery", data);
+                        axios.post("https://helpapi.onrender.com/gallery", data);
                     }} >Add To Team</Button>
                 </Box>
 

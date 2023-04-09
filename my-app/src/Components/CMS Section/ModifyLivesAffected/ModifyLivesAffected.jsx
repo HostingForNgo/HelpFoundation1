@@ -11,7 +11,7 @@ import ModifyLivesAffectedCard from "./ModifyLivesAffectedCard";
 export default function ModifyLivesAffected() {
     let [data,setData] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3001/lifeAffected")
+        axios.get("https://helpapi.onrender.com/lifeAffected")
         .then(res=>setData(res.data))
     },[])
     return (
@@ -21,7 +21,7 @@ export default function ModifyLivesAffected() {
                     <ModifyLivesAffectedCard key={i._id} title={i.title} description={i.description} count={i.count} id={i._id} func={()=>{
                         let temp = data.filter((item,ind)=>index!=ind);
                         setData(temp);
-                        axios.delete(`http://localhost:3001/lifeAffected/${i._id}`)
+                        axios.delete(`https://helpapi.onrender.com/lifeAffected/${i._id}`)
                     }}/>
                 )
             })}

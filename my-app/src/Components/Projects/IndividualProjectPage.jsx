@@ -11,7 +11,7 @@ export default function IndividualProjectPage() {
     const parentRef = useRef(null)
     window.scrollTo(0,0);
     useEffect(() => {
-        axios.get(`http://localhost:3001/Projects/${projectID}`).then(res=>{
+        axios.get(`https://helpapi.onrender.com/Projects/${projectID}`).then(res=>{
             parentRef.current.innerHTML = res.data.html
         })
     })

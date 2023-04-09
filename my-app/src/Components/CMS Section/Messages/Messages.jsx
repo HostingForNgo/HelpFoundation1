@@ -9,7 +9,7 @@ import MessageCard from "./MessageCard";
 export default function Messages() {
     let [data, setData] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:3001/messages").then((res)=>setData(res.data))
+        axios.get("https://helpapi.onrender.com/messages").then((res)=>setData(res.data))
     }, [])
     return (
         <Box width={"100%"} minHeight={"100%"} p={"20px"}>

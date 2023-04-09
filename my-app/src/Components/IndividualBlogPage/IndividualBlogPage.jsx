@@ -12,7 +12,7 @@ export default function IndividualBlogPage() {
     window.scrollTo(0,0);
     let [blogData,setBlogData] = useState({})
     useEffect(() => {
-        axios.get(`http://localhost:3001/blogs/${data.blogID}`).then((res)=>{
+        axios.get(`https://helpapi.onrender.com/blogs/${data.blogID}`).then((res)=>{
             setBlogData(res.data);
             parentRef.current.innerHTML = (res.data.mainBlog)
         })

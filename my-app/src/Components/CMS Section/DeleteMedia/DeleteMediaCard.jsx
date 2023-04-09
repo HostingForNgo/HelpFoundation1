@@ -29,7 +29,7 @@ export default function GalleryCard({ images, title, date, func, description,id 
                             description:descRef.current.value,
                             images:imgs
                         }
-                        axios.patch(`http://localhost:3001/gallery/${id}`,obj)
+                        axios.patch(`https://helpapi.onrender.com/gallery/${id}`,obj)
                     }}
                         variant="text" sx={{ display: !readOnly ? "flex" : "none", "&:hover": { background: "#7912f7" }, color: "white", width: "100%", background: "#7912f7", height: "30px" }} >
                         Save

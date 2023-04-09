@@ -9,7 +9,7 @@ import DeleteEventCard from "./DeleteEventsCard";
 export default function DeleteEvents() {
     let [data,setData] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3001/event")
+        axios.get("https://helpapi.onrender.com/event")
         .then(res=>setData(res.data))
     },[])
     return (
@@ -19,7 +19,7 @@ export default function DeleteEvents() {
                     <DeleteEventCard key={i._id} id={i._id} description={i.description} fundRaised={i.fundRaised} title={i.title} date={i.date} images={i.images} func={()=>{
                         let temp = data.filter((item,ind)=>index!==ind);
                         setData(temp);
-                        axios.delete(`http://localhost:3001/event/${i._id}`)
+                        axios.delete(`https://helpapi.onrender.com/event/${i._id}`)
                     }}/>
                 )
             })}

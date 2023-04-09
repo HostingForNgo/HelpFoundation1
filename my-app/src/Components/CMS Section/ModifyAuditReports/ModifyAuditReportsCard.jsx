@@ -23,7 +23,7 @@ export default function ModifyAuditReportsCard({ images, heading, func, id }) {
                             heading: headingRef.current.value,
                             images: imgs
                         }
-                        axios.patch(`http://localhost:3001/AuditReports/${id}`, obj)
+                        axios.patch(`https://helpapi.onrender.com/AuditReports/${id}`, obj)
                     }}
                         variant="text" sx={{ display: !readOnly ? "flex" : "none", "&:hover": { background: "#7912f7" }, color: "white", width: "100%", background: "#7912f7", height: "30px" }} >
                         Save

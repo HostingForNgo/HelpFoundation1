@@ -41,7 +41,7 @@ export default function AddGalleryMedia() {
                 <Box mb={"10px"}>
                     <Button onClick={() => {
                         let obj = { title, date, description, images };
-                        axios.post("http://localhost:3001/gallery", obj)
+                        axios.post("https://helpapi.onrender.com/gallery", obj)
                         // axios.post("https://futuristic-unexpected-citrine.glitch.me/gallery", obj)
                         console.log(obj);
                         setTitle("");

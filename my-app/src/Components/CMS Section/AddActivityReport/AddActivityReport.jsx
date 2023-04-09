@@ -63,7 +63,7 @@ export default function AddActivityReports() {
                     images:images,
                     pdf:file
                 }
-                axios.post("http://localhost:3001/ActivityReports",obj)
+                axios.post("https://helpapi.onrender.com/ActivityReports",obj)
                 console.log(obj)
             }}
             sx={{ marginTop: "20px", width: "100px", background: "lightgreen", color: "black", "&:hover": { background: "green", color: "white" } }}>

@@ -11,7 +11,7 @@ import ProjectCard from "./ProjectCard";
 export default function ModifyJobs() {
     let [data,setData] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3001/projects")
+        axios.get("https://helpapi.onrender.com/projects")
         .then(res=>setData(res.data))
     },[])
     return (
@@ -21,7 +21,7 @@ export default function ModifyJobs() {
                     <ProjectCard key={i._id} images={i.images} heading={i.heading} isVolunteer={i.volunteer} location={i.location} description={i.description} id={i._id} func={()=>{
                         let temp = data.filter((item,ind)=>index!=ind);
                         setData(temp);
-                        axios.delete(`http://localhost:3001/projects/${i._id}`)
+                        axios.delete(`https://helpapi.onrender.com/projects/${i._id}`)
                     }}/>
                 )
             })}

@@ -52,7 +52,7 @@ export default function BlogCard({ image, heading, date, mainBlog, blog, func, i
                             carouselImg: image,
                             mainBlog: mainBlog,
                         }
-                        axios.patch(`http://localhost:3001/blogs/${id}`, obj)
+                        axios.patch(`https://helpapi.onrender.com/blogs/${id}`, obj)
                     }}
                         variant="text" sx={{ display: !readOnly ? "flex" : "none", "&:hover": { background: "#7912f7" }, color: "white", width: "100%", background: "#7912f7", height: "30px" }} >
                         Save
