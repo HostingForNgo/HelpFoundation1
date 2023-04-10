@@ -9,7 +9,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import { useContext } from "react";
 import { Context } from "../../ContextApi";
 export default function AuditReport() {
-    let {auditReport} = useContext(Context)
+    let {auditReportImages, auditReport} = useContext(Context)
     let [arr, setArr] = useState([])
     let [width, setWidth] = useState(0)
     let [marginLeft, setMarginLeft] = useState(0)
@@ -27,7 +27,6 @@ export default function AuditReport() {
         }
         window.addEventListener("resize", func)
         // axios.get("https://helpapi.onrender.com/ActivityReports").then(res => setArr(res.data));
-        setArr(auditReport)
         return () => window.removeEventListener("resize", func)
     }, [])
     useEffect(() => {
@@ -57,7 +56,7 @@ export default function AuditReport() {
             {/* className={"animate"} */}
             <Box ref={ref1} display={"flex"} overflow={"hidden"} height={windowWidth <= 450 ?"auto":"300px"}>
                 <Box className={"animate"} display={"flex"} height={"300px"}>
-                    {arr[arr.length - 1]?.images.map((i, index) => (
+                    {auditReportImages.map((i, index) => (
                         <img draggable={false} width={windowWidth <= 450 ? `${windowWidth - 30}px` : "auto"} key={index} src={i} alt={"supporters"} />
                     ))}
                 </Box>
@@ -66,8 +65,8 @@ export default function AuditReport() {
                 <Typography marginBottom={"20px"} textAlign={"center"} fontWeight={"900"}>Swipe to See More -{">"}</Typography>
                 <motion.div drag="x" dragConstraints={{ right: 0, left: -width }} style={{ display: "flex", gap: "10px", flexShrink: "0", minWidth: "100%" }}>
                     {
-                        arr.map(item => (
-                            <Box display={"flex"} justifyContent={"space-around"} width={windowWidth <= 450 ? `${offsetWidth - 40}px` : "300px"} flexShrink={0} p={"30px"} className="button button-2">
+                        auditReport.map((item,i) => (
+                            <Box key={i} display={"flex"} justifyContent={"space-around"} width={windowWidth <= 450 ? `${offsetWidth - 40}px` : "300px"} flexShrink={0} p={"30px"} className="button button-2">
                                 <Typography>
                                     {item.heading}
                                 </Typography>

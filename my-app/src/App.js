@@ -55,9 +55,32 @@ import AddAuditReports from "./Components/CMS Section/AddAuditReport/AddAuditRep
 import ModifyActivityReports from "./Components/CMS Section/ModifyActivityReports/ModifyActivityReports";
 import ModifyAuditReports from "./Components/CMS Section/ModifyAuditReports/ModifyAuditReports";
 function App() {
-  let { items, setItems, images, setImages, setCareerData, isAdmin, setIsAdmin, projectsData, setProjectsData, page, setPage, maxPage, setMaxPage, setEvents } = useContext(Context)
+  let {setActivityReportImages,setAuditReportImages,setCentre, setActivityReport, setAuditReport, items, setItems, images, setImages, setCareerData, isAdmin, setIsAdmin, projectsData, setProjectsData, page, setPage, maxPage, setMaxPage, setEvents } = useContext(Context)
   useEffect(() => {
     try{
+      axios.get("https://helpapi.onrender.com/centers").then(res => {
+        setCentre(res.data)
+      })
+      axios.get("https://helpapi.onrender.com/ActivityReports").then(res => {
+        let data = res.data;
+        for (let i = data.length - 1; i >= 0; i++) {
+            if (data[i].images.length != 0) {
+                setActivityReportImages(data[i].images)
+                break
+            }
+        }
+        setActivityReport(res.data);
+    });
+    axios.get("https://helpapi.onrender.com/AuditReports").then(res => {
+      let data = res.data;
+      for (let i = data.length - 1; i >= 0; i++) {
+          if (data[i].images.length != 0) {
+              setAuditReportImages(data[i].images)
+              break
+          }
+      }
+      setAuditReport(res.data);
+  });
       axios.get("https://helpapi.onrender.com/team").then(res => {
         setItems(res.data)
       })
@@ -74,7 +97,6 @@ function App() {
       });
     }
     catch(err){
-      console.log(err)
       console.log(err)
     }
   }, [])

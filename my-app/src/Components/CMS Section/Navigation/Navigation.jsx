@@ -11,7 +11,7 @@ export default function Navigation() {
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD MEMBERS</Button>
                 </NavLink>
                 <NavLink to={"UpdateMembers"}>
-                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>UPDATE MEMBERS</Button>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>MODIFY MEMBERS</Button>
                 </NavLink>
                 <NavLink to={"AddTestimonial"}>
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD TESTIMONIAL</Button>
@@ -23,7 +23,7 @@ export default function Navigation() {
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD GALLERY MEDIA</Button>
                 </NavLink>
                 <NavLink to={"UploadGallery"}>
-                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>UPDATE GALLERY MEDIA</Button>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>MODIFY GALLERY MEDIA</Button>
                 </NavLink>
                 <NavLink to={"AddJobs"}>
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD JOBS</Button>
@@ -53,7 +53,7 @@ export default function Navigation() {
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD EVENTS</Button>
                 </NavLink>
                 <NavLink to={"DeleteEvents"}>
-                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>Delete EVENTS</Button>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>DELETE EVENTS</Button>
                 </NavLink>
                 <NavLink to={"AddLivesAffected"}>
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD LIVES AFFECTED</Button>
@@ -68,7 +68,7 @@ export default function Navigation() {
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>MODIFY CENTER</Button>
                 </NavLink>
                 <NavLink to={"AddActivityReports"}>
-                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD ActivityReports</Button>
+                    <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>ADD Activity Reports</Button>
                 </NavLink>
                 <NavLink to={"ModifyActivityReports"}>
                     <Button variant="contained" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", height: "40px", background: "#7912f7" }}>Modify Activity Reports</Button>
