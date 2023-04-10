@@ -5,19 +5,24 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import s from "../AddTeam.module.css"
 
-export default function CenterCard({ heading, func, id, location, description,img }) {
+export default function CenterCard({ heading, func, id, location, description, img }) {
     let [isReadOnly, setIsReadOnly] = useState(true);
     let [image, setImage] = useState(img);
     let titleRef = useRef(null)
     let descriptionRef = useRef(null)
     let countRef = useRef(null);
-    const handleFileChange = (e) => {
+    const handleFileChange = async (e) => {
         const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-            setImage(reader.result);
-        };
+        const cloud_name = "dh4svxvhl";
+        const upload_preset = "excjxkms";
+        let formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", upload_preset);
+
+        let link = await axios.post(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, formData);
+        link = link.data;
+        setImage(link.secure_url);
+
     };
     return (
         <Box flexShrink={0} padding={"20px"} minHeight={"50px"} gap="20px" display={"flex"} alignItems={"center"} width={"100%"} boxShadow={"rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"}>
@@ -28,11 +33,11 @@ export default function CenterCard({ heading, func, id, location, description,im
                 </Box>
                 <textarea ref={descriptionRef} defaultValue={description} className={s.TestimonialCardInput} readOnly={isReadOnly} rows="7" cols="200" style={{ width: "80%", height: "100%", resize: "none" }}>
                 </textarea>
-                <img src={image} width={"200px"}/>
+                <img src={image} width={"200px"} />
                 Change Image
-                <input onChange={handleFileChange} type={"file"}/>
+                <input onChange={handleFileChange} type={"file"} />
             </Box>
-            
+
             <Box display={"flex"} gap={"20px"} flexDirection={"column"} width={"20%"}>
                 <Button style={{ display: !isReadOnly ? "none" : "block" }} onClick={() => {
                     setIsReadOnly(false)
@@ -45,7 +50,7 @@ export default function CenterCard({ heading, func, id, location, description,im
                         heading: titleRef.current.value,
                         description: descriptionRef.current.value,
                         location: countRef.current.value,
-                        image:image
+                        image: image
                     })
                 }}
                     style={{ display: isReadOnly ? "none" : "block" }} variant="text" sx={{ "&:hover": { background: "#7912f7" }, color: "white", width: "100%", background: "#7912f7", height: "30px" }}>

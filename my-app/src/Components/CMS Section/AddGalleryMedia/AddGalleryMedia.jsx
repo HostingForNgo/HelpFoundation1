@@ -28,13 +28,17 @@ export default function AddGalleryMedia() {
                 <Box mb={"10px"}>
                     <Typography>images</Typography>
                     <Box display={"flex"} gap={"10px"}>
-                        <input type={"file"} onChange={(e) => {
+                        <input type={"file"} onChange={async (e) => {
                             const file = e.target.files[0];
-                            const reader = new FileReader();
-                            reader.readAsDataURL(file);
-                            reader.onloadend = () => {
-                                setImages([...images, reader.result]);
-                            };
+                            const cloud_name = "dh4svxvhl";
+                            const upload_preset = "excjxkms";
+                            let formData = new FormData();
+                            formData.append("file", file);
+                            formData.append("upload_preset", upload_preset);
+                            let link = await axios.post(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, formData);
+                            link = link.data;
+                            setImages([...images, link.secure_url]);
+
                         }} />
                     </Box>
                 </Box>
@@ -55,11 +59,11 @@ export default function AddGalleryMedia() {
                 <Box>
                     <Typography mb={"5px"} fontWeight={"700"} fontSize={"28px"}>
                         {title}
-                        
+
                     </Typography>
                     <Typography mb={"5px"} fontSize={"20px"}>
                         {date}
-                        
+
                     </Typography>
                 </Box>
                 <Typography fontSize={"14px"} minHeight={"100px"}>
@@ -67,14 +71,14 @@ export default function AddGalleryMedia() {
                 </Typography>
                 <Box display={"flex"} flexWrap={"wrap"} gap={"20px"}>
                     {
-                        images.map((i,index) => (
+                        images.map((i, index) => (
                             <Box position={"relative"} width={"30%"} minHeight={"100px"}>
-                                <Box onClick={()=>{
-                                    setImages(images.filter((i,inde)=>index!=inde))
+                                <Box onClick={() => {
+                                    setImages(images.filter((i, inde) => index != inde))
                                 }} color={"white"} zIndex={"1"} display={"flex"} justifyContent={"center"} alignItems={"center"} width={"100%"} height={"100%"} position="absolute">
                                     Delete
                                 </Box>
-                                <img style={{ width: "100%", height:"100%",flexShrink: "0",position:"absolute" }} src={i} />
+                                <img style={{ width: "100%", height: "100%", flexShrink: "0", position: "absolute" }} src={i} />
                             </Box>
                         ))
                     }
