@@ -62,13 +62,18 @@ export default function AddProjects() {
         // blogRef.current.value = ""
         // setImages("")
     }
-    const handleFileChange = (e) => {
+    const handleFileChange = async (e) => {
         const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-            setImages(reader.result);
-        };
+        const cloud_name = "dh4svxvhl";
+        const upload_preset = "excjxkms";
+        let formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", upload_preset);
+
+        let link = await axios.post(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, formData);
+        link = link.data;
+        setImages(link.secure_url);
+
     };
     const handleFileChange1 = (e) => {
         const file = e.target.files[0];
@@ -95,7 +100,7 @@ export default function AddProjects() {
                         <textarea ref={blogRef} style={{ resize: "none", width: "100%", padding: "10px", minHeight: "300px" }} />
                     </Box>
                     <input type={"file"} onChange={handleFileChange} />
-                    <FormControlLabel control={<Checkbox onChange={(e) => setVolunteer(e.target.checked)}  />} label="Volunteer" />
+                    <FormControlLabel control={<Checkbox onChange={(e) => setVolunteer(e.target.checked)} />} label="Volunteer" />
                 </Box>
                 <Box width={"50%"} display={"flex"} flexWrap={"wrap"} p={"20px"} gap={"10px"}>
                     <img width={"250px"} height={"200px"} src={images} alt="w" />

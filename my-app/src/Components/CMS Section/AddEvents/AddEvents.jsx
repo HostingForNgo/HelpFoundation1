@@ -32,13 +32,16 @@ export default function AddGalleryMedia() {
         console.log(obj)
         // axios.post("https://futuristic-unexpected-citrine.glitch.me/blogs",obj)
     }
-    const handleFileChange = (e) => {
+    const handleFileChange = async (e) => {
         const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-            setImage(reader.result);
-        };
+        const cloud_name = "dh4svxvhl";
+        const upload_preset = "excjxkms";
+        let formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", upload_preset);
+        let link = await axios.post(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, formData);
+        link = link.data;
+        setImage(link.secure_url);
     };
     const handleFileChange1 = (e) => {
         const file = e.target.files[0];

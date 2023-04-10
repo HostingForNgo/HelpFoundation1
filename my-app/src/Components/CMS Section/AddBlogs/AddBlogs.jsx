@@ -31,13 +31,16 @@ export default function AddBlogs() {
         // axios.post("https://futuristic-unexpected-citrine.glitch.me/blogs",obj)
         console.log(obj);
     }
-    const handleFileChange = (e) => {
+    const handleFileChange = async (e) => {
         const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-            setImage(reader.result);
-        };
+        const cloud_name = "dh4svxvhl";
+        const upload_preset = "excjxkms";
+        let formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", upload_preset);
+        let link = await axios.post(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, formData);
+        link = link.data;
+        setImage(link.secure_url);
     };
     return (
         <Box width={"100%"} minHeight={"100%"} p={"20px"} display={"flex"} flexDirection={"column"}>
@@ -65,7 +68,7 @@ export default function AddBlogs() {
                     </Box>
                 </Box>
             </Box>
-            <Button onClick={handleSubmit} sx={{  width: "100px", background: "lightgreen", color: "black", "&:hover": { background: "green", color: "white" } }}>
+            <Button onClick={handleSubmit} sx={{ width: "100px", background: "lightgreen", color: "black", "&:hover": { background: "green", color: "white" } }}>
                 Upload
             </Button>
         </Box>
