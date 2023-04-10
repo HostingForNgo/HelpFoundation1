@@ -60,6 +60,9 @@ export default function AddTeam() {
                 <Typography fontSize={"20px"}>{name || "Name"}</Typography>
                 <Typography fontSize={"20px"}>{role || "Role"}</Typography>
                 <Typography fontSize={"20px"}>{summary || "Summary"}</Typography>
+                <Typography fontSize={"20px"}>{linkedin || "LinkedIn"}</Typography>
+                <Typography fontSize={"20px"}>{instagram || "Instagram"}</Typography>
+                <Typography fontSize={"20px"}>{twitter || "Twitter"}</Typography>
             </Box>
         </Box>
     )

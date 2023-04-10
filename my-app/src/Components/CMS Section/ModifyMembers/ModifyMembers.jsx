@@ -16,12 +16,11 @@ export default function DeleteTeam(){
             {data.length==0? <Typography fontSize={"40px"}>Team Data is Empty</Typography>  :data.map((i,index)=>{
                 return (
                     <MediaCard key={i._id} id={i._id} func={()=>{
-                        console.log();
                         let temp = data.filter((it,ind)=>ind!=index);
                         setData(temp);
                         axios.delete(`https://helpapi.onrender.com/team/${i._id}`)
                     }}
-                    name={i.name} role={i.secondText} desc={i.description} img={i.img}/>
+                    name={i.name} role={i.secondText} linkedIn={i.linkedin} twitter={i.twitter} insta={i.instagram} desc={i.description} img={i.img}/>
                 )
             })}
         </Box>
