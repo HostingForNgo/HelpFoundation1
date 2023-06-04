@@ -8,38 +8,38 @@ import axios from "axios";
 import MobileViewTestimonialsCircle from "./mobileViewTestimonialCircles";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
-let testimonialArray = [
-  {
-    testimonial: "I can't express enough gratitude for the amazing work this NGO does. They have truly made a positive impact in my life and the lives of many others.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
-    name: "Java",
-    company:"Microsoft"
-  },
-  {
-    testimonial: "I have never seen such dedication and compassion from an NGO. Their tireless efforts to make a difference in the community are truly inspiring.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
-    name: "Corruptor",
-    company:"Google"
-  },
-  {
-    testimonial: "This NGO has exceeded all my expectations. Their commitment to improving the lives of those in need is unmatched.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
-    name: "Deadly",
-    company:"Amazon"
-  },
-  {
-    testimonial: "I am constantly impressed by the passion and expertise of the team at this NGO. They truly go above and beyond to make a difference.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
-    name: "Devil",
-    company:"Apple"
-  },
-  {
-    testimonial: "I am so grateful for the support and resources provided by this NGO. Without them, I don't know where I would be today. Thank you for everything you do.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
-    name: "Sumit Saurabh",
-    company:"Meta"
-  }
-];
+// let testimonialArray = [
+//   {
+//     testimonial: "I can't express enough gratitude for the amazing work this NGO does. They have truly made a positive impact in my life and the lives of many others.",
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
+//     name: "Java",
+//     company:"Microsoft"
+//   },
+//   {
+//     testimonial: "I have never seen such dedication and compassion from an NGO. Their tireless efforts to make a difference in the community are truly inspiring.",
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
+//     name: "Corruptor",
+//     company:"Google"
+//   },
+//   {
+//     testimonial: "This NGO has exceeded all my expectations. Their commitment to improving the lives of those in need is unmatched.",
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
+//     name: "Deadly",
+//     company:"Amazon"
+//   },
+//   {
+//     testimonial: "I am constantly impressed by the passion and expertise of the team at this NGO. They truly go above and beyond to make a difference.",
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
+//     name: "Devil",
+//     company:"Apple"
+//   },
+//   {
+//     testimonial: "I am so grateful for the support and resources provided by this NGO. Without them, I don't know where I would be today. Thank you for everything you do.",
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
+//     name: "Sumit Saurabh",
+//     company:"Meta"
+//   }
+// ];
 export default function Testimonals() {
   const [wid1, setWid1] = useState(29.5);
   const [wid2, setWid2] = useState(10);
@@ -94,7 +94,11 @@ export default function Testimonals() {
       setDownLeft(arr[0]);
     });
 
+<<<<<<< HEAD
+    // let temp = testimonialData
+=======
     // let temp = testimonialArray
+>>>>>>> 8b6dc696ebb75f4503fd656392260eec9e432f00
     //    if (temp.length <= 10) {
     //     setCoverTextMain(temp[0].testimonial);
     //     setTestimonialData(temp);
@@ -109,6 +113,48 @@ export default function Testimonals() {
     //   setTestimonialData(random);
     //   setDownLeft(arr[0]);
   }, []);
+<<<<<<< HEAD
+  return  (
+    testimonialData.length==0?<></>:<Box
+    bgcolor={"white"}
+    sx={{
+      width: "100%",
+      height: "700px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+    }}
+    borderBottom={"2px solid rgb(86, 79, 164)"}
+  >
+    <Box>
+      <Typography
+        sx={{
+          fontFamily: "Roboto, sans-serif",
+          fontSize: "40px",
+          color: "#564fa4",
+        }}
+      >
+        TESTIMONIALS
+      </Typography>
+      <Box
+        width={"50%"}
+        bgcolor={"#564fa4"}
+        minHeight={"3px"}
+        m={"auto"}
+      ></Box>
+    </Box>
+    <Box sx={{ width: "100%", height: "70%" }}>
+      <Box
+        sx={{
+          width: "100%",
+          height: "70%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+=======
   return ( testimonialData.length>=1 &&
     <Box
       bgcolor={"white"}
@@ -140,93 +186,230 @@ export default function Testimonals() {
         ></Box>
       </Box>
       <Box sx={{ width: "100%", height: "70%" }}>
+>>>>>>> 8b6dc696ebb75f4503fd656392260eec9e432f00
         <Box
+          boxShadow={
+            "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
+          }
           sx={{
-            width: "100%",
+            width: "80%",
             height: "70%",
+            background: "#efefef",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "space-evenly",
             alignItems: "center",
+            position: "relative",
           }}
         >
           <Box
-            boxShadow={
-              "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
-            }
             sx={{
-              width: "80%",
+              width: "10%",
               height: "70%",
-              background: "#efefef",
-              display: "flex",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-              position: "relative",
+              borderRight: "10px solid #564fa4",
             }}
           >
-            <Box
-              sx={{
-                width: "10%",
-                height: "70%",
-                borderRight: "10px solid #564fa4",
+            <img
+              style={{ width: "70%", margin: "10%" }}
+              src={Comma}
+              alt="comma"
+            />
+          </Box>
+          <Box
+            className="scrollbar-hidden"
+            sx={{ width: "80%", height: "70%", overflowY: "scroll" }}
+          >
+            <Typography
+              fontSize={["11px", "17px", "19px", "24px"]}
+              sx={{ fontfamily: "Roboto, sans-serif", fontWeight: "bold" }}
+            >
+              {coverTextMain}
+            </Typography>
+          </Box>
+          <Box
+            left={[
+              "calc( 50% - 50px )",
+              "calc( 50% - 50px )",
+              `${downLeft}%`,
+              `${downLeft}%`,
+            ]}
+            sx={{
+              transition: ".5s",
+              width: "0px",
+              height: "0px",
+              borderLeft: "solid 50px transparent",
+              borderTop: "solid 50px #564fa4",
+              borderRight: "solid 50px transparent",
+              top: "100%",
+              position: "absolute",
+            }}
+          ></Box>
+        </Box>
+      </Box>
+
+      <Box
+        sx={{
+          width: "100%",
+          minHeight: "30%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {/* For PC */}
+        <Box
+          display={["none", "none", "flex", "flex"]}
+          sx={{
+            width: "80%",
+            height: "100%",
+            position: "relative",
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            mr={"20px"}
+            display={["none", "none", "flex", "flex"]}
+            style={{ display: widArr[0] == 29.5 ? "none" : "flex" }}
+          >
+            <Button
+              onClick={() => {
+                for (let i = 0; i < widArr.length; i++) {
+                  if (widArr[i] == 29.5) {
+                    for (let j = 0; j < setWidArr.length; j++) {
+                      if (j != i - 1) setWidArr[j](10);
+                    }
+                    setCoverTextMain(testimonialData[i - 1].testimonial);
+                    setDownLeft(arr[i - 1]);
+                    setWidArr[i - 1](29.5);
+                    break;
+                  }
+                }
               }}
-            >
-              <img
-                style={{ width: "70%", margin: "10%" }}
-                src={Comma}
-                alt="comma"
-              />
-            </Box>
-            <Box
-              className="scrollbar-hidden"
-              sx={{ width: "80%", height: "70%", overflowY: "scroll" }}
-            >
-              <Typography
-                fontSize={["11px", "17px", "19px", "24px"]}
-                sx={{ fontfamily: "Roboto, sans-serif", fontWeight: "bold" }}
-              >
-                {coverTextMain}
-              </Typography>
-            </Box>
-            <Box
-              left={[
-                "calc( 50% - 50px )",
-                "calc( 50% - 50px )",
-                `${downLeft}%`,
-                `${downLeft}%`,
-              ]}
-              sx={{
-                transition: ".5s",
-                width: "0px",
-                height: "0px",
-                borderLeft: "solid 50px transparent",
-                borderTop: "solid 50px #564fa4",
-                borderRight: "solid 50px transparent",
-                top: "100%",
+              variant="text"
+              style={{
+                height: "100%",
+                top: "0",
+                color: "black",
+                width: "5%",
+                justifyContent: "center",
+                alignItems: "center",
                 position: "absolute",
+                left: "-5%",
               }}
-            ></Box>
+            >
+              <ChevronLeftIcon
+                sx={{ width: "40px", height: "40px", color: "black" }}
+              />
+            </Button>
+          </Box>
+
+          <Box
+            display={["none", "none", "flex", "flex"]}
+            width={["60%", "70%", "92%", "90%"]}
+            className="scrollbar-hidden"
+            sx={{
+              overflowX: "scroll",
+              overflowY: "hidden",
+              height: "100%",
+              gap: ".5vw",
+              alignItems: "center",
+              flexShrink: "0",
+            }}
+          >
+            {testimonialData.map((i, index) => (
+              <TestimonialCircle
+                setWid={setWidArr[index]}
+                wid={widArr[index]}
+                key={index}
+                img={i.img}
+                name={i.name}
+                company={i.company}
+              />
+            ))}
+          </Box>
+          <Box
+            display={["none", "none", "flex", "flex"]}
+            style={{
+              display: widArr[widArr.length - 1] == 29.5 ? "none" : "flex",
+            }}
+          >
+            <Button
+              onClick={() => {
+                for (let i = 0; i < widArr.length; i++) {
+                  if (widArr[i] == 29.5) {
+                    if (i + 1 == 5) {
+                      setWidArr[4](10);
+                      setCoverTextMain(testimonialData[0].testimonial);
+                      setDownLeft(arr[0]);
+                      setWidArr[0](29.5);
+                      return;
+                    }
+                    for (let j = 0; j < setWidArr.length; j++) {
+                      if (j != i + 1) setWidArr[j](10);
+                    }
+                    setCoverTextMain(testimonialData[i + 1].testimonial);
+                    setDownLeft(arr[i + 1]);
+                    setWidArr[i + 1](29.5);
+                    break;
+                  }
+                }
+              }}
+              variant="text"
+              style={{
+                height: "100%",
+                top: "0",
+                color: "black",
+                width: "5%",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "absolute",
+                right: "-5%",
+              }}
+            >
+              <KeyboardArrowRightIcon
+                sx={{ width: "40px", height: "40px", color: "black" }}
+              />
+            </Button>
           </Box>
         </Box>
 
+        {/* For Mobile Devices */}
         <Box
-          sx={{
-            width: "100%",
-            minHeight: "30%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
+          bgcolor={"#efefef"}
+          position={"relative"}
+          width={"80%"}
+          height={"100%"}
+          display={["flex", "flex", "none", "none"]}
+          justifyContent={"center"}
         >
-          {/* For PC */}
           <Box
-            display={["none", "none", "flex", "flex"]}
-            sx={{
-              width: "80%",
-              height: "100%",
-              position: "relative",
-              justifyContent: "center",
-            }}
+            display={marginRightCarousel == 0 ? "none" : "flex"}
+            width={"15%"}
+            height={"100%"}
+            position={"absolute"}
+            left={"-5%"}
           >
+<<<<<<< HEAD
+            <Button
+              onClick={() => {
+                let temp = marginRightCarousel + 100;
+                let index = Math.abs(temp / 100);
+                if (temp == -500) {
+                  setMarginRightCarousel(0);
+                  setCoverTextMain(testimonialData[0].testimonial);
+                  return;
+                }
+                setCoverTextMain(testimonialData[index].testimonial);
+                setMarginRightCarousel(temp);
+              }}
+              style={{
+                height: "100%",
+                color: "black",
+                width: "100%",
+                justifyContent: "center",
+                alignItems: "center",
+                border: "0",
+                background: "rgb(223 223 223)",
+=======
             <Box
               mr={"20px"}
               display={["none", "none", "flex", "flex"]}
@@ -293,151 +476,74 @@ export default function Testimonals() {
               display={["none", "none", "flex", "flex"]}
               style={{
                 display: widArr[testimonialData.length - 1] == 29.5 ? "none" : "flex",
+>>>>>>> 8b6dc696ebb75f4503fd656392260eec9e432f00
               }}
             >
-              <Button
-                onClick={() => {
-                  for (let i = 0; i < widArr.length; i++) {
-                    if (widArr[i] == 29.5) {
-                      if (i + 1 == 5) {
-                        setWidArr[4](10);
-                        setCoverTextMain(testimonialData[0].testimonial);
-                        setDownLeft(arr[0]);
-                        setWidArr[0](29.5);
-                        return;
-                      }
-                      for (let j = 0; j < setWidArr.length; j++) {
-                        if (j != i + 1) setWidArr[j](10);
-                      }
-                      setCoverTextMain(testimonialData[i + 1].testimonial);
-                      setDownLeft(arr[i + 1]);
-                      setWidArr[i + 1](29.5);
-                      break;
-                    }
-                  }
-                }}
-                variant="text"
-                style={{
-                  height: "100%",
-                  top: "0",
-                  color: "black",
-                  width: "5%",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  position: "absolute",
-                  right: "-5%",
-                }}
-              >
-                <KeyboardArrowRightIcon
-                  sx={{ width: "40px", height: "40px", color: "black" }}
-                />
-              </Button>
+              <ChevronLeftIcon sx={{ width: "100%", color: "black" }} />
+            </Button>
+          </Box>
+          <Box width={"80%"} height={"100%"} overflow={"hidden"}>
+            <Box
+              sx={{ transition: ".5s" }}
+              marginLeft={`${marginRightCarousel}%`}
+              display={"flex"}
+              height={"100%"}
+              width={`${100 * testimonialData.length}%`}
+            >
+              <MobileViewTestimonialsCircle
+                width={`${100 / testimonialData.length}`}
+              />
+              <MobileViewTestimonialsCircle
+                width={`${100 / testimonialData.length}`}
+              />
+              <MobileViewTestimonialsCircle
+                width={`${100 / testimonialData.length}`}
+              />
+              <MobileViewTestimonialsCircle
+                width={`${100 / testimonialData.length}`}
+              />
+              <MobileViewTestimonialsCircle
+                width={`${100 / testimonialData.length}`}
+              />
             </Box>
           </Box>
-
-          {/* For Mobile Devices */}
           <Box
-            bgcolor={"#efefef"}
-            position={"relative"}
-            width={"80%"}
+            display={marginRightCarousel == -400 ? "none" : "flex"}
+            width={"15%"}
             height={"100%"}
-            display={["flex", "flex", "none", "none"]}
-            justifyContent={"center"}
+            position={"absolute"}
+            right={"-5%"}
           >
-            <Box
-              display={marginRightCarousel == 0 ? "none" : "flex"}
-              width={"15%"}
-              height={"100%"}
-              position={"absolute"}
-              left={"-5%"}
+            <Button
+              onClick={() => {
+                let temp = marginRightCarousel - 100;
+                let index = Math.abs(temp / 100);
+                if (temp == -500) {
+                  setMarginRightCarousel(0);
+                  setCoverTextMain(testimonialData[0].testimonial);
+                  return;
+                }
+                setCoverTextMain(testimonialData[index].testimonial);
+                setMarginRightCarousel(temp);
+              }}
+              style={{
+                height: "100%",
+                color: "black",
+                width: "100%",
+                justifyContent: "center",
+                alignItems: "center",
+                border: "0",
+                background: "rgb(223 223 223)",
+              }}
             >
-              <Button
-                onClick={() => {
-                  let temp = marginRightCarousel + 100;
-                  let index = Math.abs(temp / 100);
-                  if (temp == -500) {
-                    setMarginRightCarousel(0);
-                    setCoverTextMain(testimonialData[0].testimonial);
-                    return;
-                  }
-                  setCoverTextMain(testimonialData[index].testimonial);
-                  setMarginRightCarousel(temp);
-                }}
-                style={{
-                  height: "100%",
-                  color: "black",
-                  width: "100%",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  border: "0",
-                  background: "rgb(223 223 223)",
-                }}
-              >
-                <ChevronLeftIcon sx={{ width: "100%", color: "black" }} />
-              </Button>
-            </Box>
-            <Box width={"80%"} height={"100%"} overflow={"hidden"}>
-              <Box
-                sx={{ transition: ".5s" }}
-                marginLeft={`${marginRightCarousel}%`}
-                display={"flex"}
-                height={"100%"}
-                width={`${100 * testimonialData.length}%`}
-              >
-                <MobileViewTestimonialsCircle
-                  width={`${100 / testimonialData.length}`}
-                />
-                <MobileViewTestimonialsCircle
-                  width={`${100 / testimonialData.length}`}
-                />
-                <MobileViewTestimonialsCircle
-                  width={`${100 / testimonialData.length}`}
-                />
-                <MobileViewTestimonialsCircle
-                  width={`${100 / testimonialData.length}`}
-                />
-                <MobileViewTestimonialsCircle
-                  width={`${100 / testimonialData.length}`}
-                />
-              </Box>
-            </Box>
-            <Box
-              display={marginRightCarousel == -400 ? "none" : "flex"}
-              width={"15%"}
-              height={"100%"}
-              position={"absolute"}
-              right={"-5%"}
-            >
-              <Button
-                onClick={() => {
-                  let temp = marginRightCarousel - 100;
-                  let index = Math.abs(temp / 100);
-                  if (temp == -500) {
-                    setMarginRightCarousel(0);
-                    setCoverTextMain(testimonialData[0].testimonial);
-                    return;
-                  }
-                  setCoverTextMain(testimonialData[index].testimonial);
-                  setMarginRightCarousel(temp);
-                }}
-                style={{
-                  height: "100%",
-                  color: "black",
-                  width: "100%",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  border: "0",
-                  background: "rgb(223 223 223)",
-                }}
-              >
-                <KeyboardArrowRightIcon
-                  sx={{ width: "100%", color: "black" }}
-                />
-              </Button>
-            </Box>
+              <KeyboardArrowRightIcon
+                sx={{ width: "100%", color: "black" }}
+              />
+            </Button>
           </Box>
         </Box>
       </Box>
     </Box>
+  </Box>
   );
 }

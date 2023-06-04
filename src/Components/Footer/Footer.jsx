@@ -39,9 +39,9 @@ export default function Footer() {
                         <Box minHeight={"1000px"} p={"10px"} paddingTop={"70px"} flexDirection={"column"} display={"flex"} alignItems={"center"} gap={"30px"}>
                             <Box display={"flex"} flexDirection={"column"} alignItems={"center"} gap={"20px"}>
                                 <Typography color={"white"} fontWeight={"700"} fontSize={"40px"}>CONTACT US</Typography>
-                                <Typography textAlign={"center"} color={"white"} fontWeight={"700"} fontSize={"15px"}>Ranipokhar Rd, Bishunpur Udho Urf Dumri, Bihar - 844113</Typography>
-                                <Typography color={"white"} fontSize={"14px"}>info@helpprojectfoundation.org</Typography>
-                                <Typography color={"white"} fontSize={"14px"}>+91-7321003465, +91-9801350949</Typography>
+                                <Typography textAlign={"center"} color={"white"} fontWeight={"700"} fontSize={"15px"}>AT- PAREEKHIYA BHAWAN, KUTUBPUR SAIDPUR, (KHALSA ROAD), BIDUPUR, DISTRICT- VAISHALI-844503 (BIHAR)</Typography>
+                                <Typography color={"white"} fontSize={"14px"}>vsssindia11@gmail.com</Typography>
+                                <Typography color={"white"} fontSize={"14px"}>+91 8873321252</Typography>
                             </Box>
                             <Box display={"flex"} flexDirection={"column"} alignItems={"center"} width={["100%", "100%", "100%", "940px"]} gap={"20px"}>
                                 <Box width={"100%"} display={"flex"} gap={'20px'} flexDirection={["column", "column", "column", "row"]} justifyContent={"space-between"}>
@@ -87,16 +87,16 @@ export default function Footer() {
                             <InstagramIcon />
                         </Box>
                         <Box color={"gray"} justifyContent={"space-evenly"} display={"flex"} alignItems={"center"} gap={"10px"} flexDirection={"column"}>
-                            <Typography fontSize={"13px"}>info@helpprojectfoundation.org</Typography>
-                            <Typography fontSize={"13px"}>+91-7321003465, +91-9801350949</Typography>
+                            <Typography fontSize={"13px"}>vsssindia11@gmail.com</Typography>
+                            <Typography fontSize={"13px"}>+91-8873321252</Typography>
                         </Box>
                         <Box textAlign={"center"}>
-                            <Typography fontWeight={"bold"} color={"gray"}>Ranipokhar Rd, Bishunpur Udho Urf Dumri, Bihar - 844113</Typography>
+                            <Typography fontWeight={"bold"} color={"gray"}>AT- PAREEKHIYA BHAWAN, KUTUBPUR SAIDPUR, (KHALSA ROAD), BIDUPUR, DISTRICT- VAISHALI-844503 (BIHAR)</Typography>
                         </Box>
                     </Box>
                     <Box marginTop={"30px"} textAlign={"center"}>
                         <Typography color={"gray"} fontSize={"13px"}>
-                            Copyright ©2021 by HELP (Health and Education for Life Project) Foundation
+                            Copyright ©2021 by VSSS
                         </Typography>
                     </Box>
                 </Box>

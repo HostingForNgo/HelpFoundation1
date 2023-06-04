@@ -18,9 +18,12 @@ export default function CenterDetailsPage() {
         })
     }, [])
     return (
-        <Box width={"100%"} minHeight={"100vh"} padding={"20px"} display={"flex"} flexDirection={"column"} gap={"30px"} alignItems={"center"}>
-            <img src={blogData.image} alt="img" />
-            <Typography width={["100%","80%","70%","50%"]}>{blogData.description}</Typography>
+        <Box width={"100%"} mt={"5%"} minHeight={"100vh"} padding={"20px"} display={"flex"} flexDirection={"column"} gap={"30px"} alignItems={"center"}>
+            <Box width={"70%"} display={"flex"} flexDirection={"column"} gap={"10px"} alignItems={"center"}>
+            <Typography textAlign={"center"} variant="h4" fontWeight={700} width={["100%"]}>{blogData.heading}</Typography>
+            <img src={blogData.image} style={{margin:"auto"}} alt="img" />
+            <Typography textAlign={"center"} width={["100%"]}>{blogData.description}</Typography>
+            </Box>
         </Box>
     )
 }
