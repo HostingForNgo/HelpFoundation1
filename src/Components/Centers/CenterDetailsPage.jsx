@@ -19,6 +19,7 @@ export default function CenterDetailsPage() {
     }, [])
     return (
         <Box width={"100%"} minHeight={"100vh"} padding={"20px"} display={"flex"} flexDirection={"column"} gap={"30px"} alignItems={"center"}>
+            <Typography width={["100%","80%","70%","50%"]}>{blogData.description}</Typography>
             <img src={blogData.image} alt="img" />
             <Typography width={["100%","80%","70%","50%"]}>{blogData.description}</Typography>
         </Box>

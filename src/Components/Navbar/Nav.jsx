@@ -2,7 +2,7 @@ import { Button, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { NavLink } from 'react-router-dom';
 import Hamburger from './Hamburger';
-import Logo from "./Logo2.png";
+import Logo from "./newLogo.png";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 export default function Navbar() {
 
@@ -13,7 +13,7 @@ export default function Navbar() {
                     <Box sx={{ height: "100%", display: "flex", alignItems: "center" }} display={"flex"} width={"35%"} justifyContent={"center"}>
                         <NavLink to={"/"} style={{ display: "flex", textDecoration: "none", color: "black", alignItems: "center" }}>
                             <img style={{ borderRadius: "50%", width: "50px" }} src={Logo} alt="logo" />
-                            <Typography sx={{ fontFamily: "Roboto, sans-serif", fontSize: "18px", width: "135px", fontWeight: "900", ml: "10px" }}>HELP FOUNDATION</Typography>
+                            <Typography sx={{ fontFamily: "Roboto, sans-serif", fontSize: "18px", width: "135px", fontWeight: "900", ml: "10px" }}>Vinayak Samajik Sewa Sansthan</Typography>
                         </NavLink>
                     </Box>
 
