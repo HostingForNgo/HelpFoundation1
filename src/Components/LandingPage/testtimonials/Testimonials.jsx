@@ -76,26 +76,10 @@ export default function Testimonals() {
   });
 
   useEffect(() => {
-    // axios.get("https://helpapi.onrender.com/testimonials").then((res) => {
-    //   let temp = res.data;
+    axios.get("https://helpapi.onrender.com/testimonials").then((res) => {
+      let temp = res.data;
       
-    //   if (res.data.length <= 10) {
-    //     setCoverTextMain(temp[0].testimonial);
-    //     setTestimonialData(temp);
-    //     setDownLeft(arr[0]);
-    //     return;
-    //   }
-    //   let random = [];
-    //   for (let i = 0; i < 5 && i < temp.length; i++) {
-    //     random[i] = temp[Math.floor(Math.random() * temp.length)];
-    //   }
-    //   setCoverTextMain(random[0].testimonial);
-    //   setTestimonialData(random);
-    //   setDownLeft(arr[0]);
-    // });
-
-    let temp = testimonialArray
-       if (temp.length <= 10) {
+      if (res.data.length <= 10) {
         setCoverTextMain(temp[0].testimonial);
         setTestimonialData(temp);
         setDownLeft(arr[0]);
@@ -108,8 +92,24 @@ export default function Testimonals() {
       setCoverTextMain(random[0].testimonial);
       setTestimonialData(random);
       setDownLeft(arr[0]);
+    });
+
+    // let temp = testimonialArray
+    //    if (temp.length <= 10) {
+    //     setCoverTextMain(temp[0].testimonial);
+    //     setTestimonialData(temp);
+    //     setDownLeft(arr[0]);
+    //     return;
+    //   }
+    //   let random = [];
+    //   for (let i = 0; i < 5 && i < temp.length; i++) {
+    //     random[i] = temp[Math.floor(Math.random() * temp.length)];
+    //   }
+    //   setCoverTextMain(random[0].testimonial);
+    //   setTestimonialData(random);
+    //   setDownLeft(arr[0]);
   }, []);
-  return (
+  return ( testimonialData.length>=1 &&
     <Box
       bgcolor={"white"}
       sx={{
@@ -233,6 +233,7 @@ export default function Testimonals() {
               style={{ display: widArr[0] == 29.5 ? "none" : "flex" }}
             >
               <Button
+                // disabled={testimonialData.length<=1}
                 onClick={() => {
                   for (let i = 0; i < widArr.length; i++) {
                     if (widArr[i] == 29.5) {
@@ -282,7 +283,7 @@ export default function Testimonals() {
                   setWid={setWidArr[index]}
                   wid={widArr[index]}
                   key={index}
-                  img={i.img}
+                  img={i.image}
                   name={i.name}
                   company={i.company}
                 />
@@ -291,7 +292,7 @@ export default function Testimonals() {
             <Box
               display={["none", "none", "flex", "flex"]}
               style={{
-                display: widArr[widArr.length - 1] == 29.5 ? "none" : "flex",
+                display: widArr[testimonialData.length - 1] == 29.5 ? "none" : "flex",
               }}
             >
               <Button

@@ -34,7 +34,7 @@ export default function Navbar() {
                             <Box width={"100%"} height={"100%"}>
                                 <Box className={"underLine"} color={"black"} style={{ textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer", gap: "10px" }}>About <KeyboardArrowDownIcon /> </Box>
                             </Box>
-                            <Box boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} className={"open"} width={"102%"} bgcolor={"white"} position={"absolute"} top={"70px"} display={"none"} flexDirection={"column"} zIndex={"2"}>
+                            <Box boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} className={"open"} width={"102%"} bgcolor={"white"} position={"absolute"} top={"68.5px"} display={"none"} flexDirection={"column"} zIndex={"2"}>
                                 <NavLink to={"/Team"} className={"hoverEffect"} style={({ isActive }) => {
                                     if (!isActive) {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700" }
@@ -107,7 +107,7 @@ export default function Navbar() {
                             <Box width={"100%"} height={"100%"}>
                                 <Box className={"underLine"} color={"black"} style={{ textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer", gap: "10px" }}>Initiatives <KeyboardArrowDownIcon /></Box>
                             </Box>
-                            <Box boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} className={"open"} width={"102%"} bgcolor={"white"} position={"absolute"} top={"70px"} display={"none"} flexDirection={"column"} zIndex={"2"} >
+                            <Box boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} className={"open"} width={"102%"} bgcolor={"white"} position={"absolute"} top={"68.5px"} display={"none"} flexDirection={"column"} zIndex={"2"} >
                                 <NavLink to={"/Impact"} className={"hoverEffect"} style={({ isActive }) => {
                                     if (!isActive) {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700" }
@@ -138,7 +138,7 @@ export default function Navbar() {
                             <Box width={"100%"} height={"100%"}>
                                 <Box className={"underLine"} color={"black"} style={{ textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "20px", fontWeight: "700", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer", gap: "10px" }}>Media  <KeyboardArrowDownIcon /></Box>
                             </Box>
-                            <Box boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} className={"open"} width={"110%"} bgcolor={"white"} position={"absolute"} top={"70px"} display={"none"} flexDirection={"column"} zIndex={"2"}>
+                            <Box boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} className={"open"} width={"110%"} bgcolor={"white"} position={"absolute"} top={"68.5px"} display={"none"} flexDirection={"column"} zIndex={"2"}>
 
                                 <NavLink to={"/Gallery"} className={"hoverEffect"} style={({ isActive }) => {
                                     if (!isActive) {
