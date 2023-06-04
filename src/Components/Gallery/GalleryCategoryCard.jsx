@@ -52,8 +52,9 @@ export default function GalleryCategoryCard({ heading, description, img, index }
             transition={{ duration: 0.75 }}
             style={{background:"#efefef"}}
         >
+              <NavLink style={{ textDecoration: "none", display: "flex", color: "black" }} to={`${index}`}>
             <Box display={["none", "flex", "flex", "flex"]} width={"90vw"} height={"26vw"} boxShadow={"rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px"} >
-                <NavLink style={{ textDecoration: "none", display: "flex", color: "black" }} to={`${index}`}>
+              
                     <Box width={"40%"} height={"100%"} p={"20px"}>
                         <img style={{ height: "100%", width: "100%" }} src={img} alt="bvds" />
                     </Box>
@@ -67,8 +68,8 @@ export default function GalleryCategoryCard({ heading, description, img, index }
                             </Typography>
                         </Box>
                     </Box>
-                </NavLink>
             </Box>
+                </NavLink>
         </motion.div>
     )
 }
