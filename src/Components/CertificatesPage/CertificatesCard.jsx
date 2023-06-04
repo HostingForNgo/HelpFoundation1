@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import s from "./Certificates.module.css"
-export default function CertificatesCard() {
+export default function CertificatesCard({src}) {
     const ref = useRef(null)
     const isInView = useInView(ref)
 
@@ -24,7 +24,7 @@ export default function CertificatesCard() {
             animate={isInView ? "visible" : "hidden"}
             variants={variants}
             transition={{ duration: 0.75 }}>
-            <img src="https://marketplace.canva.com/EAFIEvneNCM/1/0/1600w/canva-golden-elegant-certificate-of-appreciation-0bN-aLORS9U.jpg" style={{ width: "100%" }} alt="ss" />
+            <img src={src} style={{ width: "100%" }} alt="ss" />
         </motion.div>
     )
 }

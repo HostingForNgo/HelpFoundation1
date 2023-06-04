@@ -59,14 +59,14 @@ export default function Navbar() {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white" }
                                     }
                                 }} >VISION</NavLink>
-                                <NavLink to={"/Career"} className={"hoverEffect"} style={({ isActive }) => {
+                                {/* <NavLink to={"/Career"} className={"hoverEffect"} style={({ isActive }) => {
                                     if (!isActive) {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700" }
                                     }
                                     else {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white" }
                                     }
-                                }} >CAREER</NavLink>
+                                }} >CAREER</NavLink> */}
                                 <NavLink className={"hoverEffect dropDownParent"} style={{ padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", position: "relative" }} >
                                     REPORT
                                     <Box bgcolor={"white"} className={"doubleDropDown"} position={"absolute"} width={"120%"} display={"none"} flexDirection={"column"} top={"0"} left={"100%"}>
@@ -116,14 +116,14 @@ export default function Navbar() {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white" }
                                     }
                                 }}>IMPACT</NavLink>
-                                <NavLink to={"/OngoingInitiatives"} className={"hoverEffect"} style={({ isActive }) => {
+                                {/* <NavLink to={"/OngoingInitiatives"} className={"hoverEffect"} style={({ isActive }) => {
                                     if (!isActive) {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", lineHeight: "25px" }
                                     }
                                     else {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white", lineHeight: "25px" }
                                     }
-                                }} >ONGOING INITIATIVES</NavLink>
+                                }} >ONGOING INITIATIVES</NavLink> */}
                                 <NavLink to={"/Centers"} className={"hoverEffect"} style={({ isActive }) => {
                                     if (!isActive) {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700" }
@@ -148,7 +148,7 @@ export default function Navbar() {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white" }
                                     }
                                 }}>GALLERY</NavLink>
-                                <NavLink to={"/MediaCoverage"} className={"hoverEffect"} style={({ isActive }) => {
+                                {/* <NavLink to={"/MediaCoverage"} className={"hoverEffect"} style={({ isActive }) => {
                                     if (!isActive) {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", lineHeight: "25px" }
                                     }
@@ -163,7 +163,7 @@ export default function Navbar() {
                                     else {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white" }
                                     }
-                                }} >CERTIFICATES</NavLink>
+                                }} >CERTIFICATES</NavLink> */}
                             </Box>
                         </Box>
                     </Box>
