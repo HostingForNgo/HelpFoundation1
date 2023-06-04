@@ -94,7 +94,11 @@ export default function Testimonals() {
       setDownLeft(arr[0]);
     });
 
+<<<<<<< HEAD
     // let temp = testimonialData
+=======
+    // let temp = testimonialArray
+>>>>>>> 8b6dc696ebb75f4503fd656392260eec9e432f00
     //    if (temp.length <= 10) {
     //     setCoverTextMain(temp[0].testimonial);
     //     setTestimonialData(temp);
@@ -109,6 +113,7 @@ export default function Testimonals() {
     //   setTestimonialData(random);
     //   setDownLeft(arr[0]);
   }, []);
+<<<<<<< HEAD
   return  (
     testimonialData.length==0?<></>:<Box
     bgcolor={"white"}
@@ -149,6 +154,39 @@ export default function Testimonals() {
           alignItems: "center",
         }}
       >
+=======
+  return ( testimonialData.length>=1 &&
+    <Box
+      bgcolor={"white"}
+      sx={{
+        width: "100%",
+        height: "700px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+      }}
+      borderBottom={"2px solid rgb(86, 79, 164)"}
+    >
+      <Box>
+        <Typography
+          sx={{
+            fontFamily: "Roboto, sans-serif",
+            fontSize: "40px",
+            color: "#564fa4",
+          }}
+        >
+          TESTIMONIALS
+        </Typography>
+        <Box
+          width={"50%"}
+          bgcolor={"#564fa4"}
+          minHeight={"3px"}
+          m={"auto"}
+        ></Box>
+      </Box>
+      <Box sx={{ width: "100%", height: "70%" }}>
+>>>>>>> 8b6dc696ebb75f4503fd656392260eec9e432f00
         <Box
           boxShadow={
             "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
@@ -350,6 +388,7 @@ export default function Testimonals() {
             position={"absolute"}
             left={"-5%"}
           >
+<<<<<<< HEAD
             <Button
               onClick={() => {
                 let temp = marginRightCarousel + 100;
@@ -370,6 +409,74 @@ export default function Testimonals() {
                 alignItems: "center",
                 border: "0",
                 background: "rgb(223 223 223)",
+=======
+            <Box
+              mr={"20px"}
+              display={["none", "none", "flex", "flex"]}
+              style={{ display: widArr[0] == 29.5 ? "none" : "flex" }}
+            >
+              <Button
+                // disabled={testimonialData.length<=1}
+                onClick={() => {
+                  for (let i = 0; i < widArr.length; i++) {
+                    if (widArr[i] == 29.5) {
+                      for (let j = 0; j < setWidArr.length; j++) {
+                        if (j != i - 1) setWidArr[j](10);
+                      }
+                      setCoverTextMain(testimonialData[i - 1].testimonial);
+                      setDownLeft(arr[i - 1]);
+                      setWidArr[i - 1](29.5);
+                      break;
+                    }
+                  }
+                }}
+                variant="text"
+                style={{
+                  height: "100%",
+                  top: "0",
+                  color: "black",
+                  width: "5%",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position: "absolute",
+                  left: "-5%",
+                }}
+              >
+                <ChevronLeftIcon
+                  sx={{ width: "40px", height: "40px", color: "black" }}
+                />
+              </Button>
+            </Box>
+
+            <Box
+              display={["none", "none", "flex", "flex"]}
+              width={["60%", "70%", "92%", "90%"]}
+              className="scrollbar-hidden"
+              sx={{
+                overflowX: "scroll",
+                overflowY: "hidden",
+                height: "100%",
+                gap: ".5vw",
+                alignItems: "center",
+                flexShrink: "0",
+              }}
+            >
+              {testimonialData.map((i, index) => (
+                <TestimonialCircle
+                  setWid={setWidArr[index]}
+                  wid={widArr[index]}
+                  key={index}
+                  img={i.image}
+                  name={i.name}
+                  company={i.company}
+                />
+              ))}
+            </Box>
+            <Box
+              display={["none", "none", "flex", "flex"]}
+              style={{
+                display: widArr[testimonialData.length - 1] == 29.5 ? "none" : "flex",
+>>>>>>> 8b6dc696ebb75f4503fd656392260eec9e432f00
               }}
             >
               <ChevronLeftIcon sx={{ width: "100%", color: "black" }} />
