@@ -8,38 +8,7 @@ import axios from "axios";
 import MobileViewTestimonialsCircle from "./mobileViewTestimonialCircles";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
-let testimonialArray = [
-  {
-    testimonial: "I can't express enough gratitude for the amazing work this NGO does. They have truly made a positive impact in my life and the lives of many others.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
-    name: "Java",
-    company:"Microsoft"
-  },
-  {
-    testimonial: "I have never seen such dedication and compassion from an NGO. Their tireless efforts to make a difference in the community are truly inspiring.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
-    name: "Corruptor",
-    company:"Google"
-  },
-  {
-    testimonial: "This NGO has exceeded all my expectations. Their commitment to improving the lives of those in need is unmatched.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
-    name: "Deadly",
-    company:"Amazon"
-  },
-  {
-    testimonial: "I am constantly impressed by the passion and expertise of the team at this NGO. They truly go above and beyond to make a difference.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
-    name: "Devil",
-    company:"Apple"
-  },
-  {
-    testimonial: "I am so grateful for the support and resources provided by this NGO. Without them, I don't know where I would be today. Thank you for everything you do.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusiN-xRAgysIibknPWGOppktx_DvcvljvdQ&usqp=CAU",
-    name: "Sumit Saurabh",
-    company:"Meta"
-  }
-];
+
 export default function Testimonals() {
   const [wid1, setWid1] = useState(29.5);
   const [wid2, setWid2] = useState(10);

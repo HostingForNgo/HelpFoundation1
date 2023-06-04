@@ -51,14 +51,6 @@ export default function Navbar() {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white" }
                                     }
                                 }} >MISSION</NavLink>
-                                <NavLink to={"/Vision"} className={"hoverEffect"} style={({ isActive }) => {
-                                    if (!isActive) {
-                                        return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700" }
-                                    }
-                                    else {
-                                        return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700", background: "black", color: "white" }
-                                    }
-                                }} >VISION</NavLink>
                                 {/* <NavLink to={"/Career"} className={"hoverEffect"} style={({ isActive }) => {
                                     if (!isActive) {
                                         return { padding: "10px 20px", textDecoration: "none", fontFamily: "Roboto, sans-serif", fontSize: "16px", fontWeight: "700" }

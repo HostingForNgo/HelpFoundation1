@@ -19,7 +19,6 @@ import IndividualProjectPage from "./Components/Projects/IndividualProjectPage";
 import IndividualBlogPage from "./Components/IndividualBlogPage/IndividualBlogPage";
 import Certificates from "./Components/CertificatesPage/Cartificates";
 import MediaCoverage from "./Components/MediaCoverage/MediaCoveragePage";
-import Vision from "./Components/Vision/Vision";
 import OngoingInitiatives from "./Components/Ongoing Initiatives/OngoingInitiatives";
 import Mission from "./Components/Mission/Mission";
 import Impact from "./Components/Impact/Impact";
@@ -125,7 +124,6 @@ function App() {
         <Route path="/Projects" element={<Project />} />
         <Route path="/Certificates" element={<Certificates />} />
         <Route path="/MediaCoverage" element={<MediaCoverage />} />
-        <Route path="/Vision" element={<Vision />} />
         <Route path="/OngoingInitiatives" element={<OngoingInitiatives />} />
         <Route path="/Mission" element={<Mission />} />
         <Route path="/Impact" element={<Impact />} />

@@ -83,7 +83,7 @@ export default function ProjectCard({ heading, volunteer,img, description, id })
             transition={{ duration: 0.75 }}
         >
             <Box sx={{ transition: "1s", overflowX: "hidden" }} className={"card"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} position={"relative"} flexShrink={0} >
-                <Box width={"100%"} height={"50%"}>
+                <Box sx={{ transition: "1s", overflowX: "hidden" }} width={"100%"} height={"400px"}>
                     <img draggable={"false"} style={{ width: "100%", height: "400px" }} src={img} alt={"projects"} />
                 </Box>
                 <Box padding={"20px"} width={"100%"} height={"50%"}>
