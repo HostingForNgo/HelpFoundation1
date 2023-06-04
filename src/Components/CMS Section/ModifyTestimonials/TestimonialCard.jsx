@@ -3,12 +3,13 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import s from "../AddTeam.module.css"
 
-export default function TestimonialCard({ text, func, id }) {
+export default function TestimonialCard({ text, func, id,image }) {
     let [isReadOnly,setIsReadOnly] = useState(true);
     let textAreaRef = useRef(null)
     return (
         <Box flexShrink={0} padding={"20px"} minHeight={"50px"} gap="20px" display={"flex"} alignItems={"center"} width={"100%"} boxShadow={"rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"}>
-            <textarea ref={textAreaRef} defaultValue={text} className={s.TestimonialCardInput} readOnly={isReadOnly} rows="7" cols="200" style={{width:"80%",height:"100%",resize: "none"}}>
+            <img style={{height:"100px"}} src={image}/>
+            <textarea ref={textAreaRef} defaultValue={text} className={s.TestimonialCardInput} readOnly={isReadOnly} rows="7" cols="200" style={{width:"50%",height:"100%",resize: "none"}}>
             </textarea>
             <Box display={"flex"} gap={"20px"} flexDirection={"column"} width={"20%"}>
                 <Button style={{display:!isReadOnly?"none":"block"}} onClick={()=>{
