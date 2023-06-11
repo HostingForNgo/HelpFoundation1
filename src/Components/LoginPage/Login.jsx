@@ -8,6 +8,8 @@ export default function LoginPage() {
     let {isAdmin,setIsAdmin} = useContext(Context)
     let users = [
         {email:"sumitsaurabh@gmail.com",password:"sumitsaurabh123"},
+        {email:"ishanyadav13290@gmail.com",password:"ishanyadav13290@gmail.com"},
+        {email:"raghbirsingh9101@gmail.com",password:"raghbirsingh9101@gmail.com"},
         {email:"yashwantsharma@gmail.com",password:"yashwantsharma123"}
     ]
     let emailRef = useRef(null)
