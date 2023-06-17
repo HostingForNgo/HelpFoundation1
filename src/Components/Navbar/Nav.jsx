@@ -72,7 +72,7 @@ export default function Navbar() {
             }}
             display={["none", "none", "flex"]}
           >
-          <Box
+          {/* <Box
               className={"dropDown1"}
               width={"20%"}
               height={"70%"}
@@ -117,7 +117,7 @@ export default function Navbar() {
                   Login
                 </NavLink>
               </Box>
-            </Box>
+            </Box> */}
           
             <Box
               className={"dropDown1"}

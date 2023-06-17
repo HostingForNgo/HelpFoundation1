@@ -33,7 +33,7 @@ export default function FirstSection() {
                                 style={{display:"flex",flexDirection:"column",gap:"20px"}}
                             >
                                 <Typography sx={{ fontSize: "36px", color: "white", fontWeight: "800", fontFamily: "Roboto, sans-serif", lineHeight: "42px" }}>
-                                    Health and Education for Life Project
+                                    Vinayak Samajik Sewa Sansthan
                                 </Typography>
                                 <Typography sx={{ fontSize: "14px", color: "white", fontWeight: "800", fontFamily: "Roboto, sans-serif" }}>
                                     Your donation providing life changing education for children from rural villages. Vinayak Samajik Sewa Sansthan is a non-profit section-8 organisation. We need your support.

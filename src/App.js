@@ -1,6 +1,6 @@
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Nav";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Team from "./Components/Team/Team";
 import { Context } from "./ContextApi";
@@ -53,8 +53,10 @@ import AddActivityReports from "./Components/CMS Section/AddActivityReport/AddAc
 import AddAuditReports from "./Components/CMS Section/AddAuditReport/AddAuditReport";
 import ModifyActivityReports from "./Components/CMS Section/ModifyActivityReports/ModifyActivityReports";
 import ModifyAuditReports from "./Components/CMS Section/ModifyAuditReports/ModifyAuditReports";
+import { Box, Button } from "@mui/material";
 function App() {
   let {setActivityReportImages,setAuditReportImages,setCentre, setActivityReport, setAuditReport, items, setItems, images, setImages, setCareerData, isAdmin, setIsAdmin, projectsData, setProjectsData, page, setPage, maxPage, setMaxPage, setEvents } = useContext(Context)
+  let navigate = useNavigate()
   useEffect(() => {
     try{
       axios.get("https://helpapi.onrender.com/centers").then(res => {
@@ -107,7 +109,12 @@ function App() {
     })
   }, [page])
   return (
-    <>
+    <Box position={"relative"}>
+    <Box position={"fixed"} zIndex={1000} bottom={["10px","20px","30px","40px"]} left={["10px","20px","30px","40px"]}>
+      <Button variant="contained" sx={{color:"white"}} onClick={()=>{navigate("/login")}}>
+      Login
+      </Button>
+    </Box>
       <SocialMedia />
       <ProgressBar />
       <Navbar />
@@ -166,7 +173,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
-    </>
+    </Box>
   );
 }
 export default App;
