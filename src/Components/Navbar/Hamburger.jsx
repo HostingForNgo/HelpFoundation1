@@ -143,20 +143,6 @@ export default function Hamburger() {
             </NavLink>
           </ListItem>
           <Divider />
-
-          <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
-              if (isActive) {
-                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
-              }
-              return { width: "100%", textDecoration: "none", color: "black" }
-            }} to={"/OngoingInitiatives"}>
-              <ListItemButton>
-                <ListItemText primary={"Ongoing Initiatives"} />
-              </ListItemButton>
-            </NavLink>
-          </ListItem>
-          <Divider />
           <ListItem disablePadding>
             <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
               if (isActive) {
@@ -182,32 +168,6 @@ export default function Hamburger() {
             }} to={"/Gallery"}>
               <ListItemButton>
                 <ListItemText primary={"Gallery"} />
-              </ListItemButton>
-            </NavLink>
-          </ListItem>
-          <Divider />
-          <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
-              if (isActive) {
-                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
-              }
-              return { width: "100%", textDecoration: "none", color: "black" }
-            }} to={"/MediaCoverage"}>
-              <ListItemButton>
-                <ListItemText primary={"Media Coverage"} />
-              </ListItemButton>
-            </NavLink>
-          </ListItem>
-          <Divider />
-          <ListItem disablePadding>
-            <NavLink onClick={toggleDrawer(anchor, false)} style={({ isActive }) => {
-              if (isActive) {
-                return {background:"black" ,width: "100%", textDecoration: "none", color: "white" }
-              }
-              return { width: "100%", textDecoration: "none", color: "black" }
-            }} to={"/Certificates"}>
-              <ListItemButton>
-                <ListItemText primary={"Certificates"} />
               </ListItemButton>
             </NavLink>
           </ListItem>
