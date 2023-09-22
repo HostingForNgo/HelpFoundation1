@@ -8,6 +8,8 @@ import { useRef } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { useContext } from 'react';
+import { Context } from '../../../ContextApi';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -21,6 +23,7 @@ const style = {
 };
 
 export default function BasicModal({open,setOpen}) {
+    const {apiLink} = useContext(Context);
     const emailRef = useRef(null)
     const fullNameRef = useRef(null);
     const phoneRef = useRef(null);
@@ -40,7 +43,7 @@ export default function BasicModal({open,setOpen}) {
             message:messageRef.current.value,
         }
         
-        axios.post("https://helpapi.onrender.com/messages",obj);
+        axios.post(apiLink+"messages",obj);
         fullNameRef.current.value=""
         emailRef.current.value=""
         phoneRef.current.value=""

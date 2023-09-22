@@ -5,7 +5,10 @@ import BlogCard from "./BlogsCard";
 import PcViewBlogCard from "./PcViewBlogCard";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 export default function Blogs() {
+    const {apiLink} = useContext(Context);
     const [data, setData] = useState([]);
     const [margin, setMargin] = useState(0);
 
@@ -23,7 +26,7 @@ export default function Blogs() {
 
 
     useEffect(() => {
-        axios.get("https://helpapi.onrender.com/blogs").then(res => setData(res.data));
+        axios.get(apiLink+"blogs").then(res => setData(res.data));
     }, [])
 
     return ( data.length==0?"":

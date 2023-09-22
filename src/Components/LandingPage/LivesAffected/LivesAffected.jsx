@@ -2,11 +2,14 @@ import { Box } from "@mui/system";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import LifeAffectedCard from "./LifeAffectedCard";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 export default function LivesAffected(){
+    const {apiLink} = useContext(Context);
     let [data,setData] = useState([]);
     useEffect(() => {
-      axios.get("https://helpapi.onrender.com/lifeAffected").then(res=>setData(res.data))
+      axios.get(apiLink+"lifeAffected").then(res=>setData(res.data))
     }, [])
     
     return (

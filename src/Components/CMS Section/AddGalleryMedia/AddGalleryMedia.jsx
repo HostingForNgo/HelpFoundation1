@@ -4,12 +4,14 @@ import { useRef } from "react";
 import { useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
-
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 export default function AddGalleryMedia() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [images, setImages] = useState([]);
     const [date, setDate] = useState([]);
+    const {apiLink} = useContext(Context)
     return (
         <Box width={"100%"} minHeight={"100%"} display={"flex"}>
             <Box p={"20px"} width={"50%"}>
@@ -45,7 +47,10 @@ export default function AddGalleryMedia() {
                 <Box mb={"10px"}>
                     <Button onClick={() => {
                         let obj = { title, date, description, images };
-                        axios.post("https://helpapi.onrender.com/gallery", obj)
+                        if(title.length===0) return alert("Fill Title")
+                        if(date.length===0) return alert("Fill date")
+                        if(description.length===0) return alert("Fill description")
+                        axios.post(apiLink+"gallery", obj).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)})
                         // axios.post("https://futuristic-unexpected-citrine.glitch.me/gallery", obj)
                         console.log(obj);
                         setTitle("");
@@ -74,11 +79,11 @@ export default function AddGalleryMedia() {
                         images.map((i, index) => (
                             <Box position={"relative"} width={"30%"} minHeight={"100px"}>
                                 <Box onClick={() => {
-                                    setImages(images.filter((i, inde) => index != inde))
+                                    setImages(images.filter((i, inde) => index !== inde))
                                 }} color={"white"} zIndex={"1"} display={"flex"} justifyContent={"center"} alignItems={"center"} width={"100%"} height={"100%"} position="absolute">
                                     Delete
                                 </Box>
-                                <img style={{ width: "100%", height: "100%", flexShrink: "0", position: "absolute" }} src={i} />
+                                <img style={{ width: "100%", height: "100%", flexShrink: "0", position: "absolute" }} alt="" src={i} />
                             </Box>
                         ))
                     }

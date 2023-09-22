@@ -7,7 +7,10 @@ import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
 import BasicModal from "./Modal/Modal";
+import { useContext } from "react";
+import { Context } from "../../ContextApi";
 export default function ProjectCard({ heading, volunteer,img, description, id }) {
+    const {apiLink} = useContext(Context);
     const ref = useRef(null)
     const isInView = useInView(ref)
     const [open, setOpen] = useState(false);
@@ -55,7 +58,7 @@ export default function ProjectCard({ heading, volunteer,img, description, id })
                 "color": "#564fa4"
             }
         };
-        let { data } = await axios.post("https://helpapi.onrender.com/create/orderId", obj)
+        let { data } = await axios.post(apiLink+"create/orderId", obj)
         options.order_id = data.orderId;
         let rzp = new window.Razorpay(options);
         rzp.open();

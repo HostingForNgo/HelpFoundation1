@@ -3,7 +3,10 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import s from "../AddTeam.module.css"
 import CloseIcon from '@mui/icons-material/Close';
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 export default function JobCard({ title, location, jobDescription, qualifications, openPositions, func, id }) {
+    const {apiLink} = useContext(Context);
     let [isReadOnly, setIsReadOnly] = useState(true);
     let headingRef = useRef(null)
     let locationRef = useRef(null)
@@ -46,7 +49,7 @@ export default function JobCard({ title, location, jobDescription, qualification
                 </Button>
                 <Button onClick={() => {
                     setIsReadOnly(true);
-                    axios.patch(`https://helpapi.onrender.com/jobs/${id}`, {
+                    axios.patch(apiLink+`jobs/${id}`, {
                         JobTitle: headingRef.current.value,
                         location: locationRef.current.value,
                         jobDescription: descriptionRef.current.value,

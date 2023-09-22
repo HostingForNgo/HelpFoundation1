@@ -8,6 +8,8 @@ import { useRef } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { useContext } from 'react';
+import { Context } from '../../../ContextApi';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -21,6 +23,7 @@ const style = {
 };
 
 export default function BasicModal() {
+    const {apiLink} = useContext(Context);
     const inputRef = useRef(null)
     const fullNameRef = useRef(null);
     const qualificationsRef = useRef(null);
@@ -36,7 +39,7 @@ export default function BasicModal() {
             age:ageRef.current.value,
             resume:resume
         }
-        axios.post("https://helpapi.onrender.com/JobApplications",obj);
+        axios.post(apiLink+"JobApplications",obj);
         fullNameRef.current.value=""
         qualificationsRef.current.value=""
         ageRef.current.value=""

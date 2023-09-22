@@ -9,9 +9,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import JoditEditor from "jodit-react";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 
 export default function AddBlogs() {
+    const {apiLink} = useContext(Context);
     let [image, setImage] = useState("")
     let headingRef = useRef(null);
     let dateRef = useRef(null);
@@ -27,7 +30,7 @@ export default function AddBlogs() {
             blogLink: blogLinkRef.current.value,
         }
 
-        axios.post("https://helpapi.onrender.com/blogs", obj)
+        axios.post(apiLink+"blogs", obj)
         // axios.post("https://futuristic-unexpected-citrine.glitch.me/blogs",obj)
         console.log(obj);
     }

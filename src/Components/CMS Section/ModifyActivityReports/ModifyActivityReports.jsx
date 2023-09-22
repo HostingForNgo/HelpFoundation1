@@ -1,15 +1,17 @@
 import { Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import axios from "axios";
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import ModifyActivityReportsCard from "./ModifyActivityReportsCard";
+import { Context } from "../../../ContextApi";
 
 
 
 export default function ModifyActivityReports() {
+    const {apiLink} = useContext(Context);
     let [data, setData] = useState([]);
     useEffect(() => {
-        axios.get("https://helpapi.onrender.com/ActivityReports")
+        axios.get(apiLink+"ActivityReports")
             .then(res => setData(res.data))
     }, [])
     return (
@@ -19,7 +21,7 @@ export default function ModifyActivityReports() {
                     <ModifyActivityReportsCard key={i._id} id={i._id} heading={i.heading} images={i.images} func={() => {
                         let temp = data.filter((item, ind) => index !== ind);
                         setData(temp);
-                        axios.delete(`https://helpapi.onrender.com/ActivityReports/${i._id}`)
+                        axios.delete(apiLink+`ActivityReports/${i._id}`)
                     }} />
                 )
             })}

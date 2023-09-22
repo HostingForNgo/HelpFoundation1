@@ -2,8 +2,11 @@ import { Box, Button, Typography } from "@mui/material";
 import { useRef, useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 export default function ModifyActivityReportsCard({ images, heading, func, id }) {
+    const {apiLink} = useContext(Context);
     const headingRef = useRef(null);
     const [imgs, setImgs] = useState(images);
     const [readOnly, setReadOnly] = useState(true)
@@ -23,7 +26,7 @@ export default function ModifyActivityReportsCard({ images, heading, func, id })
                             heading: headingRef.current.value,
                             images: imgs
                         }
-                        axios.patch(`https://helpapi.onrender.com/ActivityReports/${id}`, obj)
+                        axios.patch(apiLink+`ActivityReports/${id}`, obj)
                     }}
                         variant="text" sx={{ display: !readOnly ? "flex" : "none", "&:hover": { background: "#7912f7" }, color: "white", width: "100%", background: "#7912f7", height: "30px" }} >
                         Save

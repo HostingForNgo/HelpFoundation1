@@ -2,7 +2,9 @@ import { Button, Checkbox, FormControlLabel, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
 import JoditEditor from "jodit-react";
+import { useContext } from "react";
 import { useRef, useState } from "react";
+import { Context } from "../../../ContextApi";
 
 
 export default function AddProjects() {
@@ -39,6 +41,7 @@ export default function AddProjects() {
 
     //     </Box>
     // )
+    const {apiLink} = useContext(Context);
     let [volunteer, setVolunteer] = useState(false)
     let headingRef = useRef(null)
     let dateRef = useRef(null)
@@ -54,7 +57,7 @@ export default function AddProjects() {
             images: images,
             html: html
         }
-        axios.post("https://helpapi.onrender.com/projects", obj)
+        axios.post(apiLink+"projects", obj)
         // axios.post("https://futuristic-unexpected-citrine.glitch.me/blogs",obj)
         console.log(obj);
         // headingRef.current.value = ""

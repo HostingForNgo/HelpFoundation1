@@ -2,9 +2,11 @@ import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
 import InputBox from "../InputBox";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 export default function AddTeam() {
-    
+    const {apiLink} = useContext(Context);
     const [name, setName] = useState("");
     const [imgSrc, setImg] = useState("");
     const [role, setRole] = useState("");
@@ -50,7 +52,7 @@ export default function AddTeam() {
                         instagram,
                     }
                     console.log(data);
-                    axios.post("https://helpapi.onrender.com/team", data);
+                    axios.post(apiLink+"team", data);
                     // axios.post("https://futuristic-unexpected-citrine.glitch.me/team", data);
                     setName("");
                     setRole("");

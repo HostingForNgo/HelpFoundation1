@@ -55,14 +55,14 @@ import ModifyActivityReports from "./Components/CMS Section/ModifyActivityReport
 import ModifyAuditReports from "./Components/CMS Section/ModifyAuditReports/ModifyAuditReports";
 import { Box, Button } from "@mui/material";
 function App() {
-  let {setActivityReportImages,setAuditReportImages,setCentre, setActivityReport, setAuditReport, items, setItems, images, setImages, setCareerData, isAdmin, setIsAdmin, projectsData, setProjectsData, page, setPage, maxPage, setMaxPage, setEvents } = useContext(Context)
+  let {apiLink, setActivityReportImages,setAuditReportImages,setCentre, setActivityReport, setAuditReport, items, setItems, images, setImages, setCareerData, isAdmin, setIsAdmin, projectsData, setProjectsData, page, setPage, maxPage, setMaxPage, setEvents } = useContext(Context)
   let navigate = useNavigate()
   useEffect(() => {
     try{
-      axios.get("https://helpapi.onrender.com/centers").then(res => {
+      axios.get(apiLink+"centers").then(res => {
         setCentre(res.data)
       })
-      axios.get("https://helpapi.onrender.com/ActivityReports").then(res => {
+      axios.get(apiLink+"ActivityReports").then(res => {
         let data = res.data;
         for (let i = data.length - 1; i >= 0; i++) {
             if (data[i].images.length != 0) {
@@ -72,26 +72,26 @@ function App() {
         }
         setActivityReport(res.data);
     });
-    axios.get("https://helpapi.onrender.com/AuditReports").then(res => {
+    axios.get(apiLink+"AuditReports").then(res => {
       let data = res.data;
       for (let i = data.length - 1; i >= 0; i++) {
-          if (data[i].images.length != 0) {
+          if (data[i].images.length !== 0) {
               setAuditReportImages(data[i].images)
               break
           }
       }
       setAuditReport(res.data);
   });
-      axios.get("https://helpapi.onrender.com/team").then(res => {
+      axios.get(apiLink+"team").then(res => {
         setItems(res.data)
       })
-      axios.get("https://helpapi.onrender.com/jobs").then(res => {
+      axios.get(apiLink+"jobs").then(res => {
         setCareerData(res.data)
       })
-      axios.get("https://helpapi.onrender.com/Projects").then(res => {
+      axios.get(apiLink+"Projects").then(res => {
         setProjectsData(res.data)
       })
-      axios.get("https://helpapi.onrender.com/event").then((res) => {
+      axios.get(apiLink+"event").then((res) => {
         let data = res.data;
         data.sort((a, b) => new Date(b.date) - new Date(a.date));
         setEvents(data.slice(0, 3))
@@ -103,11 +103,11 @@ function App() {
   }, [])
 
   useEffect(() => {
-    axios.get(`https://helpapi.onrender.com/gallery/pagination?page=${page}&limit=4`).then(res => {
+    axios.get(apiLink+`gallery/pagination?page=${page}&limit=4`).then(res => {
       setMaxPage(Math.ceil(res.data["x-total-count"] / 4));
       setImages(res.data.finalData);
     })
-  }, [page])
+  }, [apiLink, page])
   return (
     <Box position={"relative"}>
     <Box position={"fixed"} zIndex={1000} bottom={["10px","20px","30px","40px"]} left={["10px","20px","30px","40px"]}>

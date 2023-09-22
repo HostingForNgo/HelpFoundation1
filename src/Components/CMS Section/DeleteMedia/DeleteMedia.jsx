@@ -3,13 +3,16 @@ import { Box } from "@mui/system"
 import axios from "axios";
 import { useEffect, useState } from "react"
 import GalleryCard from "./DeleteMediaCard";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 
 
 export default function DeleteGallery() {
+    const {apiLink} = useContext(Context);
     let [data,setData] = useState([]);
     useEffect(()=>{
-        axios.get("https://helpapi.onrender.com/gallery")
+        axios.get(apiLink+"gallery")
         .then(res=>setData(res.data))
     },[])
     return (
@@ -19,7 +22,7 @@ export default function DeleteGallery() {
                     <GalleryCard key={i._id} id={i._id} title={i.title} date={i.date} images={i.images} description={i.description} func={()=>{
                         let temp = data.filter((item,ind)=>index!==ind);
                         setData(temp);
-                        axios.delete(`https://helpapi.onrender.com/gallery/${i._id}`)
+                        axios.delete(apiLink+`gallery/${i._id}`)
                     }}/>
                 )
             })}

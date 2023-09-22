@@ -2,8 +2,11 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import { Box } from '@mui/material';
 import axios from 'axios';
+import { useContext } from 'react';
+import { Context } from '../../../ContextApi';
 
 export default function MediaCard({ name, img, role, desc, func, id, linkedIn, twitter, insta }) {
+    const {apiLink} = useContext(Context);
     let [editable,setEditable] = React.useState(true)
     let nameRef = React.useRef(null)
     let roleRef = React.useRef(null)
@@ -37,9 +40,9 @@ export default function MediaCard({ name, img, role, desc, func, id, linkedIn, t
                             linkedin:LinkedInRef.current.value,
                             twitter:TwitterRef.current.value,
                             instagram:InstaRef.current.value,
-                            id:`https://helpapi.onrender.com/team/${id}`
+                            id:apiLink+`team/${id}`
                         }
-                        axios.patch(`https://helpapi.onrender.com/team/${id}`,obj)
+                        axios.patch(apiLink+`team/${id}`,obj)
                         setEditable(true)
                         // axios.patch()
                     }} 

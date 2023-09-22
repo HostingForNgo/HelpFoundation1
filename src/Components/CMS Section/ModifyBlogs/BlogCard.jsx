@@ -2,8 +2,11 @@ import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 export default function BlogCard({ image, heading, date, mainBlog, blog, func, id }) {
+    const {apiLink} = useContext(Context);
     const headingRef = useRef(null);
     const dateRef = useRef(null);
     const descRef = useRef(null);
@@ -52,7 +55,7 @@ export default function BlogCard({ image, heading, date, mainBlog, blog, func, i
                             carouselImg: image,
                             mainBlog: mainBlog,
                         }
-                        axios.patch(`https://helpapi.onrender.com/blogs/${id}`, obj)
+                        axios.patch(apiLink+`blogs/${id}`, obj)
                     }}
                         variant="text" sx={{ display: !readOnly ? "flex" : "none", "&:hover": { background: "#7912f7" }, color: "white", width: "100%", background: "#7912f7", height: "30px" }} >
                         Save

@@ -4,8 +4,11 @@ import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import { useRef, useState } from "react";
 import s from "../AddTeam.module.css"
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 export default function CenterCard({ heading, func, id, location, description, img }) {
+    const {apiLink} = useContext(Context);
     let [isReadOnly, setIsReadOnly] = useState(true);
     let [image, setImage] = useState(img);
     let titleRef = useRef(null)
@@ -33,7 +36,7 @@ export default function CenterCard({ heading, func, id, location, description, i
                 </Box>
                 <textarea ref={descriptionRef} defaultValue={description} className={s.TestimonialCardInput} readOnly={isReadOnly} rows="7" cols="200" style={{ width: "80%", height: "100%", resize: "none" }}>
                 </textarea>
-                <img src={image} width={"200px"} />
+                <img src={image} alt="" width={"200px"} />
                 Change Image
                 <input onChange={handleFileChange} type={"file"} />
             </Box>
@@ -46,7 +49,7 @@ export default function CenterCard({ heading, func, id, location, description, i
                 </Button>
                 <Button onClick={() => {
                     setIsReadOnly(true);
-                    axios.patch(`https://helpapi.onrender.com/centers/${id}`, {
+                    axios.patch(apiLink+`centers/${id}`, {
                         heading: titleRef.current.value,
                         description: descriptionRef.current.value,
                         location: countRef.current.value,

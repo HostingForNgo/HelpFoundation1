@@ -6,6 +6,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
 import JoditEditor from "jodit-react";
 import React from "react";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 
 export default function AddGalleryMedia() {
@@ -13,6 +15,7 @@ export default function AddGalleryMedia() {
     // const [description, setDescription] = useState("");
     // const [images, setImages] = useState([]);
     // const [date, setDate] = useState([]);
+    const {apiLink} = useContext(Context);
     let [image, setImage] = useState("");
     let headingRef = useRef(null);
     let dateRef = useRef(null);
@@ -28,7 +31,7 @@ export default function AddGalleryMedia() {
             fundRaised:0,
             html: html,
         }
-        axios.post("https://helpapi.onrender.com/event", obj)
+        axios.post(apiLink+"event", obj)
         console.log(obj)
         // axios.post("https://futuristic-unexpected-citrine.glitch.me/blogs",obj)
     }

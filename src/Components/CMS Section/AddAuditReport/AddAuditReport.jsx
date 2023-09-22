@@ -1,11 +1,14 @@
 import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
+import { useContext } from "react";
 import { useRef, useState } from "react";
+import { Context } from "../../../ContextApi";
 
 
 
 export default function AddAuditReports() {
+    const {apiLink} = useContext(Context);
     const headingRef = useRef(null);
     const [file, setFile] = useState("");
     const [images, setImages] = useState([]);
@@ -65,7 +68,7 @@ export default function AddAuditReports() {
                     images:images,
                     pdf:file
                 }
-                axios.post("https://helpapi.onrender.com/AuditReports",obj)
+                axios.post(apiLink+"AuditReports",obj)
                 console.log(obj)
             }}
             sx={{ marginTop: "20px", width: "100px", background: "lightgreen", color: "black", "&:hover": { background: "green", color: "white" } }}>

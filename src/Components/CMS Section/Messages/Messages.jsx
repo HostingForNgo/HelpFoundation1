@@ -3,13 +3,16 @@ import { Box } from "@mui/system";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import MessageCard from "./MessageCard";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 
 
 export default function Messages() {
+    const {apiLink} = useContext(Context);
     let [data, setData] = useState([]);
     useEffect(() => {
-        axios.get("https://helpapi.onrender.com/messages").then((res)=>setData(res.data))
+        axios.get(apiLink+"messages").then((res)=>setData(res.data))
     }, [])
     return (
         <Box width={"100%"} minHeight={"100%"} p={"20px"}>

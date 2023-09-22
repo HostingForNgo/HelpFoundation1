@@ -17,10 +17,12 @@ export default function ContextProvider({ children }) {
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
   let productsCardRef = useRef(null);
+  let apiLink = "https://helpapi.onrender.com/";
 
   return (
     <Context.Provider
       value={{
+        apiLink,
         activityReportImages, setActivityReportImages,
         auditReportImages, setAuditReportImages,
         centre,

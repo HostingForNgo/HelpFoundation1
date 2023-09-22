@@ -10,7 +10,7 @@ export default function FooterInputBox({ text, width, height, placeholder, onInp
         <Box width={width}>
             <Typography ml={"5px"} fontSize={"15px"} color={"white"}>{text}</Typography>
             <input value={val} required onInput={e => {
-                if(e.target.value.length==0) setClas("footerInputRed");
+                if(e.target.value.length===0) setClas("footerInputRed");
                 else setClas("footerInput");
                 onInput(e.target.value);
                 setInputIext(e.target.value);

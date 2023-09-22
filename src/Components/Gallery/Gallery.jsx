@@ -3,12 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import React from 'react';
 import { Context } from "../../ContextApi";
 import { Pagination, Typography } from "@mui/material";
-import s from "./gallery.module.css"
-import GalleryCard from "./GalleryCard";
-import { NavLink } from "react-router-dom";
 import GalleryCategoryCard from "./GalleryCategoryCard";
 import GalleryCategoryCardMobile from "./GalleryCategoryCardMobile";
-import axios from "axios";
 export default function Gallery() {
     const {images,setImages} = useContext(Context);
     const {page,setPage} = useContext(Context);

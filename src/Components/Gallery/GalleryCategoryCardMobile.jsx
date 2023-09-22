@@ -30,9 +30,7 @@ export default function GalleryCategoryCardMobile({ heading, volunteer, descript
                     <Box padding={"20px"} width={"100%"} height={"50%"}>
                         <Typography fontWeight={"800"} fontSize={"18px"} mb={"10px"}>{heading || "Help Foundation1"}</Typography>
                         <Typography fontSize={["10px", "14px"]} color={"grey"}>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut cupiditate doloribus eos neque odit sequi sint ullam obcaecati ipsam ipsa.
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut cupiditate doloribus eos neque odit sequi sint ullam obcaecati ipsam ipsa.
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut cupiditate doloribus eos neque odit sequi sint ullam obcaecati ipsam ipsa.
+                            {description}
                         </Typography>
                     </Box>
                 </NavLink>

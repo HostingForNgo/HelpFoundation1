@@ -1,9 +1,11 @@
 import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Styles from "../AddTeam.module.css"
+import { Context } from "../../../ContextApi";
 
 export default function AddTestimonials() {
+    const {apiLink} = useContext(Context);
     let [testimonials, setTestimonials] = useState("");
     let [name, setName] = useState();
     let [image, setImage] = useState();
@@ -56,7 +58,7 @@ export default function AddTestimonials() {
                     company: role
                 }
 
-                axios.post("https://helpapi.onrender.com/testimonials", temp);
+                axios.post(apiLink+"testimonials", temp);
                 setTestimonials("")
                 setRole("")
                 setName("")

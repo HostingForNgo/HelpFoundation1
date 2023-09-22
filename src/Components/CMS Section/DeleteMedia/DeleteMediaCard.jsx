@@ -2,8 +2,11 @@ import { Box, Button, Typography } from "@mui/material";
 import { useRef, useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 export default function GalleryCard({ images, title, date, func, description,id }) {
+    const {apiLink} = useContext(Context);
     const headingRef = useRef(null);
     const dateRef = useRef(null);
     const descRef = useRef(null);
@@ -29,7 +32,7 @@ export default function GalleryCard({ images, title, date, func, description,id 
                             description:descRef.current.value,
                             images:imgs
                         }
-                        axios.patch(`https://helpapi.onrender.com/gallery/${id}`,obj)
+                        axios.patch(apiLink+`gallery/${id}`,obj)
                     }}
                         variant="text" sx={{ display: !readOnly ? "flex" : "none", "&:hover": { background: "#7912f7" }, color: "white", width: "100%", background: "#7912f7", height: "30px" }} >
                         Save

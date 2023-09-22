@@ -1,19 +1,22 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
+import { useContext } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Context } from "../../ContextApi";
 
 
 
 export default function IndividualProjectPage() {
+    const {apiLink} = useContext(Context);
     let {projectID} = useParams();
     const parentRef = useRef(null)
     let [heading,setHeading] = useState("")
     let [image,setImage] = useState("")
     window.scrollTo(0,0);
     useEffect(() => {
-        axios.get(`https://helpapi.onrender.com/Projects/${projectID}`).then(res=>{
+        axios.get(apiLink+`Projects/${projectID}`).then(res=>{
             parentRef.current.innerHTML = res.data.html
             setHeading(res.data.heading)
             setImage(res.data.images)

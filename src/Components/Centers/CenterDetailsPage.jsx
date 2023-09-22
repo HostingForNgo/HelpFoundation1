@@ -1,18 +1,21 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
+import { useContext } from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Context } from "../../ContextApi";
 
 
 
 export default function CenterDetailsPage() {
+    const {apiLink} = useContext(Context);
     let data = useParams();
     window.scrollTo(0, 0);
     let [blogData, setBlogData] = useState({})
     useEffect(() => {
         console.log(data)
-        axios.get(`https://helpapi.onrender.com/centers/${data.CenterID}`).then((res) => {
+        axios.get(apiLink+`centers/${data.CenterID}`).then((res) => {
             setBlogData(res.data)
             console.log(res.data)
         })

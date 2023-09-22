@@ -3,12 +3,15 @@ import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import { useRef, useState } from "react";
 import s from "../AddTeam.module.css"
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 export default function ModifyLivesAffectedCard({ title, func, id, description, count }) {
     let [isReadOnly,setIsReadOnly] = useState(true);
     let titleRef = useRef(null)
     let descriptionRef = useRef(null)
     let countRef = useRef(null)
+    const {apiLink} = useContext(Context);
     return (
         <Box flexShrink={0} padding={"20px"} minHeight={"50px"} gap="20px" display={"flex"} alignItems={"center"} width={"100%"} boxShadow={"rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"}>
             <Box display={"flex"} flexDirection={"column"}> 
@@ -28,7 +31,7 @@ export default function ModifyLivesAffectedCard({ title, func, id, description, 
                 </Button>
                 <Button onClick={()=>{
                     setIsReadOnly(true);
-                    axios.patch(`https://helpapi.onrender.com/lifeAffected/${id}`,{
+                    axios.patch(apiLink+`lifeAffected/${id}`,{
                         title:titleRef.current.value,
                         description:descriptionRef.current.value,
                         count:countRef.current.value,

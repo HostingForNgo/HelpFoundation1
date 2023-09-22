@@ -2,10 +2,12 @@ import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
 import { set } from "mongoose";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import { Context } from "../../../ContextApi";
 
 
 export default function AddEvents() {
+    const {apiLink} = useContext(Context);
     let headingRef = useRef(null)
     let descRef = useRef(null)
     let locationRef = useRef(null)
@@ -17,7 +19,7 @@ export default function AddEvents() {
             description: descRef.current.value,
             image: image,
         }
-        axios.post("https://helpapi.onrender.com/centers", obj)
+        axios.post(apiLink+"centers", obj)
         console.log(obj);
         headingRef.current.value = ""
         descRef.current.value = ""

@@ -3,13 +3,16 @@ import { Box } from "@mui/system"
 import axios from "axios";
 import { useEffect, useState } from "react"
 import DeleteEventCard from "./DeleteEventsCard";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 
 
 export default function DeleteEvents() {
+    const {apiLink} = useContext(Context);
     let [data,setData] = useState([]);
     useEffect(()=>{
-        axios.get("https://helpapi.onrender.com/event")
+        axios.get(apiLink+"event")
         .then(res=>setData(res.data))
     },[])
     return (
@@ -19,7 +22,7 @@ export default function DeleteEvents() {
                     <DeleteEventCard key={i._id} id={i._id} description={i.description} fundRaised={i.fundRaised} title={i.title} date={i.date} images={i.images} func={()=>{
                         let temp = data.filter((item,ind)=>index!==ind);
                         setData(temp);
-                        axios.delete(`https://helpapi.onrender.com/event/${i._id}`)
+                        axios.delete(apiLink+`event/${i._id}`)
                     }}/>
                 )
             })}

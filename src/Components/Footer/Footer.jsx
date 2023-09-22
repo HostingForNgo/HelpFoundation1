@@ -3,13 +3,15 @@ import FooterInputBox from "./FooterInputBox";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import bgImg from "./bg.png"
+import { Context } from "../../ContextApi";
 export default function Footer() {
+    const {apiLink} = useContext(Context);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -65,7 +67,7 @@ export default function Footer() {
                                     let data = {
                                         name, email, phone, address, subject, message
                                     }
-                                    axios.post("https://helpapi.onrender.com/messages", data)
+                                    axios.post(apiLink+"messages", data)
                                     setName("")
                                     setEmail("")
                                     setPhone("")

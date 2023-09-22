@@ -3,13 +3,16 @@ import { Box } from "@mui/system";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import JobApplicationsCard from "./JobApplicationsCard";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 
 
 export default function JobApplications() {
+    const {apiLink} = useContext(Context);
     let [data, setData] = useState([]);
     useEffect(() => {
-        axios.get("https://helpapi.onrender.com/jobApplications").then((res)=>setData(res.data))
+        axios.get(apiLink+"jobApplications").then((res)=>setData(res.data))
         // axios.get("https://futuristic-unexpected-citrine.glitch.me/JobApplications").then((res)=>setData(res.data))
     }, [])
     return (

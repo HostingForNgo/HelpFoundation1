@@ -1,7 +1,10 @@
 import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
+import { useContext } from "react";
 import { useState } from "react";
+import { Context } from "../../../ContextApi";
 export default function AddGallery() {
+    const {apiLink} = useContext(Context);
     const [imgSrc, setImg] = useState("")
     const handleFileChange = async (e) => {
         const file = e.target.files[0];
@@ -31,7 +34,7 @@ export default function AddGallery() {
                         img: imgSrc,
                     }
                     console.log(data);
-                    axios.post("https://helpapi.onrender.com/gallery", data);
+                    axios.post(apiLink+"gallery", data);
                 }} >Add To Team</Button>
             </Box>
 

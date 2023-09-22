@@ -26,7 +26,7 @@ export default function BlogCard({ blog, head,img, id, wid, date, blogLink }) {
             
             <Box  flexShrink={0} width={"100%"} >
                 <Box width={"100%"} overflow={"hidden"}>
-                    <img style={{ width: "100%" }} src={img} />
+                    <img style={{ width: "100%" }} src={img} alt=""/>
                 </Box>
                 <Box minHeight={"260px"}>
                     <Box padding={"10px"}>

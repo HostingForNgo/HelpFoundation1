@@ -1,18 +1,20 @@
 import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import BasicModal from "./Modal/Modal";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
+import { Context } from "../../ContextApi";
 
 export default function JobApplicationPage() {
     const { JobID } = useParams();
     const [data, setData] = useState({});
     const [quali, setQuali] = useState(" ")
+    const {apiLink} = useContext(Context);
 
     const ref = useRef(null)
     const isInView = useInView(ref)
@@ -23,7 +25,7 @@ export default function JobApplicationPage() {
     };
 
     useEffect(() => {
-        axios.get(`https://helpapi.onrender.com/Jobs/${JobID}`).then(res => {
+        axios.get(apiLink+`Jobs/${JobID}`).then(res => {
             setData(res.data);
             setQuali(res.data.qualifications.join(", "))
         })

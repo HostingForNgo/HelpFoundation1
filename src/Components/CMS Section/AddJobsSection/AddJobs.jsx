@@ -3,9 +3,12 @@ import { useRef } from "react";
 import { useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 
 export default function AddJobs() {
+    const {apiLink} = useContext(Context);
     const [JobTitle, setJobTitle] = useState("");
     const [location, setLocation] = useState("");
     const [jobDescription, setJobDescription] = useState("");
@@ -47,7 +50,7 @@ export default function AddJobs() {
                 <Box mb={"10px"}>
                     <Button onClick={()=>{
                         let obj = {JobTitle,location,jobDescription,qualifications,openPositions};
-                        axios.post("https://helpapi.onrender.com/Jobs",obj)
+                        axios.post(apiLink+"Jobs",obj)
                         // axios.post("https://futuristic-unexpected-citrine.glitch.me/Jobs",obj)
                         console.log(obj);
                         setJobTitle("");

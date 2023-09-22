@@ -2,8 +2,11 @@ import { Box, Button, Checkbox, FormControlLabel, Typography } from "@mui/materi
 import axios from "axios";
 import { useRef, useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
+import { useContext } from "react";
+import { Context } from "../../../ContextApi";
 
 export default function ProjectCard({ images, heading, date, description, isVolunteer, func, id  }) {
+    const {apiLink} = useContext(Context);
     const headingRef = useRef(null);
     const descRef = useRef(null);
     const [imgs, setImgs] = useState(images);
@@ -36,7 +39,7 @@ export default function ProjectCard({ images, heading, date, description, isVolu
                             description: descRef.current.value,
                             images: imgs
                         }
-                        axios.patch(`https://helpapi.onrender.com/projects/${id}`, obj)
+                        axios.patch(apiLink+`projects/${id}`, obj)
                     }}
                         variant="text" sx={{ display: !readOnly ? "flex" : "none", "&:hover": { background: "#7912f7" }, color: "white", width: "100%", background: "#7912f7", height: "30px" }} >
                         Save
@@ -50,7 +53,7 @@ export default function ProjectCard({ images, heading, date, description, isVolu
                 </Box>
             </Box>
             <Box display={"flex"} flexWrap={"wrap"} justifyContent={"space-evenly"}>
-            <img width={"100%"} height={"100%"} src={imgs} />
+            <img width={"100%"} alt="" height={"100%"} src={imgs} />
             </Box>
         </Box>
     )
