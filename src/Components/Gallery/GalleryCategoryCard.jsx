@@ -60,10 +60,10 @@ export default function GalleryCategoryCard({ heading, description, img, index }
                     </Box>
                     <Box width={"60%"} height={"100%"} p={"10px"} display={"flex"} flexDirection={"column"}>
                         <Box minHeight={"20%"} pb={"40px"}>
-                            <Typography fontSize={["18px", "20px", "30px", "40px"]} fontWeight={"900"} color={"#564FA5"}>{heading}</Typography>
+                            <Typography fontSize={["18px", "20px", "30px", "40px"]} fontWeight={"900"} color={"#564FA5"} title={heading} >{heading?.slice(0,40)+"..."}</Typography>
                         </Box>
-                        <Box height={"80%"}>
-                            <Typography fontSize={["10px", "10px", "14px", "16px"]} color={"gray"} fontWeight={"900"}>
+                        <Box height={"80%"} sx={{overflowY:["none", "scroll", "scroll", "scroll"]}}>
+                            <Typography  fontSize={["10px", "10px", "14px", "16px"]} color={"gray"} fontWeight={"900"}>
                                 {description}
                             </Typography>
                         </Box>
