@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { NavLink } from "react-router-dom";
+import { a } from "react-router-dom";
 export default function MemberCard({ img, name, description, role,linkedin,instagram,twitter }) {
     const ref = useRef(null)
     const isInView = useInView(ref)
@@ -38,9 +38,9 @@ export default function MemberCard({ img, name, description, role,linkedin,insta
                     </Box>
                     <Box bgcolor={"black"} className={"back"} p={"20px"} display={"flex"} flexDirection={"column"} justifyContent={"center"} gap={"30px"}>
                         <Box justifyContent={"space-evenly"} gap={"10px"} display={"flex"}>
-                            <NavLink target="_black" style={{textDecoration:"none",color:"white"}} to={`//${linkedin}`}><LinkedInIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/></NavLink>
-                            <NavLink target="_black" style={{textDecoration:"none",color:"white"}} to={`//${twitter}`}><TwitterIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/></NavLink>
-                            <NavLink target="_black" style={{textDecoration:"none",color:"white"}} to={`//${instagram}`}><InstagramIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/></NavLink>
+                            <a target="_blank" style={{textDecoration:"none",color:"white"}} href={`//${linkedin}`}><LinkedInIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/></a>
+                            <a target="_blank" style={{textDecoration:"none",color:"white"}} href={`//${twitter}`}><TwitterIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/></a>
+                            <a target="_blank" style={{textDecoration:"none",color:"white"}} href={`//${instagram}`}><InstagramIcon sx={{width:"40px",height:"40px",cursor:"pointer"}}/></a>
                         </Box>
                         {description}
                     </Box>
